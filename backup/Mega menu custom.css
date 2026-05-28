@@ -1,0 +1,144 @@
+#mega-menu-item-15 > ul#mega-sub-menu-15 {
+  width: fit-content !important;
+  min-width: 260px !important;
+  max-width: 280px !important;
+  padding: 8px 0 12px 0 !important;
+  border-top: 3px solid #FF0000 !important;
+  border-radius: 8px !important;
+  box-shadow: 0 3px 15px rgba(0,0,0,0.08) !important;
+  background: #fff !important;
+}
+
+#mega-menu-item-15 > ul#mega-sub-menu-15 > li.mega-menu-item > a.mega-menu-link {
+  display: block !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+  white-space: nowrap !important;
+  color: #0D004A !important;
+  font-family: 'Roboto Slab', serif !important;
+  font-size: 18px !important;
+  font-weight: 400 !important;
+  letter-spacing: 0px !important;
+  padding: 10px 24px !important;
+  border-left: 3px solid transparent !important;
+  transition: all 0.2s ease !important;
+}
+
+#mega-menu-item-15 > ul#mega-sub-menu-15 > li.mega-menu-item > a.mega-menu-link:hover {
+  color: #FF0000 !important;
+  border-left: 3px solid #FF0000 !important;
+  background: #fff5f5 !important;
+  padding-left: 28px !important;
+}
+
+/* ABOUT US DROPDOWN FINAL FIX */
+
+#mega-menu-item-15{
+    position: relative !important;
+}
+
+/* dropdown box */
+
+#mega-menu-item-15 > ul.mega-sub-menu{
+
+    position: absolute !important;
+
+    top: 100% !important;
+
+    left: 50% !important;
+
+    transform: translateX(-50%) !important;
+
+    width: 280px !important;
+
+    z-index: 999999 !important;
+
+    pointer-events: auto;
+}
+
+/* stop overlap */
+
+#mega-menu-item-561{
+    position: relative !important;
+    z-index: 1 !important;
+}
+
+#mega-menu-item-15:hover{
+    z-index: 999999 !important;
+}
+
+/* gap prevent */
+
+#mega-menu-item-15 > ul.mega-sub-menu::after{
+    content:'';
+    position:absolute;
+    top:0;
+    right:-20px;
+    width:20px;
+    height:100%;
+    background:transparent;
+}
+/* Left red vertical bar on Capabilities panel */
+#mega-sub-menu-16 {
+  border-top: 3px solid #FF0000 !important;
+}
+
+/* Left red vertical bar on Partners panel */
+#mega-sub-menu-17 {
+  border-top: 3px solid #FF0000 !important;
+}
+/* REMOVE left bar from tab items - revert to no border */
+#mega-sub-menu-16 > li.mega-menu-item > a.mega-menu-link,
+#mega-sub-menu-16 > li.mega-menu-item.mega-toggle-on > a.mega-menu-link,
+#mega-sub-menu-16 > li.mega-menu-item > a.mega-menu-link:hover,
+#mega-sub-menu-17 > li.mega-menu-item > a.mega-menu-link,
+#mega-sub-menu-17 > li.mega-menu-item.mega-toggle-on > a.mega-menu-link,
+#mega-sub-menu-17 > li.mega-menu-item > a.mega-menu-link:hover {
+  border-left: none !important;
+  background: transparent !important;
+  padding-left: 24px !important;
+}
+
+/* Left red bar ONLY on right content links - Capabilities */
+#mega-sub-menu-3780 .textwidget ul li a,
+#mega-sub-menu-589 .textwidget ul li a,
+#mega-sub-menu-4594 .textwidget ul li a,
+#mega-sub-menu-4595 .textwidget ul li a {
+  border-left: 3px solid transparent !important;
+  padding-left: 10px !important;
+  transition: all 0.2s ease !important;
+  display: block !important;
+}
+
+#mega-sub-menu-3780 .textwidget ul li a:hover,
+#mega-sub-menu-589 .textwidget ul li a:hover,
+#mega-sub-menu-4594 .textwidget ul li a:hover,
+#mega-sub-menu-4595 .textwidget ul li a:hover {
+  color: #FF0000 !important;
+  border-left: 3px solid #FF0000 !important;
+  background: #fff5f5 !important;
+  padding-left: 14px !important;
+}
+
+/* Same for Partners right content links */
+#mega-sub-menu-590 .textwidget ul li a,
+#mega-sub-menu-591 .textwidget ul li a,
+#mega-sub-menu-592 .textwidget ul li a,
+#mega-sub-menu-4717 .textwidget ul li a,
+#mega-sub-menu-593 .textwidget ul li a {
+  border-left: 3px solid transparent !important;
+  padding-left: 10px !important;
+  transition: all 0.2s ease !important;
+  display: block !important;
+}
+
+#mega-sub-menu-590 .textwidget ul li a:hover,
+#mega-sub-menu-591 .textwidget ul li a:hover,
+#mega-sub-menu-592 .textwidget ul li a:hover,
+#mega-sub-menu-4717 .textwidget ul li a:hover,
+#mega-sub-menu-593 .textwidget ul li a:hover {
+  color: #FF0000 !important;
+  border-left: 3px solid #FF0000 !important;
+  background: #fff5f5 !important;
+  padding-left: 14px !important;
+}

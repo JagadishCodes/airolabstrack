@@ -1,0 +1,38 @@
+.menu-logo-wrp {
+    padding: 5px 0;
+}
+.menu-right-col li a, #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-tabbed > ul.mega-sub-menu > li.mega-menu-item > a.mega-menu-link {
+    font-family: RobotoSlab-Regular , serif;
+}
+
+#data-sec3 .services-inner h3 span, .banner-content span{
+	color: #FF0000;
+}
+.co {
+    color: #FF0000;
+}
+.menu-right-col .mega-menu-item-text-26 .textwidget{
+	padding: 0 !important;
+}
+
+
+@media (min-width: 1200px) {
+	.van-title h4 {
+			font-size: 1.6vw;
+	}
+
+}
+
+.event-countdown-box{
+	display: none;
+}
+.airothon-rules-wrapper-originality{
+	display:none;
+}
+.timeline-section{
+	display: none;
+}
+
+section#offices iframe .i4ewOd-pzNkMb-haAclf {
+    display: none !important;
+}

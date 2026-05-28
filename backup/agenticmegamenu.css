@@ -1,0 +1,39 @@
+/* .menu-right-col .textwidget {
+  padding-top: 5px !important;
+  padding-bottom: 0 !important;
+}
+.menu-right-col .textwidget p {
+  display: none !important;
+}
+*/
+
+#mega-menu-3780-0 .textwidget {
+  display: none !important;
+}
+
+
+.mega-menu-megamenu .mega-block-title,
+.mega-menu-megamenu h4.mega-block-title {
+  font-weight: normal;
+  font-size: 40px;
+}
+
+.navbar-fixed-top {
+  z-index: 9999 !important;
+}
+
+.mega-menu-wrap,
+#mega-menu-wrap-primary {
+  z-index: 9999 !important;
+}
+
+.mega-sub-menu {
+  z-index: 9998 !important;
+}
+
+.navbar-fixed-top,
+.navbar-default {
+  border: none !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
+}
