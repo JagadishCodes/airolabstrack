@@ -2740,75 +2740,68 @@ div#n2-ss-2 .nextend-bullet-bar {
     }   */
     /* Proportional Typography for Mobile */
     .triniti-headline {
-        font-size: 18px !important;
-        line-height: 1.15 !important;
-        margin-bottom: 4px !important;
+        font-size: 24px !important;
+        line-height: 1.2 !important;
+        margin-bottom: 8px !important;
     }
     .triniti-headline::after {
         width: 40px !important;
         height: 2px !important;
-        margin-top: 5px !important;
+        margin-top: 8px !important;
     }
     .triniti-sub {
-        font-size: 10px !important;
-        margin-bottom: 2px !important;
-        line-height: 1.2 !important;
+        font-size: 13px !important;
+        margin-bottom: 6px !important;
+        line-height: 1.3 !important;
     }
     .triniti-product {
-        font-size: 13px !important;
-        margin-bottom: 8px !important;
+        font-size: 17px !important;
+        margin-bottom: 15px !important;
     }
 
     /* Horizontal side-by-side Features for Mobile (Preserving proportions) */
     .triniti-features {
-        flex-direction: row !important;
-        gap: 6px !important;
-        margin-bottom: 8px !important;
+        flex-direction: column !important;
+        gap: 8px !important;
+        margin-bottom: 12px !important;
     }
     .t-feature {
-        flex-direction: column !important;
-        align-items: flex-start !important;
-        gap: 2px !important;
-        padding-right: 4px !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        gap: 6px !important;
+        padding-right: 0 !important;
         flex: 1 !important;
         min-width: unset !important;
     }
     .t-feature::after {
-        display: block !important;
-        right: 0 !important;
-        top: 10% !important;
-        bottom: 10% !important;
-        width: 1px !important;
-        background: rgba(0,0,0,0.08) !important;
-    }
-    .t-feature:last-child::after {
         display: none !important;
     }
     .t-feat-icon {
-        width: 18px !important;
-        height: 18px !important;
-        font-size: 14px !important;
+        width: 20px !important;
+        height: 20px !important;
+        font-size: 16px !important;
         display: flex !important;
         align-items: center !important;
         justify-content: flex-start !important;
     }
     .t-feat-text {
-        font-size: 9px !important;
-        line-height: 1.1 !important;
+        font-size: 12px !important;
+        line-height: 1.4 !important;
     }
     .t-feat-text strong {
-        font-size: 9.5px !important;
+        font-size: 13px !important;
     }
 
     .t-partners {
-        font-size: 9px !important;
-        gap: 4px !important;
+        font-size: 11px !important;
+        gap: 8px !important;
+        flex-wrap: wrap;
     }
     .t-partners span {
-        display: none !important;
+        display: inline-block !important;
     }
     .t-partners strong {
-        font-size: 9.5px !important;
+        font-size: 12px !important;
     }
 
     /* Choose Your Package Slide Mobile */
@@ -2867,11 +2860,11 @@ div#n2-ss-2 .nextend-bullet-bar {
     left: 0;
     width: 100% !important;
     height: 100%;
-    padding: 18px 5% 52px 5%;  /* bottom 52px clears the slick dots at bottom:6px */
+    padding: 20px 6% 30px 6%;  
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;  /* start from top, not centered, to avoid overflow */
+    justify-content: center;  /* Center the content vertically so it aligns nicely */
     overflow-y: hidden;
     z-index: 2;
     opacity: 0;
@@ -2896,7 +2889,7 @@ div#n2-ss-2 .nextend-bullet-bar {
     max-width: 100% !important;
     text-align: center !important;
     padding: 10px 18px !important;
-    font-size: 12px !important;
+    font-size: 13px !important;
     border-radius: 4px !important;
     white-space: normal !important;
     box-sizing: border-box !important;
@@ -2904,28 +2897,28 @@ div#n2-ss-2 .nextend-bullet-bar {
     font-weight: 700 !important;
   }
   .triniti-cta-wrapper {
-    margin-top: 8px !important;
-    margin-bottom: 4px !important;
+    margin-top: 10px !important;
+    margin-bottom: 10px !important;
     width: 100% !important;
   }
   /* Partner logos: keep them small but visible */
   .t-partners {
     display: flex !important;
     align-items: center !important;
-    gap: 6px !important;
-    font-size: 0 !important;  /* hide text including pipe separator */
-    margin-top: 6px !important;
-    opacity: 0.75 !important;
+    gap: 8px !important;
+    font-size: 11px !important;  
+    margin-top: 10px !important;
+    opacity: 0.9 !important;
   }
   .t-partners img {
-    height: 9px !important;
+    height: 12px !important;
     width: auto !important;
     display: inline-block !important;
     filter: brightness(0) invert(1) !important;
     opacity: 1 !important;
   }
   .t-partners span {
-    display: none !important;
+    display: inline-block !important;
   }
 }
 
@@ -3039,8 +3032,7 @@ div#n2-ss-2 .nextend-bullet-bar {
            <div class="triniti-banner-inner">
                <div class="triniti-left">
                    <h1 class="triniti-headline">
-                       Delivering <span class="text-red">AI</span><br>
-                       Through <span class="text-red">AI</span>
+                       Delivering <span class="text-red">AI</span><br class="d-none d-md-block"> Through <span class="text-red">AI</span>
                    </h1>
                    <div class="triniti-sub">World's fastest builder of AI agents in bulk, unveils:</div>
                    <div class="triniti-product">Airo's <span class="highlight" style="position: relative; display: inline-block;"><span style="visibility: hidden;">agenTriniti<sup style="font-size: 0.35em; position: relative; top: -1.5em; line-height: 0; vertical-align: baseline;">SM</sup></span><span id="typewriter-agenTriniti" style="position: absolute; left: 0; top: 0; white-space: nowrap;"></span></span> Package</div>
@@ -3048,16 +3040,22 @@ div#n2-ss-2 .nextend-bullet-bar {
                    <div class="triniti-features">
                        <div class="t-feature" style="flex: none; padding-right: 0; min-width: auto;">
                            <div class="t-feat-text" style="color: #ffffff;">
-                               <strong style="color: #ffffff;">100 agents.</strong> 6 months. &nbsp; <strong style="color: #ffffff;">One fixed fee.</strong> No surprises.
+                               <strong style="color: #ffffff;">100 agents.</strong> 6 months. <br class="d-block d-md-none"> <strong style="color: #ffffff;">One fixed fee.</strong> No surprises.
                            </div>
                        </div>
                    </div>
 
-                   <div class="triniti-footer" style="margin-top: 20px;">
-                       <div class="t-partners" style="font-size: 13px; font-family: 'Inter', sans-serif; opacity: 0.85; display: flex; align-items: center; gap: 12px;">
+                   <div class="triniti-cta-wrapper mobile-cta d-block d-md-none" style="margin-top: 5px; margin-bottom: 10px;">
+                       <a href="https://calendly.com/airodigitallabs/30min?guests=sayak.das%40airodigitallabs.com&month=2026-05" target="_blank" class="triniti-left-btn" style="font-size: 13px; padding: 10px 16px;">
+                           Schedule Your agenTriniti<sup style="font-size: 0.55em; position: relative; top: -0.9em; line-height: 0; vertical-align: baseline; margin-right: 4px;">SM</sup> Demo Today
+                       </a>
+                   </div>
+
+                   <div class="triniti-footer" style="margin-top: 10px;">
+                       <div class="t-partners" style="font-size: 13px; font-family: 'Inter', sans-serif; opacity: 0.85; display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
                            <span>In partnership with</span>
                             <img src="<?php echo site_url(); ?>/wp-content/uploads/2026/07/anthropic-text-1.png" alt="Anthropic" style="height: 14px; width: auto; display: block; filter: brightness(0) invert(1);">
-                            <span style="opacity: 0.4;">|</span>
+                            <span class="pipe-sep" style="opacity: 0.4;">|</span>
                             <img src="<?php echo site_url(); ?>/wp-content/uploads/2026/07/openai-text-1.png" alt="OpenAI" style="height: 15px; width: auto; display: block; filter: brightness(0) invert(1);">
                        </div>
                    </div>
@@ -3067,7 +3065,7 @@ div#n2-ss-2 .nextend-bullet-bar {
          alt="Triniti Arc Static" 
          class="triniti-svg">
     <div class="triniti-scrim"></div>
-    <div class="triniti-cta-wrapper" style="position: absolute; bottom: 5%; left: 0; width: 100%; display: flex; justify-content: center; z-index: 10; margin-top: 0;">
+    <div class="triniti-cta-wrapper desktop-cta d-none d-md-flex" style="position: absolute; bottom: 5%; left: 0; width: 100%; display: flex; justify-content: center; z-index: 10; margin-top: 0;">
         <a href="https://calendly.com/airodigitallabs/30min?guests=sayak.das%40airodigitallabs.com&month=2026-05" 
            target="_blank" 
            class="triniti-left-btn">
