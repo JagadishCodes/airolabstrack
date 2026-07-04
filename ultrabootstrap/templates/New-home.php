@@ -1928,10 +1928,11 @@ div#n2-ss-2 .nextend-bullet-bar {
 
 /* Triniti Card Dark Theme (matches Slide 2 color combo) */
 .triniti-card {
-    background: radial-gradient(circle at 10% 20%, rgba(255, 0, 51, 0.15) 0%, transparent 45%), 
-                radial-gradient(circle at 90% 80%, rgba(0, 102, 255, 0.2) 0%, transparent 50%), 
-                linear-gradient(135deg, #020212 0%, #07061d 50%, #030214 100%) !important;
-    border: none;
+  background:
+    radial-gradient(circle at 10% 20%, rgba(0, 102, 255, 0.2) 0%, transparent 50%),
+    radial-gradient(circle at 90% 80%, rgba(180, 0, 40, 0.10) 0%, transparent 45%),
+    linear-gradient(135deg, #030214 0%, #07061d 50%, #020212 100%) !important;
+  border: none;
 }
 
 /* Dark Theme Typography for Triniti Card */
@@ -2386,7 +2387,7 @@ div#n2-ss-2 .nextend-bullet-bar {
 .hero-main-carousel.slick-initialized .triniti-left .triniti-sub,
 .hero-main-carousel.slick-initialized .triniti-left .triniti-product,
 .hero-main-carousel.slick-initialized .triniti-left .triniti-features,
-.hero-main-carousel.slick-initialized .triniti-left .triniti-cta-wrapper,
+.hero-main-carousel.slick-initialized .triniti-cta-wrapper,
 .hero-main-carousel.slick-initialized .triniti-left .triniti-footer {
     opacity: 0;
     transform: translateY(15px);
@@ -2394,45 +2395,45 @@ div#n2-ss-2 .nextend-bullet-bar {
 }
 
 /* Trigger animation when the second slide is active */
-.hero-main-carousel.slick-initialized .slick-active .choose-pkg-banner h3 {
+.hero-main-carousel.slick-initialized .play-anim .choose-pkg-banner h3 {
     animation: choosePkgFadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-    animation-delay: 0.3s;
+    animation-delay: 0.1s;
 }
 
-.hero-main-carousel.slick-initialized .slick-active .choose-pkg-banner p {
+.hero-main-carousel.slick-initialized .play-anim .choose-pkg-banner p {
     animation: choosePkgFadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
     animation-delay: 0.5s;
 }
 
-.hero-main-carousel.slick-initialized .slick-active .choose-pkg-banner .btn-explore-wrapper {
+.hero-main-carousel.slick-initialized .play-anim .choose-pkg-banner .btn-explore-wrapper {
     animation: choosePkgFadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
     animation-delay: 0.7s;
 }
 
 /* Trigger animation when the first slide is active */
-.hero-main-carousel.slick-initialized .slick-active .triniti-left .triniti-headline {
+.hero-main-carousel.slick-initialized .play-anim .triniti-left .triniti-headline {
     animation: choosePkgFadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
     animation-delay: 0.2s;
 }
-.hero-main-carousel.slick-initialized .slick-active .triniti-left .triniti-sub {
-    animation: choosePkgFadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-    animation-delay: 0.3s;
-}
-.hero-main-carousel.slick-initialized .slick-active .triniti-left .triniti-product {
-    animation: choosePkgFadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-    animation-delay: 0.4s;
-}
-.hero-main-carousel.slick-initialized .slick-active .triniti-left .triniti-features {
+.hero-main-carousel.slick-initialized .play-anim .triniti-left .triniti-sub {
     animation: choosePkgFadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
     animation-delay: 0.5s;
 }
-.hero-main-carousel.slick-initialized .slick-active .triniti-left .triniti-cta-wrapper {
-    animation: choosePkgFadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-    animation-delay: 0.6s;
-}
-.hero-main-carousel.slick-initialized .slick-active .triniti-left .triniti-footer {
+.hero-main-carousel.slick-initialized .play-anim .triniti-left .triniti-product {
     animation: choosePkgFadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
     animation-delay: 0.7s;
+}
+.hero-main-carousel.slick-initialized .play-anim .triniti-left .triniti-features {
+    animation: choosePkgFadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    animation-delay: 0.9s;
+}
+.hero-main-carousel.slick-initialized .play-anim .triniti-cta-wrapper {
+    animation: choosePkgFadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    animation-delay: 1.1s;
+}
+.hero-main-carousel.slick-initialized .play-anim .triniti-left .triniti-footer {
+    animation: choosePkgFadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    animation-delay: 1.3s;
 }
 
 /* SVG/Image Animation adjustments */
@@ -3052,13 +3053,6 @@ div#n2-ss-2 .nextend-bullet-bar {
                        </div>
                    </div>
 
-                   <div class="triniti-cta-wrapper">
-                       <a href="https://calendly.com/airodigitallabs/30min?guests=sayak.das%40airodigitallabs.com&month=2026-05" 
-                          target="_blank" 
-                          class="triniti-left-btn">
-                           Schedule Your agenTriniti<sup style="font-size: 0.55em; position: relative; top: -0.9em; line-height: 0; vertical-align: baseline; margin-right: 6px;">SM</sup> Demo Today
-                       </a>
-                   </div>
                    <div class="triniti-footer" style="margin-top: 20px;">
                        <div class="t-partners" style="font-size: 13px; font-family: 'Inter', sans-serif; opacity: 0.85; display: flex; align-items: center; gap: 12px;">
                            <span>In partnership with</span>
@@ -3073,6 +3067,13 @@ div#n2-ss-2 .nextend-bullet-bar {
          alt="Triniti Arc Static" 
          class="triniti-svg">
     <div class="triniti-scrim"></div>
+    <div class="triniti-cta-wrapper" style="position: absolute; bottom: 5%; left: 0; width: 100%; display: flex; justify-content: center; z-index: 10; margin-top: 0;">
+        <a href="https://calendly.com/airodigitallabs/30min?guests=sayak.das%40airodigitallabs.com&month=2026-05" 
+           target="_blank" 
+           class="triniti-left-btn">
+            Schedule Your agenTriniti<sup style="font-size: 0.55em; position: relative; top: -0.9em; line-height: 0; vertical-align: baseline; margin-right: 6px;">SM</sup> Demo Today
+        </a>
+    </div>
 </div>
 			   
 			  
@@ -3131,6 +3132,8 @@ document.addEventListener("DOMContentLoaded", function() {
     adaptiveHeight: false
 });
 		
+// Make sure the first slide gets the animation class initially
+$carousel.find('.slick-slide.slick-active').addClass('play-anim');
 	
 // index of your Trinity banner slide (0 if it's the first slide)
 const TRINITY_SLIDE_INDEX = 0;
@@ -3147,6 +3150,14 @@ $carousel.on('beforeChange', function(event, slick, currentSlide, nextSlide) {
     }
     // Ensure autoplay continues
     $carousel.slick('slickPlay');
+    
+    // Remove animation class from all slides so it fully resets
+    $(slick.$slider).find('.slick-slide').removeClass('play-anim');
+});
+
+$carousel.on('afterChange', function(event, slick, currentSlide) {
+    // Add the animation class back to the active slide to cleanly restart the animations
+    $(slick.$slider).find('.slick-slide[data-slick-index="'+currentSlide+'"]').addClass('play-anim');
 });
 
 document.addEventListener("visibilitychange", function() {
@@ -4209,26 +4220,6 @@ document.addEventListener("visibilitychange", function() {
 	})();
 
 	document.addEventListener('DOMContentLoaded', function() {
-		// Kinetic typography base CSS
-		if(!document.getElementById('kinetic-left-css')) {
-			const kStyle = document.createElement('style');
-			kStyle.id = 'kinetic-left-css';
-			kStyle.innerHTML = `
-				.kinetic-block {
-					opacity: 0;
-					transform: translateY(20px) scale(0.98);
-					filter: blur(5px);
-				}
-				@keyframes kineticFadeUp {
-					to { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
-				}
-			`;
-			document.head.appendChild(kStyle);
-		}
-
-		const leftElements = document.querySelectorAll('.triniti-left > *');
-		leftElements.forEach(el => el.classList.add('kinetic-block'));
-
 		const text = "agenTriniti";
 		const el = document.getElementById("typewriter-agenTriniti");
 		
@@ -4284,19 +4275,6 @@ document.addEventListener("visibilitychange", function() {
 			el.appendChild(supSpan);
 			letters.push(supSpan);
 
-			const animateLeftSideOnce = () => {
-				leftElements.forEach((blockEl, index) => {
-					blockEl.style.animation = 'none';
-					blockEl.offsetHeight; // trigger reflow
-					blockEl.style.opacity = '0';
-					blockEl.style.transform = 'translateY(20px) scale(0.98)';
-					blockEl.style.filter = 'blur(5px)';
-					
-					blockEl.style.animation = 'kineticFadeUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards';
-					blockEl.style.animationDelay = `${index * 0.2}s`;
-				});
-			};
-
 			const resetAndAnimateWord = (initialDelay = 0) => {
 				el.classList.add('typewriter-container');
 				el.classList.remove('cinematic-shimmer', 'typing-done');
@@ -4321,14 +4299,18 @@ document.addEventListener("visibilitychange", function() {
 				}, totalDuration + 1000); // Blink for 1s then remove cursor
 			};
 
-			animateLeftSideOnce();
-			resetAndAnimateWord(0.3);
+			resetAndAnimateWord(0.7); // 0.7s delay to match the product line animation
 			
 			if (window.jQuery) {
 				jQuery('.hero-main-carousel').on('beforeChange', function(event, slick, currentSlide, nextSlide) {
 					if (nextSlide === 0) {
-						animateLeftSideOnce();
-						resetAndAnimateWord(0.3);
+						letters.forEach(span => span.style.display = 'none');
+						el.classList.remove('cinematic-shimmer', 'typing-done');
+					}
+				});
+				jQuery('.hero-main-carousel').on('afterChange', function(event, slick, currentSlide) {
+					if (currentSlide === 0) {
+						resetAndAnimateWord(0.7);
 					}
 				});
 			}
