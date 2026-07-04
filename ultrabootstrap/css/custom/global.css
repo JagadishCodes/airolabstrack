@@ -1,0 +1,117 @@
+ @font-face {
+     font-family: RobotoSlab-Bold;
+     src: url('/wp-content/themes/ultrabootstrap/fonts/RobotoSlab-Bold.ttf');
+	font-weight: 800;
+	font-display: swap;
+}
+ @font-face {
+     font-family: RobotoSlab-SemiBold;
+     src: url('/wp-content/themes/ultrabootstrap/fonts/RobotoSlab-SemiBold.ttf');
+	font-weight: 600;
+	font-display: swap;
+}
+ @font-face {
+     font-family: RobotoSlab-Medium;
+     src: url('/wp-content/themes/ultrabootstrap/fonts/RobotoSlab-Medium.ttf');
+	font-weight: 500;
+	font-display: swap;
+}
+ @font-face {
+     font-family: RobotoSlab-Regular;
+     src: url('/wp-content/themes/ultrabootstrap/fonts/RobotoSlab-Regular.ttf');
+	font-weight: 400;
+	font-display: swap;
+}
+ @font-face {
+     font-family: RobotoSlab-Light;
+     src: url('/wp-content/themes/ultrabootstrap/fonts/RobotoSlab-Light.ttf');
+	font-weight: 100;
+	font-display: swap;
+}
+ @font-face {
+     font-family: Inter-Bold;
+     src: url('/wp-content/themes/ultrabootstrap/fonts/Inter-Bold.ttf');
+	font-weight: 800;
+	font-display: swap;
+}
+ @font-face {
+     font-family: Inter-SemiBold;
+     src: url('/wp-content/themes/ultrabootstrap/fonts/Inter-SemiBold.ttf');
+	font-weight: 600;
+	font-display: swap;
+}
+ @font-face {
+     font-family: Inter-Medium;
+     src: url('/wp-content/themes/ultrabootstrap/fonts/Inter-Medium.ttf');
+	font-weight: 500;
+	font-display: swap;
+}
+ @font-face {
+     font-family: Inter-Regular;
+     src: url('/wp-content/themes/ultrabootstrap/fonts/Inter-Regular.ttf');
+	font-weight: 400;
+	font-display: swap;
+}
+
+.container {
+	width: 90% !important;
+	max-width: 90% !important;
+	padding-left: 12px !important;
+}
+.desktop{
+	display: block !important;
+}
+.mobile{
+	display: none !important;
+}
+.row{
+	margin: auto 0 !important;
+}
+.img_width{
+	width: 100%;
+}
+.img_height{
+	height: 100%;
+}
+.job-desc-sec .job-desc-left p b {
+    font-family: 'Inter-Bold';
+}
+
+.orng{
+	color: #FF0000 !important;
+}
+.footr-copy {
+    display: flex;
+    justify-content: end;
+    padding-top: 35px;
+}
+.footr-copy a{
+	color: #ffffffb3 !important;
+  font-family: 'RobotoSlab-Regular';
+}
+.prv-policy {
+    padding-left: 3%;
+}
+
+@media (max-width:767.98px){
+	.desktop{
+		display: none !important;
+	}
+	.mobile{
+		display: block !important;
+	}
+	.footr-copy {
+	    display: block;
+	    padding-bottom: 2%;
+	}
+	.prv-policy {
+	    padding-left: 0;
+	}
+}	
+
+@media (max-width:1200px){
+	.container {
+		width: 95% !important;
+		max-width: 95% !important;
+	}
+}
