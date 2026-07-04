@@ -1,0 +1,127 @@
+<svg viewBox="0 0 1500 950" xmlns="http://www.w3.org/2000/svg" font-family="Inter, Arial, sans-serif">
+
+<style>
+  .band-group { opacity: 0; transform-box: fill-box; transform-origin: 50% 100%; }
+  .center-group { opacity: 0; }
+  .footer-group { opacity: 0; }
+
+  #bandA { animation: revealA 7s ease-in-out infinite; }
+  #bandB { animation: revealB 7s ease-in-out infinite; }
+  #bandC { animation: revealC 7s ease-in-out infinite; }
+  #bandD { animation: revealD 7s ease-in-out infinite; }
+  #centerGroup { animation: revealCenter 7s ease-in-out infinite; }
+  #footerGroup { animation: revealFooter 7s ease-in-out infinite; }
+
+  @keyframes revealA {
+    0%   { opacity: 0; transform: translateY(18px) scale(0.92); }
+    4%   { opacity: 1; transform: translateY(0) scale(1); }
+    82%  { opacity: 1; transform: translateY(0) scale(1); }
+    92%  { opacity: 0; transform: translateY(0) scale(1); }
+    100% { opacity: 0; }
+  }
+  @keyframes revealB {
+    0%   { opacity: 0; transform: translateY(18px) scale(0.94); }
+    10%  { opacity: 0; transform: translateY(18px) scale(0.94); }
+    16%  { opacity: 1; transform: translateY(0) scale(1); }
+    82%  { opacity: 1; transform: translateY(0) scale(1); }
+    92%  { opacity: 0; transform: translateY(0) scale(1); }
+    100% { opacity: 0; }
+  }
+  @keyframes revealC {
+    0%   { opacity: 0; transform: translateY(18px) scale(0.96); }
+    20%  { opacity: 0; transform: translateY(18px) scale(0.96); }
+    26%  { opacity: 1; transform: translateY(0) scale(1); }
+    82%  { opacity: 1; transform: translateY(0) scale(1); }
+    92%  { opacity: 0; transform: translateY(0) scale(1); }
+    100% { opacity: 0; }
+  }
+  @keyframes revealD {
+    0%   { opacity: 0; transform: translateY(18px) scale(0.98); }
+    30%  { opacity: 0; transform: translateY(18px) scale(0.98); }
+    36%  { opacity: 1; transform: translateY(0) scale(1); }
+    82%  { opacity: 1; transform: translateY(0) scale(1); }
+    92%  { opacity: 0; transform: translateY(0) scale(1); }
+    100% { opacity: 0; }
+  }
+  @keyframes revealCenter {
+    0%   { opacity: 0; }
+    40%  { opacity: 0; }
+    48%  { opacity: 1; }
+    82%  { opacity: 1; }
+    92%  { opacity: 0; }
+    100% { opacity: 0; }
+  }
+  @keyframes revealFooter {
+    0%   { opacity: 0; }
+    48%  { opacity: 0; }
+    56%  { opacity: 1; }
+    82%  { opacity: 1; }
+    92%  { opacity: 0; }
+    100% { opacity: 0; }
+  }
+
+  .seg-label { font-weight: 700; letter-spacing: 0.3px; }
+  .seg-stroke { stroke: #FFFFFF; stroke-width: 2; }
+</style>
+
+<defs>
+<path id="bandA_labelpath_0" d="M 547.50,700.00 A 202.50,202.50 0 0 1 648.75,524.63" fill="none" />
+<path id="bandA_labelpath_1" d="M 648.75,524.63 A 202.50,202.50 0 0 1 851.25,524.63" fill="none" />
+<path id="bandA_labelpath_2" d="M 851.25,524.63 A 202.50,202.50 0 0 1 952.50,700.00" fill="none" />
+<path id="bandB_labelpath_0" d="M 422.50,700.00 A 327.50,327.50 0 0 1 586.25,416.38" fill="none" />
+<path id="bandB_labelpath_1" d="M 586.25,416.38 A 327.50,327.50 0 0 1 913.75,416.38" fill="none" />
+<path id="bandB_labelpath_2" d="M 913.75,416.38 A 327.50,327.50 0 0 1 1077.50,700.00" fill="none" />
+<path id="bandC_labelpath_0" d="M 322.50,700.00 A 427.50,427.50 0 0 1 536.25,329.77" fill="none" />
+<path id="bandC_labelpath_1" d="M 536.25,329.77 A 427.50,427.50 0 0 1 963.75,329.77" fill="none" />
+<path id="bandC_labelpath_2" d="M 963.75,329.77 A 427.50,427.50 0 0 1 1177.50,700.00" fill="none" />
+<path id="bandD_labelpath_0" d="M 212.50,700.00 A 537.50,537.50 0 0 1 369.93,319.93" fill="none" />
+<path id="bandD_labelpath_1" d="M 369.93,319.93 A 537.50,537.50 0 0 1 750.00,162.50" fill="none" />
+<path id="bandD_labelpath_2" d="M 750.00,162.50 A 537.50,537.50 0 0 1 1130.07,319.93" fill="none" />
+<path id="bandD_labelpath_3" d="M 1130.07,319.93 A 537.50,537.50 0 0 1 1287.50,700.00" fill="none" />
+</defs>
+
+<g id="bandA" class="band-group">
+<path d="M 485.00,700.00 A 265.00,265.00 0 0 1 617.50,470.50 L 680.00,578.76 A 140.00,140.00 0 0 0 610.00,700.00 Z" fill="#01004A" class="seg-stroke" />
+<text class="seg-label" font-size="25" fill="#FFFFFF"><textPath href="#bandA_labelpath_0" startOffset="50%" text-anchor="middle">Build</textPath></text>
+<path d="M 617.50,470.50 A 265.00,265.00 0 0 1 882.50,470.50 L 820.00,578.76 A 140.00,140.00 0 0 0 680.00,578.76 Z" fill="#8A8F98" class="seg-stroke" />
+<text class="seg-label" font-size="25" fill="#FFFFFF"><textPath href="#bandA_labelpath_1" startOffset="50%" text-anchor="middle">Manage</textPath></text>
+<path d="M 882.50,470.50 A 265.00,265.00 0 0 1 1015.00,700.00 L 890.00,700.00 A 140.00,140.00 0 0 0 820.00,578.76 Z" fill="#FF0000" class="seg-stroke" />
+<text class="seg-label" font-size="25" fill="#FFFFFF"><textPath href="#bandA_labelpath_2" startOffset="50%" text-anchor="middle">Communicate</textPath></text>
+</g>
+<g id="bandB" class="band-group">
+<path d="M 365.00,700.00 A 385.00,385.00 0 0 1 557.50,366.58 L 615.00,466.17 A 270.00,270.00 0 0 0 480.00,700.00 Z" fill="#FF0000" class="seg-stroke" />
+<text class="seg-label" font-size="23" fill="#FFFFFF"><textPath href="#bandB_labelpath_0" startOffset="50%" text-anchor="middle">ERP Platform</textPath></text>
+<path d="M 557.50,366.58 A 385.00,385.00 0 0 1 942.50,366.58 L 885.00,466.17 A 270.00,270.00 0 0 0 615.00,466.17 Z" fill="#FF0000" class="seg-stroke" />
+<text class="seg-label" font-size="23" fill="#FFFFFF"><textPath href="#bandB_labelpath_1" startOffset="50%" text-anchor="middle">CRM Platform</textPath></text>
+<path d="M 942.50,366.58 A 385.00,385.00 0 0 1 1135.00,700.00 L 1020.00,700.00 A 270.00,270.00 0 0 0 885.00,466.17 Z" fill="#FF0000" class="seg-stroke" />
+<text class="seg-label" font-size="23" fill="#FFFFFF"><textPath href="#bandB_labelpath_2" startOffset="50%" text-anchor="middle">SCM Platform</textPath></text>
+</g>
+<g id="bandC" class="band-group">
+<path d="M 285.00,700.00 A 465.00,465.00 0 0 1 517.50,297.30 L 555.00,362.25 A 390.00,390.00 0 0 0 360.00,700.00 Z" fill="#CDD1D9" class="seg-stroke" />
+<text class="seg-label" font-size="19" fill="#01004A"><textPath href="#bandC_labelpath_0" startOffset="50%" text-anchor="middle">Flexible Office Use Cases</textPath></text>
+<path d="M 517.50,297.30 A 465.00,465.00 0 0 1 982.50,297.30 L 945.00,362.25 A 390.00,390.00 0 0 0 555.00,362.25 Z" fill="#CDD1D9" class="seg-stroke" />
+<text class="seg-label" font-size="19" fill="#01004A"><textPath href="#bandC_labelpath_1" startOffset="50%" text-anchor="middle">Back Office Use Cases</textPath></text>
+<path d="M 982.50,297.30 A 465.00,465.00 0 0 1 1215.00,700.00 L 1140.00,700.00 A 390.00,390.00 0 0 0 945.00,362.25 Z" fill="#CDD1D9" class="seg-stroke" />
+<text class="seg-label" font-size="19" fill="#01004A"><textPath href="#bandC_labelpath_2" startOffset="50%" text-anchor="middle">IT Use Cases</textPath></text>
+</g>
+<g id="bandD" class="band-group">
+<path d="M 145.00,700.00 A 605.00,605.00 0 0 1 322.20,272.20 L 417.66,367.66 A 470.00,470.00 0 0 0 280.00,700.00 Z" fill="#EEEFF2" class="seg-stroke" />
+<text class="seg-label" font-size="20" fill="#01004A"><textPath href="#bandD_labelpath_0" startOffset="50%" text-anchor="middle">Pharma &amp; Life Sciences</textPath></text>
+<path d="M 322.20,272.20 A 605.00,605.00 0 0 1 750.00,95.00 L 750.00,230.00 A 470.00,470.00 0 0 0 417.66,367.66 Z" fill="#EEEFF2" class="seg-stroke" />
+<text class="seg-label" font-size="20" fill="#01004A"><textPath href="#bandD_labelpath_1" startOffset="50%" text-anchor="middle">Manufacturing</textPath></text>
+<path d="M 750.00,95.00 A 605.00,605.00 0 0 1 1177.80,272.20 L 1082.34,367.66 A 470.00,470.00 0 0 0 750.00,230.00 Z" fill="#EEEFF2" class="seg-stroke" />
+<text class="seg-label" font-size="20" fill="#01004A"><textPath href="#bandD_labelpath_2" startOffset="50%" text-anchor="middle">Retail &amp; CPG</textPath></text>
+<path d="M 1177.80,272.20 A 605.00,605.00 0 0 1 1355.00,700.00 L 1220.00,700.00 A 470.00,470.00 0 0 0 1082.34,367.66 Z" fill="#EEEFF2" class="seg-stroke" />
+<text class="seg-label" font-size="20" fill="#01004A"><textPath href="#bandD_labelpath_3" startOffset="50%" text-anchor="middle">Banking &amp; Financial Services</textPath></text>
+</g>
+<g id="centerGroup" class="center-group">
+<text x="750" y="620" text-anchor="middle" font-size="17" font-weight="700" fill="#FFFFFF">One fixed price</text>
+<text x="750" y="642" text-anchor="middle" font-size="17" font-weight="700" fill="#FFFFFF">per month,</text>
+<text x="750" y="664" text-anchor="middle" font-size="17" font-weight="700" fill="#FFFFFF">no hidden fees</text>
+</g>
+<g id="footerGroup" class="footer-group">
+<rect x="440.0" y="800" width="620" height="110" rx="10" fill="none" stroke="#FF0000" stroke-width="2" />
+<text x="750" y="845" text-anchor="middle" font-size="30" font-weight="800" fill="#FFFFFF">Airo&#8217;s <tspan fill="#FF0000">agenTriniti</tspan><tspan fill="#FF0000" font-size="16" dy="-10">SM</tspan><tspan dy="10"> Package</tspan></text>
+<text x="750" y="878" text-anchor="middle" font-size="19" fill="rgba(255,255,255,0.7)">AI Use Case Lifecycle Management</text>
+</g>
+</svg>

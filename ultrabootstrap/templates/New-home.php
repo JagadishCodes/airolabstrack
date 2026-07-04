@@ -2087,7 +2087,6 @@ div#n2-ss-2 .nextend-bullet-bar {
     width: 120%;
     height: 120%;
     background: radial-gradient(circle at center, rgba(0, 53, 204, 0.05) 0%, transparent 70%);
-    animation: pulseGlow 6s infinite alternate;
 }
 
 @keyframes pulseGlow {
@@ -2113,7 +2112,7 @@ div#n2-ss-2 .nextend-bullet-bar {
     display: block;
     width: 75px;
     height: 3px;
-    background: linear-gradient(90deg, #0035cc 50%, #ff0000 50%);
+    background: linear-gradient(90deg, #ffffff 0%, #ff0000 100%);
     margin-top: 20px;
     border-radius: 2px;
 }
@@ -2171,10 +2170,10 @@ div#n2-ss-2 .nextend-bullet-bar {
     font-size: 36px;
 }
 .t-feat-icon i {
-    background: linear-gradient(135deg, #ff4d4d 0%, #cc0000 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    filter: drop-shadow(0 2px 4px rgba(204,0,0,0.2));
+    color: #ffffff;
+    -webkit-text-fill-color: initial;
+    background: none;
+    filter: drop-shadow(0 2px 4px rgba(255,255,255,0.2));
 }
 .t-feat-icon.blue i {
     background: linear-gradient(135deg, #4d79ff 0%, #0035cc 100%);
@@ -2367,7 +2366,7 @@ div#n2-ss-2 .nextend-bullet-bar {
     max-width: 600px;
 }
 
-/* Kinetic Typography for Choose Your Package Banner */
+/* Kinetic Typography for Banner Animations */
 @keyframes choosePkgFadeUp {
     from {
         opacity: 0;
@@ -2382,13 +2381,19 @@ div#n2-ss-2 .nextend-bullet-bar {
 /* Hide elements when slider is initialized, so they can animate in */
 .hero-main-carousel.slick-initialized .choose-pkg-banner h3,
 .hero-main-carousel.slick-initialized .choose-pkg-banner p,
-.hero-main-carousel.slick-initialized .choose-pkg-banner .btn-explore-wrapper {
+.hero-main-carousel.slick-initialized .choose-pkg-banner .btn-explore-wrapper,
+.hero-main-carousel.slick-initialized .triniti-left .triniti-headline,
+.hero-main-carousel.slick-initialized .triniti-left .triniti-sub,
+.hero-main-carousel.slick-initialized .triniti-left .triniti-product,
+.hero-main-carousel.slick-initialized .triniti-left .triniti-features,
+.hero-main-carousel.slick-initialized .triniti-left .triniti-cta-wrapper,
+.hero-main-carousel.slick-initialized .triniti-left .triniti-footer {
     opacity: 0;
     transform: translateY(15px);
     will-change: transform, opacity;
 }
 
-/* Trigger animation when the slide is active */
+/* Trigger animation when the second slide is active */
 .hero-main-carousel.slick-initialized .slick-active .choose-pkg-banner h3 {
     animation: choosePkgFadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
     animation-delay: 0.3s;
@@ -2400,6 +2405,32 @@ div#n2-ss-2 .nextend-bullet-bar {
 }
 
 .hero-main-carousel.slick-initialized .slick-active .choose-pkg-banner .btn-explore-wrapper {
+    animation: choosePkgFadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    animation-delay: 0.7s;
+}
+
+/* Trigger animation when the first slide is active */
+.hero-main-carousel.slick-initialized .slick-active .triniti-left .triniti-headline {
+    animation: choosePkgFadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    animation-delay: 0.2s;
+}
+.hero-main-carousel.slick-initialized .slick-active .triniti-left .triniti-sub {
+    animation: choosePkgFadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    animation-delay: 0.3s;
+}
+.hero-main-carousel.slick-initialized .slick-active .triniti-left .triniti-product {
+    animation: choosePkgFadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    animation-delay: 0.4s;
+}
+.hero-main-carousel.slick-initialized .slick-active .triniti-left .triniti-features {
+    animation: choosePkgFadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    animation-delay: 0.5s;
+}
+.hero-main-carousel.slick-initialized .slick-active .triniti-left .triniti-cta-wrapper {
+    animation: choosePkgFadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    animation-delay: 0.6s;
+}
+.hero-main-carousel.slick-initialized .slick-active .triniti-left .triniti-footer {
     animation: choosePkgFadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
     animation-delay: 0.7s;
 }
@@ -2416,7 +2447,6 @@ div#n2-ss-2 .nextend-bullet-bar {
     position: relative;
     z-index: 2;
     filter: drop-shadow(0 10px 20px rgba(0,0,0,0.08));
-    animation: floatSVG 6s ease-in-out infinite;
 }
 
 /* Triniti Left CTA Button */
@@ -3015,31 +3045,9 @@ div#n2-ss-2 .nextend-bullet-bar {
                    <div class="triniti-product">Airo's <span class="highlight" style="position: relative; display: inline-block;"><span style="visibility: hidden;">agenTriniti<sup style="font-size: 0.35em; position: relative; top: -1.5em; line-height: 0; vertical-align: baseline;">SM</sup></span><span id="typewriter-agenTriniti" style="position: absolute; left: 0; top: 0; white-space: nowrap;"></span></span> Package</div>
                    
                    <div class="triniti-features">
-                       <div class="t-feature">
-                           <div class="t-feat-icon">
-                               <i class="fa fa-users" aria-hidden="true"></i>
-                           </div>
-                           <div class="t-feat-text">
-                               <strong class="red">100 agents.</strong><br>
-                               6 months.
-                           </div>
-                       </div>
-                       <div class="t-feature">
-                           <div class="t-feat-icon blue">
-                               <i class="fa fa-calendar-check-o" aria-hidden="true"></i>
-                           </div>
-                           <div class="t-feat-text">
-                               <strong class="blue">One fixed fee.</strong><br>
-                               No surprises.
-                           </div>
-                       </div>
-                       <div class="t-feature">
-                           <div class="t-feat-icon">
-                               <i class="fa fa-refresh" aria-hidden="true"></i>
-                           </div>
-                           <div class="t-feat-text">
-                               <strong class="red">Built, managed,</strong><br>
-                               and continuously<br>upgraded.
+                       <div class="t-feature" style="flex: none; padding-right: 0; min-width: auto;">
+                           <div class="t-feat-text" style="color: #ffffff;">
+                               <strong style="color: #ffffff;">100 agents.</strong> 6 months. &nbsp; <strong style="color: #ffffff;">One fixed fee.</strong> No surprises.
                            </div>
                        </div>
                    </div>
@@ -3061,8 +3069,8 @@ div#n2-ss-2 .nextend-bullet-bar {
                    </div>
                </div>
                 <div class="triniti-right">
-    <img src="<?php echo site_url(); ?>/wp-content/uploads/2026/07/trinity_arc_animated_dark-1.svg" 
-         alt="Triniti Arc" 
+    <img src="<?php echo site_url(); ?>/wp-content/uploads/2026/07/trinity_arc_static.svg" 
+         alt="Triniti Arc Static" 
          class="triniti-svg">
     <div class="triniti-scrim"></div>
 </div>
@@ -3115,7 +3123,7 @@ document.addEventListener("DOMContentLoaded", function() {
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 8000,  // default autoplay speed for all other slides
+    autoplaySpeed: 5000,  // default autoplay speed for all other slides
     pauseOnHover: true,
     arrows: false,
     swipe: true,
@@ -3136,6 +3144,16 @@ $carousel.on('beforeChange', function(event, slick, currentSlide, nextSlide) {
         // entering any other slide - default speed/autoplay
         $carousel.slick('slickSetOption', 'speed', 300, false);
         $carousel.slick('slickSetOption', 'autoplaySpeed', 5000, false);
+    }
+    // Ensure autoplay continues
+    $carousel.slick('slickPlay');
+});
+
+document.addEventListener("visibilitychange", function() {
+    if (document.hidden) {
+        $carousel.slick('slickPause');
+    } else {
+        $carousel.slick('slickPlay');
     }
 });
 		
@@ -4280,8 +4298,8 @@ $carousel.on('beforeChange', function(event, slick, currentSlide, nextSlide) {
 			};
 
 			const resetAndAnimateWord = (initialDelay = 0) => {
-				el.classList.add('cinematic-shimmer', 'typewriter-container');
-				el.classList.remove('typing-done');
+				el.classList.add('typewriter-container');
+				el.classList.remove('cinematic-shimmer', 'typing-done');
 				
 				letters.forEach((span, index) => {
 					span.style.display = 'none';
@@ -4293,6 +4311,11 @@ $carousel.on('beforeChange', function(event, slick, currentSlide, nextSlide) {
 				});
 				
 				const totalDuration = initialDelay * 1000 + (letters.length * 100);
+				
+				setTimeout(() => {
+					el.classList.add('cinematic-shimmer');
+				}, totalDuration);
+				
 				setTimeout(() => {
 					el.classList.add('typing-done');
 				}, totalDuration + 1000); // Blink for 1s then remove cursor
@@ -4300,6 +4323,15 @@ $carousel.on('beforeChange', function(event, slick, currentSlide, nextSlide) {
 
 			animateLeftSideOnce();
 			resetAndAnimateWord(0.3);
+			
+			if (window.jQuery) {
+				jQuery('.hero-main-carousel').on('beforeChange', function(event, slick, currentSlide, nextSlide) {
+					if (nextSlide === 0) {
+						animateLeftSideOnce();
+						resetAndAnimateWord(0.3);
+					}
+				});
+			}
 		}
 
 		// Animation for the video section title
@@ -4323,8 +4355,8 @@ $carousel.on('beforeChange', function(event, slick, currentSlide, nextSlide) {
 			lettersVideo.push(supSpanVideo);
 
 			const resetAndAnimateWordVideo = (initialDelay = 0) => {
-				elVideo.classList.add('cinematic-shimmer', 'typewriter-container');
-				elVideo.classList.remove('typing-done');
+				elVideo.classList.add('typewriter-container');
+				elVideo.classList.remove('cinematic-shimmer', 'typing-done');
 				
 				lettersVideo.forEach((span, index) => {
 					span.style.display = 'none';
@@ -4336,6 +4368,11 @@ $carousel.on('beforeChange', function(event, slick, currentSlide, nextSlide) {
 				});
 				
 				const totalDuration = initialDelay * 1000 + (lettersVideo.length * 100);
+				
+				setTimeout(() => {
+					elVideo.classList.add('cinematic-shimmer');
+				}, totalDuration);
+				
 				setTimeout(() => {
 					elVideo.classList.add('typing-done');
 				}, totalDuration + 1000); // Blink for 1s then remove cursor
