@@ -3286,7 +3286,7 @@ document.addEventListener("visibilitychange", function() {
 <section class="new-video-sec" style="padding: 20px 0; background-color: var(--off);">
 	<div class="container" style="padding-left: 15px !important; padding-right: 15px !important;">
 		<div class="ecosystem-header" style="margin-bottom: 20px; text-align: center;">
-			<h2 class="intro-headline" style="font-size: clamp(32px, 4vw, 48px); padding-bottom: 0; margin-bottom: 15px; text-align: center !important; text-transform: none; letter-spacing: normal !important; word-spacing: normal !important; line-height: 1.3 !important;">Airo's <span class="highlight" style="position: relative; display: inline-block;"><span style="visibility: hidden;">agenTriniti<sup style="font-size: 0.35em; position: relative; top: -1.5em; line-height: 0; vertical-align: baseline;">SM</sup></span><span id="typewriter-agenTriniti-video" style="position: absolute; left: 0; top: 0; white-space: nowrap;"></span></span> Package</h2>
+			<h2 class="intro-headline" style="font-size: clamp(32px, 4vw, 48px); padding-bottom: 0; margin-bottom: 15px; text-align: center !important; text-transform: none; letter-spacing: normal !important; word-spacing: normal !important; line-height: 1.3 !important;">Airo's <span class="highlight" style="position: relative; display: inline-block; color: var(--red, #ff0000);"><span style="visibility: hidden;">agenTriniti<sup style="font-size: 0.28em; font-weight: 500; position: relative; top: -1.6em; line-height: 0; vertical-align: baseline;">SM</sup></span><span id="typewriter-agenTriniti-video" style="position: absolute; left: 0; top: 0; white-space: nowrap;"></span></span> Package</h2>
 			<p class="eyebrow" style="justify-content: center; color: var(--red); margin-bottom: 15px;">AI Use Case Lifecycle Management</p>
 		</div>
 		<div class="row">
@@ -4317,6 +4317,12 @@ document.addEventListener("visibilitychange", function() {
 		// Animation for the video section title
 		const elVideo = document.getElementById("typewriter-agenTriniti-video");
 		if(elVideo) {
+			const videoHeadline = elVideo.closest('.intro-headline');
+			if (videoHeadline) {
+				videoHeadline.style.opacity = '0';
+				videoHeadline.style.transform = 'translateY(15px)';
+			}
+
 			elVideo.innerHTML = '';
 			const lettersVideo = text.split('').map((char, index) => {
 				const span = document.createElement('span');
@@ -4330,7 +4336,7 @@ document.addEventListener("visibilitychange", function() {
 			const supSpanVideo = document.createElement('span');
 			supSpanVideo.className = 'cinematic-letter';
 			supSpanVideo.style.animationPlayState = 'paused';
-			supSpanVideo.innerHTML = '<sup style="font-size: 0.35em; position: relative; top: -1.5em; line-height: 0; vertical-align: baseline; color: var(--red, #ff0000) !important; -webkit-text-fill-color: var(--red, #ff0000) !important;">SM</sup>';
+			supSpanVideo.innerHTML = '<sup style="font-size: 0.28em; font-weight: 500; position: relative; top: -1.6em; line-height: 0; vertical-align: baseline; color: var(--red, #ff0000) !important; -webkit-text-fill-color: var(--red, #ff0000) !important;">SM</sup>';
 			elVideo.appendChild(supSpanVideo);
 			lettersVideo.push(supSpanVideo);
 
@@ -4358,7 +4364,25 @@ document.addEventListener("visibilitychange", function() {
 				}, totalDuration + 1000); // Blink for 1s then remove cursor
 			};
 
-			resetAndAnimateWordVideo(0.3);
+			if ('IntersectionObserver' in window && videoHeadline) {
+				let hasAnimated = false;
+				const observer = new IntersectionObserver((entries) => {
+					entries.forEach(entry => {
+						if (entry.isIntersecting && !hasAnimated) {
+							hasAnimated = true;
+							videoHeadline.style.animation = 'choosePkgFadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards';
+							resetAndAnimateWordVideo(0.7); 
+						}
+					});
+				}, { threshold: 0.2 });
+				observer.observe(videoHeadline);
+			} else {
+				if (videoHeadline) {
+					videoHeadline.style.opacity = '1';
+					videoHeadline.style.transform = 'none';
+				}
+				resetAndAnimateWordVideo(0.7);
+			}
 		}
 	});
 (function() {
