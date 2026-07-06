@@ -983,7 +983,10 @@ body {
     background: var(--red);
     display: inline-block;
   }
-
+.pkg-banner-v2 {
+  height: auto !important;
+  min-height: 460px !important;
+}
   .closing-title {
     font-family: var(--font-display);
     font-size: clamp(22px, 3vw, 34px);
@@ -2318,54 +2321,93 @@ div#n2-ss-2 .nextend-bullet-bar {
 }
 
 /* Secondary Banner */
+/* Banner base */
 .choose-pkg-banner {
-    color: #fff;
-    padding: 0 8%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    text-align: left;
-    text-decoration: none !important;
-    position: relative;
-    overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0 8%;
+  color: #fff;
+  text-align: left;
+  text-decoration: none !important;
+  overflow: hidden;
+  width: 100%;
+  min-height: 320px; /* desktop baseline */
 }
+
+/* Background layer */
 .choose-pkg-banner::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: -50px; /* Extended to crop/hide the watermark at the bottom of the image */
-    background-image: url('https://dev.airolabs.ai/wp-content/uploads/2026/07/banner2-1.jpeg');
-    background-size: cover;
-    background-position: right center; /* aligns graphic to the right */
-    z-index: 1;
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('https://dev.airolabs.ai/wp-content/uploads/2026/07/banner2-1.jpeg');
+  background-size: cover;              /* desktop full bleed */
+  background-position: right center;   /* anchor to right */
+  background-repeat: no-repeat;
+  z-index: 1;
 }
+
+/* Text always above background */
 .choose-pkg-banner h3,
 .choose-pkg-banner p,
 .choose-pkg-banner .btn-explore-wrapper {
-    position: relative;
-    z-index: 2;
+  position: relative;
+  z-index: 2;
 }
+
+/* Heading */
 .choose-pkg-banner h3 {
-    font-family: 'RobotoSlab-Bold', var(--font-b), serif;
-    font-size: clamp(36px, 4vw, 56px);
-    font-weight: 800;
-    color: #fff;
-    margin-bottom: 20px;
-    text-transform: uppercase;
-    letter-spacing: -0.5px;
-    max-width: 600px;
+  font-family: 'RobotoSlab-Bold', var(--font-b), serif;
+  font-size: clamp(36px, 4vw, 56px);
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: -0.5px;
+  max-width: 600px;
 }
+
+/* Paragraph */
 .choose-pkg-banner p {
-    font-family: 'RobotoSlab-Regular', var(--font-b), serif;
-    font-size: 18px;
-    color: rgba(255,255,255,0.85);
-    margin-bottom: 40px;
-    line-height: 1.6;
-    max-width: 600px;
+  font-family: 'RobotoSlab-Regular', var(--font-b), serif;
+  font-size: 18px;
+  color: rgba(255,255,255,0.85);
+  margin-bottom: 40px;
+  line-height: 1.6;
+  max-width: 600px;
 }
+
+	
+	
+/* Mobile view */
+@media (max-width: 767px) {
+  .choose-pkg-banner::before {
+    background-size: contain !important; /* show whole image */
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+    background-color: #000;              /* fill gaps */
+	height:auto;
+  }
+
+  .choose-pkg-banner {
+    min-height: auto !important;         /* let height follow content */
+    padding: 28px 24px 52px 24px !important;
+  }
+}
+
+	
+	.slide-inner {
+  width: 100%;
+  min-height: 70vh; /* ensures Slick sees height */
+}
+.banner-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 
 /* Kinetic Typography for Banner Animations */
 @keyframes choosePkgFadeUp {
@@ -2511,10 +2553,10 @@ div#n2-ss-2 .nextend-bullet-bar {
     .hero-main-carousel .slick-track,
     .hero-main-carousel .slick-slide,
     .hero-main-carousel .slick-slide > div {
-        height: 480px !important;
+/*         height: 480px !important; */
     }
     .hero-main-carousel .slick-list {
-        height: 480px !important;
+/*         height: 480px !important; */
         overflow: hidden !important;
     }
 
@@ -2604,7 +2646,7 @@ div#n2-ss-2 .nextend-bullet-bar {
         padding: 0 8% !important;
         justify-content: center !important;
         height: 100% !important;
-    }
+    } 
     .choose-pkg-banner h3 {
         font-size: 36px !important;
         margin-bottom: 15px !important;
@@ -2670,24 +2712,24 @@ div#n2-ss-2 .nextend-bullet-bar {
     
     /* Lock mobile carousel height — 400px gives room for content + button + partner logos */
     .hero-main-carousel {
-        height: 400px !important;
+/*         height: 400px !important; */
         width: 100% !important;
         max-width: 100% !important;
         box-sizing: border-box !important;
     }
     .hero-main-carousel .slick-list {
-        height: 400px !important;
+/*         height: 400px !important; */
         width: 100% !important;
         max-width: 100% !important;
         overflow: hidden !important;
         box-sizing: border-box !important;
     }
     .hero-main-carousel .slick-track {
-        height: 400px !important;
+/*         height: 400px !important; */
     }
     .hero-main-carousel .slick-slide,
     .hero-main-carousel .slick-slide > div {
-        height: 400px !important;
+      
         width: 100% !important;
         box-sizing: border-box !important;
     }
@@ -2805,11 +2847,11 @@ div#n2-ss-2 .nextend-bullet-bar {
     }
 
     /* Choose Your Package Slide Mobile */
-    .choose-pkg-banner {
+/*     .choose-pkg-banner {
         padding: 0 20px !important;
         align-items: flex-start !important;
         text-align: left !important;
-    }
+    } */
     .choose-pkg-banner h3 {
         font-size: 24px !important;
         margin-bottom: 10px !important;
@@ -2828,7 +2870,10 @@ div#n2-ss-2 .nextend-bullet-bar {
         display: none !important;
     }
 }
-
+.slide-inner {
+  width: 100%;
+  min-height: 70vh; /* ensures Slick sees height */
+}
 /* ── Triniti overlay layout for mobile (must be top-level, not nested) ── */
 @media (max-width: 768px) {
   .trinity-banner-v2 .triniti-right {
@@ -2946,18 +2991,10 @@ div#n2-ss-2 .nextend-bullet-bar {
 /* ── Choose Your Package banner: mobile fixes ── */
 @media (max-width: 767px) {
   /* Background image was right-anchored — centers it so the left side isn't cut off */
-  .choose-pkg-banner::before {
-    background-position: center center !important;
-    bottom: 0 !important;  /* remove the -50px crop offset (irrelevant at mobile sizes) */
+ 
+.carousel-slide-item {
+    height: auto !important;
   }
-
-  /* Restore content padding (custom-banner-card has padding:0 on mobile now) */
-  .choose-pkg-banner {
-    padding: 28px 24px 52px 24px !important; /* bottom 52px keeps content above dots */
-    justify-content: center !important;
-    align-items: flex-start !important;
-  }
-
   .choose-pkg-banner h3 {
     font-size: 26px !important;
     margin-bottom: 10px !important;
@@ -3019,6 +3056,242 @@ div#n2-ss-2 .nextend-bullet-bar {
     
 			}
 	}
+/* Image wrapper ensures aspect ratio */
+.banner-img-wrapper {
+  width: 100%;
+  aspect-ratio: 16/9; /* adjust to your image ratio */
+  overflow: hidden;
+  position: relative;
+}
+
+.banner-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* desktop: fill */
+  display: block;
+}
+
+/* Fourth Banner content overlay */
+.banner-4 {
+  position: relative;
+}
+
+.banner-4 .banner-content {
+  position: absolute;
+  top: 50%;
+  left: 8%;
+  transform: translateY(-50%);
+  color: #fff;
+  max-width: 600px;
+  z-index: 2;
+}
+
+/* Mobile adjustments */
+@media (max-width: 767px) {
+  .banner-img-wrapper {
+    aspect-ratio: auto; /* let it scale naturally */
+    min-height: 100vh;  /* force full screen height */
+  }
+
+  .banner-img {
+    object-fit: contain; /* show full image */
+    background-color: #000; /* fill gaps */
+  }
+
+  .banner-4 .banner-content {
+    top: auto;
+    bottom: 20px;
+    left: 24px;
+    transform: none;
+    padding-right: 24px;
+  }
+}
+
+
+	/* ===== Package Banner V2 — full-bleed overlay style ===== */
+	
+	.carousel-slide-item {
+  height: 100%  !important;
+}
+.pkg-banner-v2 {
+  position: relative;
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  text-decoration: none !important;
+  background-color: #000;
+}
+
+.pkg-banner-v2--package {
+  aspect-ratio: 2.5641 / 1;
+}
+
+.pkg-banner-v2--gptw {
+  aspect-ratio: 2.1912 / 1;
+  background-color: #fff;
+}
+
+.pkg-banner-v2__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 1;
+}
+
+.pkg-banner-v2__text {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  max-width: 600px;
+  padding: 60px 8%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.pkg-banner-v2__heading {
+  font-family: 'RobotoSlab-Bold', var(--font-b), serif;
+  font-size: clamp(32px, 4vw, 56px);
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: -0.5px;
+  line-height: 1.1;
+}
+
+.pkg-banner-v2__highlight {
+  color: #ff0000;
+}
+
+.pkg-banner-v2__desc {
+  font-family: 'RobotoSlab-Regular', var(--font-b), serif;
+  font-size: 18px;
+  color: rgba(255,255,255,0.85);
+  margin-bottom: 32px;
+  line-height: 1.6;
+}
+
+.pkg-banner-v2__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #ff0000;
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+/* ===== Mobile: stack text above, full image below, no cropping ===== */
+@media (max-width: 767px) {
+	  .carousel-slide-item {
+    height: auto !important;
+  }
+
+  .hero-main-carousel .slick-slide,
+  .hero-main-carousel .slick-slide > div {
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+	
+	
+
+  .pkg-banner-v2__text {
+    padding: 20px;
+  }
+
+  .pkg-banner-v2__heading {
+    font-size: clamp(20px, 6vw, 28px);
+  }
+
+  .pkg-banner-v2__desc {
+    font-size: 13px;
+    margin-bottom: 12px;
+  }
+
+  .pkg-banner-v2__btn {
+    padding: 8px 16px;
+    font-size: 13px;
+  }
+
+  .pkg-banner-v2 {
+    height: 320px !important;
+  }
+
+  .pkg-banner-v2__img {
+    object-fit: cover !important;
+    object-position: center !important;
+  }
+
+  .pkg-banner-v2__text {
+    position: absolute !important;
+    inset: 0 !important;
+    z-index: 2;
+    padding: 20px;
+  }
+
+  .pkg-banner-v2__heading {
+    font-size: clamp(20px, 6vw, 28px);
+  }
+
+  .pkg-banner-v2__desc {
+    font-size: 13px;
+    margin-bottom: 12px;
+  }
+
+  .pkg-banner-v2__btn {
+    padding: 8px 16px;
+    font-size: 13px;
+  }
+	
+	
+	
+  .pkg-banner-v2 {
+    position: relative !important;
+    display: block !important;
+    height: auto !important;
+    min-height: unset !important;
+    aspect-ratio: 2.5641 / 1;   /* container matches image ratio exactly */
+  }
+
+  .pkg-banner-v2__img {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;   /* safe now — container ratio = image ratio, so no cropping */
+    object-position: center !important;
+    order: unset;
+    z-index: 1;
+  }
+
+  .pkg-banner-v2__text {
+    position: absolute !important;
+    inset: 0 !important;
+    z-index: 2;
+    max-width: 100%;
+    padding: 20px 20px;
+    order: unset;
+  }
+
+  .pkg-banner-v2__heading {
+    font-size: clamp(22px, 6vw, 32px);
+  }
+
+  .pkg-banner-v2__desc {
+    font-size: 14px;
+    margin-bottom: 16px;
+  }
+
+  .pkg-banner-v2__btn {
+    padding: 8px 16px;
+    font-size: 13px;
+  }
+}
 </style>
 
 <section class="custom-banners-wrapper">
@@ -3054,7 +3327,7 @@ div#n2-ss-2 .nextend-bullet-bar {
                    <div class="triniti-footer" style="margin-top: 10px;">
                        <div class="t-partners" style="font-size: 13px; font-family: 'Inter', sans-serif; opacity: 0.85; display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
                            <span>In partnership with</span>
-                            <img src="<?php echo site_url(); ?>/wp-content/uploads/2026/07/anthropic-text-1.png" alt="Anthropic" style="height: 14px; width: auto; display: block; filter: brightness(0) invert(1);">
+                            <img src="<?php echo site_url(); ?>/wp-content/uploads/2026/07/anthropic-text-1.png" class="banner-img" alt="Anthropic" style="height: 14px; width: auto; display: block; filter: brightness(0) invert(1);">
                             <span class="pipe-sep" style="opacity: 0.4;">|</span>
                             <img src="<?php echo site_url(); ?>/wp-content/uploads/2026/07/openai-text-1.png" alt="OpenAI" style="height: 15px; width: auto; display: block; filter: brightness(0) invert(1);">
                        </div>
@@ -3089,7 +3362,9 @@ div#n2-ss-2 .nextend-bullet-bar {
             </div>
         </a>
       </div>
-
+ 
+		
+		
       <!-- Slide 3: Image Banner -->
 
 		
@@ -3098,6 +3373,38 @@ div#n2-ss-2 .nextend-bullet-bar {
         
     </div>
 </div>
+		
+		
+		
+<div class="carousel-slide-item">
+  <a href="/capabilities/airos-agentriniti-package/#choose-package" class="pkg-banner-v2 custom-banner-card pkg-banner-v2--package">
+    <img
+      src="https://dev.airolabs.ai/wp-content/uploads/2026/07/banner2-1.jpeg"
+      class="pkg-banner-v2__img"
+      alt="Choose your package"
+    >
+    <div class="pkg-banner-v2__text">
+      <h3 class="pkg-banner-v2__heading">Choose Your <span class="pkg-banner-v2__highlight">Package</span></h3>
+      <p class="pkg-banner-v2__desc">Explore our transparent, flat-rate tiers designed to scale with your enterprise.</p>
+      <div class="pkg-banner-v2__btn-wrap">
+        <span class="pkg-banner-v2__btn"><i class="fa fa-rocket" aria-hidden="true"></i> Explore Packages</span>
+      </div>
+    </div>
+  </a>
+</div>
+		
+		<div class="carousel-slide-item">
+  <a href="#" class="pkg-banner-v2 custom-banner-card pkg-banner-v2--gptw">
+    <img
+      src="https://dev.airolabs.ai/wp-content/uploads/2026/07/greatplacebannertest.png"
+      class="pkg-banner-v2__img"
+      alt="Choose your package"
+    >
+   
+  </a>
+</div>
+		
+
 
     </div>
   </div>
@@ -3114,20 +3421,36 @@ document.addEventListener("DOMContentLoaded", function() {
                 jQuery(window).trigger('resize');
             }, 500);
         });
+   $carousel.slick({
+  dots: true,
+  infinite: true,
+  speed: 300,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  autoplay: true,
+  autoplaySpeed: 5000,
+  pauseOnHover: true,
+  arrows: false,
+  swipe: true,
+  touchMove: true,
+  adaptiveHeight: true // <-- let each slide size itself
+});
 
-    $carousel.slick({
-    dots: true,
-    infinite: true,
-    speed: 300,          // default speed for all other slides
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 5000,  // default autoplay speed for all other slides
-    pauseOnHover: true,
-    arrows: false,
-    swipe: true,
-    touchMove: true,
-    adaptiveHeight: false
+// ===== Recalculate height once banner images load (fixes empty gap below short slides) =====
+$carousel.find('.pkg-banner-v2__img, .banner-img-mobile').on('load', function() {
+    setTimeout(function() {
+        $carousel.slick('setPosition');
+    }, 100);
+});
+
+// Extra safety net for cached images that never fire 'load'
+setTimeout(function() {
+    $carousel.slick('setPosition');
+}, 800);
+
+// Recalc on resize/orientation change (mobile rotate, etc.)
+$(window).on('resize orientationchange', function() {
+    $carousel.slick('setPosition');
 });
 		
 // Make sure the first slide gets the animation class initially
@@ -3135,7 +3458,6 @@ $carousel.find('.slick-slide.slick-active').addClass('play-anim');
 	
 // index of your Trinity banner slide (0 if it's the first slide)
 const TRINITY_SLIDE_INDEX = 0;
-
 $carousel.on('beforeChange', function(event, slick, currentSlide, nextSlide) {
     if (nextSlide === TRINITY_SLIDE_INDEX) {	
         // about to enter Trinity slide - slow transition, longer hold
@@ -3152,12 +3474,10 @@ $carousel.on('beforeChange', function(event, slick, currentSlide, nextSlide) {
     // Remove animation class from all slides so it fully resets
     $(slick.$slider).find('.slick-slide').removeClass('play-anim');
 });
-
 $carousel.on('afterChange', function(event, slick, currentSlide) {
     // Add the animation class back to the active slide to cleanly restart the animations
     $(slick.$slider).find('.slick-slide[data-slick-index="'+currentSlide+'"]').addClass('play-anim');
 });
-
 document.addEventListener("visibilitychange", function() {
     if (document.hidden) {
         $carousel.slick('slickPause');
@@ -3165,10 +3485,19 @@ document.addEventListener("visibilitychange", function() {
         $carousel.slick('slickPlay');
     }
 });
-		
-
-    }
+		$(window).on('load', function(){
+  $carousel.slick('setPosition'); // recalc after all images load
+  setTimeout(function(){
+      $carousel.slick('setPosition'); // extra pass in case CSS/aspect-ratio settled late
+  }, 300);
 });
+    }
+	
+	
+	
+	
+});
+	
 </script>
 
 <!-- ── CLIENT LOGO CAROUSEL ── -->
@@ -3286,7 +3615,7 @@ document.addEventListener("visibilitychange", function() {
 <section class="new-video-sec" style="padding: 20px 0; background-color: var(--off);">
 	<div class="container" style="padding-left: 15px !important; padding-right: 15px !important;">
 		<div class="ecosystem-header" style="margin-bottom: 20px; text-align: center;">
-			<h2 class="intro-headline" style="font-size: clamp(32px, 4vw, 48px); padding-bottom: 0; margin-bottom: 15px; text-align: center !important; text-transform: none; letter-spacing: normal !important; word-spacing: normal !important; line-height: 1.3 !important;">Airo's <span class="highlight" style="position: relative; display: inline-block; color: var(--red, #ff0000);"><span style="visibility: hidden;">agenTriniti<sup style="font-size: 0.28em; font-weight: 500; position: relative; top: -1.6em; line-height: 0; vertical-align: baseline;">SM</sup></span><span id="typewriter-agenTriniti-video" style="position: absolute; left: 0; top: 0; white-space: nowrap;"></span></span> Package</h2>
+			<h2 class="intro-headline" style="font-size: clamp(32px, 4vw, 48px); padding-bottom: 0; margin-bottom: 15px; text-align: center !important; text-transform: none; letter-spacing: normal !important; word-spacing: normal !important; line-height: 1.3 !important;">Airo's <span class="highlight" style="position: relative; display: inline-block; color: var(--red, #ff0000);"><span style="visibility: hidden;">agenTriniti<sup style="font-size: 0.28em; font-weight: 500; position: relative; top: -1.5em; line-height: 0; vertical-align: baseline;">SM</sup></span><span id="typewriter-agenTriniti-video" style="position: absolute; left: 0; top: 0; white-space: nowrap;"></span></span> Package</h2>
 			<p class="eyebrow" style="justify-content: center; color: var(--red); margin-bottom: 15px;">AI Use Case Lifecycle Management</p>
 		</div>
 		<div class="row">
@@ -3314,7 +3643,7 @@ document.addEventListener("visibilitychange", function() {
 		  An AI Use Case Lifecycle Management System for continuous enterprise execution.</b>
 	  </h3> -->
     <p class="intro-body">
-      Airo’s agenTriniti<sup style="font-size: 0.35em; position: relative; top: -1.5em; line-height: 0; vertical-align: baseline;">SM</sup> Package integrates deployment, governance, and continuous AI evolution into one operational system designed for enterprise scale.<br>Built to orchestrate AI across enterprise workflows, legacy systems, and agent ecosystems while eliminating fragmented delivery, vendor lock-in, and operational complexity.
+      Airo’s agenTriniti<sup style="font-size: 0.45em; position: relative; top: -1.5em; line-height: 0; vertical-align: baseline; font-weight: 500;">SM</sup> Package integrates deployment, governance, and continuous AI evolution into one operational system designed for enterprise scale.<br>Built to orchestrate AI across enterprise workflows, legacy systems, and agent ecosystems while eliminating fragmented delivery, vendor lock-in, and operational complexity.
     </p>
 
 	  <div style="display: flex; justify-content: center; margin-top: 20px;">
@@ -3326,7 +3655,7 @@ document.addEventListener("visibilitychange", function() {
 </div>
 	  <div class="trinity-ctas">
   <a href="/capabilities/airos-agentriniti-package/"  class="trinity-btn-primary text-wrap text-center" style="white-space: normal; height: auto; line-height: 1.4; padding-top: 10px; padding-bottom: 10px; text-transform: none;">
-	       <span class="d-none d-md-inline">Learn More About agenTriniti<sup style="font-size: 0.35em; position: relative; top: -1.5em; line-height: 0; vertical-align: baseline;">SM</sup> Package</span>
+	       <span class="d-none d-md-inline">Learn More About agenTriniti<sup style="font-size: 0.50em; position: relative; top: -1.5em; line-height: 0; vertical-align: baseline;">SM</sup> Package</span>
 	  <span class="d-md-none">Learn More About agenTriniti<sup style="font-size: 0.35em; position: relative; top: -1.5em; line-height: 0; vertical-align: baseline;">SM</sup> Package</span>
   </a>
 </div>
@@ -4422,4 +4751,23 @@ document.addEventListener("visibilitychange", function() {
 
   init();
 })();
+$(window).on('load', function(){
+  $('.hero-main-carousel').slick('setPosition'); // recalc heights once images are ready
+});
+$('.hero-main-carousel').on('afterChange', function(event, slick, currentSlide){
+  slick.$slider.slick('setPosition');
+});
+	
+	// Force slick to recalc height once all banner images load
+$carousel.find('.pkg-banner-v2__img, .banner-img-mobile').on('load', function() {
+    $carousel.slick('setPosition');
+});
+
+// Extra safety: recalc again shortly after init in case images are cached
+setTimeout(function() {
+    $carousel.slick('setPosition');
+}, 800);
+	
+	
+
 </script>
