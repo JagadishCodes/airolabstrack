@@ -1903,7 +1903,13 @@ li#mega-menu-item-588 .mega-menu-column ul.mega-sub-menu {
         margin-top: 25px;
     }
     .fixed-sec {
-        overflow: hidden;
+        height: auto !important;
+        overflow: visible !important;
+    }
+    .fixed-sec-inner {
+        height: auto !important;
+        min-height: 0 !important;
+        display: block !important;
     }
     .two-col .wpcf7-form-control-wrap {
         width: 100%;
@@ -2138,7 +2144,7 @@ li#mega-menu-item-588 .mega-menu-column ul.mega-sub-menu {
     .lines{ padding: 20px; }
     .ai-value-inner{ padding: 30px 40px !important; }
     .impact-tab { padding: 40px 0px 40px 40px !important; }
-    .fixed-sec-inner{ height: 60vh;z-index:2000; }
+    .fixed-sec-inner{ height: auto !important; min-height: 0 !important; padding: 60px 0 !important; z-index: 2000; display: block !important; position: relative !important; }
     .slide-logos:hover .logo-content{ padding: 10px; }
     .question-inner .question-left{ padding-top: 40px; }
     .question-inner .question-left, .question-inner .question-right { padding: 40px; }
@@ -2186,7 +2192,7 @@ li#mega-menu-item-588 .mega-menu-column ul.mega-sub-menu {
 }
 
 @media(max-width: 1024px) and (min-width: 992px){
-	.fixed-sec-inner{ height: 90vh; }
+	.fixed-sec-inner{ height: auto !important; min-height: 0 !important; padding: 60px 0 !important; display: block !important; position: relative !important; }
 	.services-sec .services-inner:hover p { overflow: scroll; height: 150px; }
 	.jobs-content{ width: 55%; }
 }

@@ -516,7 +516,7 @@ get_header(); ?>
         background: var(--red);
         color: #fff;
         border: none;
-        border-radius: 50px;
+        border-radius: 8px;
         padding: 12px 22px;
         font-size: 14px;
         font-weight: 700;
@@ -5033,7 +5033,7 @@ get_header(); ?>
         padding: 15px 38px;
         background: var(--red, #e31837);
         color: #ffffff !important;
-        border-radius: 50px;
+        border-radius: 8px;
         font-family: "Inter", sans-serif;
         font-size: 14.5px;
         font-weight: 700;
@@ -5096,7 +5096,7 @@ get_header(); ?>
         background: transparent;
         border: 2px solid var(--navy, #0b1f44);
         color: var(--navy, #0b1f44) !important;
-        border-radius: 50px;
+        border-radius: 8px;
         font-family: "Inter", sans-serif;
         font-size: 13.5px;
         font-weight: 700;
@@ -6546,77 +6546,71 @@ get_header(); ?>
 
             setTimeout(wireTooltips, 400);
 
-            // ── Hash deep-linking scroll — choose-package ──────────────────────
-            // FIX: Two issues addressed:
-            //  1. Scroll offset: use window.scrollTo() with header height offset
-            //     so heading + all package cards are fully visible.
-            //  2. Refresh fix: browser scroll-restoration saves the scroll position
-            //     and restores it on refresh even after replaceState removes the hash.
-            //     We disable scrollRestoration, detect reload vs fresh-navigate via
-            //     the Performance Navigation API, and force scrollTo(0,0) on reload.
-
-            // Disable browser's automatic scroll-position restore for this page.
-            if ('scrollRestoration' in history) {
-                history.scrollRestoration = 'manual';
-            }
+// ── Hash deep-linking scroll — choose-package ──────────────────────
+            // Disable automatic scroll restoration
+            if ('scrollRestoration' in history) { history.scrollRestoration = 'manual'; }
 
             function scrollToChoosePackage(behavior) {
                 var el = document.getElementById('choose-package');
-                if (!el) return;
+                if (!el) {
+                    document.documentElement.style.visibility = 'visible';
+                    return;
+                }
 
-                // Measure header(s) stacked at the top.
                 var adminBar = document.getElementById('wpadminbar');
                 var siteHeader = document.querySelector('#masthead, .site-header, header.site-header, nav.navbar, .header-main');
                 var adminH  = adminBar  ? adminBar.offsetHeight  : 0;
                 var headerH = siteHeader ? siteHeader.offsetHeight : 0;
-                var EXTRA   = 24; // breathing room above heading
+                var EXTRA   = 24; 
 
                 var rect    = el.getBoundingClientRect();
                 var scrollY = window.pageYOffset || document.documentElement.scrollTop;
                 var targetY = rect.top + scrollY - adminH - headerH - EXTRA;
 
-                window.scrollTo({ top: Math.max(0, targetY), behavior: behavior || 'smooth' });
+                window.scrollTo({ top: Math.max(0, targetY), behavior: behavior || 'instant' });
+                
+                // Ensure visibility is restored
+                document.documentElement.style.visibility = 'visible';
 
-                // Strip hash from URL so a future refresh has no hash to act on.
                 try {
                     history.replaceState(null, '', window.location.pathname + window.location.search);
-                } catch (e) { /* no-op */ }
+                } catch (e) { }
             }
 
             (function () {
                 var hash = window.location.hash;
                 if (hash !== '#choose-package' && hash !== '#packages') return;
 
+                // Hide page to avoid flash during navigation
+                document.documentElement.style.visibility = 'hidden';
+
                 // ── Detect reload vs. fresh link-navigation ──────────────────
                 var isReload = false;
                 try {
                     var navEntry = performance.getEntriesByType('navigation')[0];
                     if (navEntry) isReload = (navEntry.type === 'reload');
-                } catch (e) { /* PerformanceNavigationTiming not available */ }
+                } catch (e) { /* ignore */ }
 
                 if (isReload) {
                     // PAGE REFRESH — clear hash and go to the very top.
                     // Do NOT scroll to the package section.
-                    try {
-                        history.replaceState(null, '', window.location.pathname + window.location.search);
-                    } catch (e) { /* no-op */ }
-                    window.addEventListener('load', function () {
-                        window.scrollTo({ top: 0, behavior: 'instant' });
-                    });
+                    try { history.replaceState(null, '', window.location.pathname + window.location.search); } catch (e) { /* no-op */ }
+                    // Immediately scroll to top on refresh
+                    window.scrollTo({ top: 0, behavior: 'instant' });
+                    document.documentElement.style.visibility = 'visible';
                 } else {
-                    // FRESH NAVIGATION (user clicked "Explore Packages") —
-                    // clear hash first so any refresh after this goes to top,
-                    // then scroll to the section with proper header offset.
-                    try {
-                        history.replaceState(null, '', window.location.pathname + window.location.search);
-                    } catch (e) { /* no-op */ }
-
-                    if (document.readyState === 'complete') {
-                        setTimeout(function () { scrollToChoosePackage('smooth'); }, 100);
+                    // Fresh navigation (Explore Packages)
+                    try { history.replaceState(null, '', window.location.pathname + window.location.search); } catch (e) { /* no-op */ }
+                    var doScroll = function () {
+                        scrollToChoosePackage('smooth');
+                        // visibility restored inside scrollToChoosePackage
+                    };
+                    if (document.readyState === 'complete' || document.readyState === 'interactive') {
+                        setTimeout(doScroll, 30);
                     } else {
                         window.addEventListener('load', function onFirstLoad() {
                             window.removeEventListener('load', onFirstLoad);
-                            setTimeout(function () { scrollToChoosePackage('smooth'); }, 120);
+                            setTimeout(doScroll, 30);
                         });
                     }
                 }

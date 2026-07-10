@@ -1,0 +1,1099 @@
+<!-- ============================================================
+  AIRO DIGITAL LABS — agenTriniti℠ Hero Banner
+  Paste this whole block into a WordPress "Custom HTML" block
+  (or your theme's page/header template). No external JS required.
+  Fonts: Roboto Slab (headline) + Inter (body) per Airo Brand v002.
+  If your theme already loads these two fonts sitewide, you can
+  delete the @import line to avoid loading them twice.
+============================================================= -->
+<section class="airo-hero" aria-label="Airo agenTriniti hero">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap');
+
+    .airo-hero {
+      --red: #FF0000;
+      --blue: #01004A;
+      --white: #FFFFFF;
+      --mist: #E5E1C7;
+      --black: #040404;
+      --vivid: #003FE1;
+      --grey-line: #E4E6EE;
+
+      position: relative;
+      overflow: hidden;
+      background: var(--white);
+      padding: clamp(56px, 8vw, 96px) clamp(20px, 5vw, 64px);
+      font-family: 'Inter', Arial, sans-serif;
+      color: var(--blue);
+      isolation: isolate;
+    }
+
+    /* ---------- ambient background: faint brand glows + dot grid ---------- */
+    .airo-hero__bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .airo-hero__bg span {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(70px);
+      animation: airoDrift 22s ease-in-out infinite alternate;
+    }
+
+    .airo-hero__bg .glow-red {
+      width: 420px;
+      height: 420px;
+      left: -120px;
+      top: -80px;
+      background: radial-gradient(circle, rgba(255, 0, 0, 0.10), rgba(255, 0, 0, 0) 70%);
+    }
+
+    .airo-hero__bg .glow-blue {
+      width: 480px;
+      height: 480px;
+      right: -140px;
+      bottom: -120px;
+      background: radial-gradient(circle, rgba(0, 63, 225, 0.09), rgba(0, 63, 225, 0) 70%);
+      animation-delay: -6s;
+    }
+
+    .airo-hero__bg .dotgrid {
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(var(--grey-line) 1.4px, transparent 1.4px);
+      background-size: 26px 26px;
+      -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, #000 40%, transparent 85%);
+      mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, #000 40%, transparent 85%);
+      opacity: 0.55;
+    }
+
+    @keyframes airoDrift {
+      0% {
+        transform: translate(0, 0);
+      }
+
+      100% {
+        transform: translate(24px, 18px);
+      }
+    }
+
+    /* ---------- layout ---------- */
+    .airo-hero__grid {
+      position: relative;
+      z-index: 1;
+      max-width: 1320px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.05fr 1fr;
+      gap: clamp(32px, 5vw, 72px);
+      align-items: center;
+    }
+
+    /* ---------- eyebrow ---------- */
+    .airo-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12.5px;
+      font-weight: 700;
+      letter-spacing: 1.6px;
+      text-transform: uppercase;
+      color: var(--blue);
+      background: var(--mist);
+      padding: 7px 14px;
+      border-radius: 100px;
+      opacity: 0;
+      animation: airoUp .7s ease forwards;
+      animation-delay: .05s;
+    }
+
+    .airo-eyebrow::before {
+      content: "";
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--red);
+      box-shadow: 0 0 0 0 rgba(255, 0, 0, .5);
+      animation: airoPulseDot 2.2s ease-out infinite;
+    }
+
+    /* ---------- headline ---------- */
+    .airo-headline {
+      position: relative;
+      overflow: hidden;
+      font-family: 'Roboto Slab', Georgia, serif;
+      font-weight: 700;
+      font-size: clamp(2.3rem, 4.6vw, 3.7rem);
+      line-height: 1.06;
+      letter-spacing: -0.5px;
+      margin: 20px 0 0;
+    }
+
+    .airo-headline .line {
+      display: block;
+      overflow: hidden;
+    }
+
+    .airo-headline .line span {
+      display: inline-block;
+      opacity: 0;
+      transform: translateY(110%);
+      animation: airoLineUp .7s cubic-bezier(.22, 1, .36, 1) forwards;
+    }
+
+    .airo-headline .line:nth-child(1) span {
+      animation-delay: .18s;
+    }
+
+    .airo-headline .line:nth-child(2) span {
+      animation-delay: .32s;
+    }
+
+    .airo-headline .accent {
+      background: linear-gradient(100deg, var(--red) 0%, #ff5b3d 35%, var(--red) 60%, #b40000 100%);
+      background-size: 220% auto;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      animation: airoLineUp .7s cubic-bezier(.22, 1, .36, 1) forwards, airoShimmer 5s linear infinite 1.2s;
+    }
+
+    /* soft passing light-sweep across the whole headline, forever, like a screen waking up */
+    .airo-headline::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -35%;
+      width: 26%;
+      height: 100%;
+      background: linear-gradient(115deg, transparent, rgba(255, 255, 255, .85), transparent);
+      mix-blend-mode: overlay;
+      transform: skewX(-14deg);
+      pointer-events: none;
+      animation: airoHeadlineSheen 5.5s cubic-bezier(.45, .05, .55, .95) infinite 2s;
+    }
+
+    .airo-divider {
+      position: relative;
+      overflow: hidden;
+      display: block;
+      width: 0;
+      height: 4px;
+      margin-top: 18px;
+      border-radius: 4px;
+      background: linear-gradient(90deg, var(--red), #ff8a70);
+      animation: airoDraw .8s ease forwards .55s, airoBarBreathe 3.4s ease-in-out infinite 1.4s;
+    }
+
+    .airo-divider::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -60%;
+      width: 60%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .9), transparent);
+      animation: airoBarStreak 3.4s ease-in-out infinite 1.4s;
+    }
+
+    .airo-subhead {
+      font-size: clamp(1rem, 1.6vw, 1.15rem);
+      color: #3a3d63;
+      font-weight: 500;
+      margin: 20px 0 0;
+      max-width: 46ch;
+      opacity: 0;
+      animation: airoUp .7s ease forwards;
+      animation-delay: .62s;
+    }
+
+    .airo-subhead .spot {
+      font-weight: 700;
+      background: linear-gradient(90deg, var(--red), var(--blue), var(--red));
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      animation: airoShimmer 6s linear infinite 2s;
+    }
+
+    /* ---------- product badge (agenTriniti — the signature moment) ---------- */
+    .airo-badge {
+      position: relative;
+      isolation: isolate;
+      display: inline-flex;
+      align-items: baseline;
+      gap: 6px;
+      margin-top: 18px;
+      padding: 11px 20px;
+      background: var(--white);
+      border: 1.5px solid rgba(255, 0, 0, .35);
+      border-radius: 100px;
+      font-size: 1.02rem;
+      font-weight: 600;
+      color: var(--blue);
+      box-shadow: 0 6px 20px -8px rgba(255, 0, 0, 0.25);
+      opacity: 0;
+      animation: airoUp .7s ease forwards .72s, airoBadgeGlow 3.2s ease-in-out infinite 1.6s;
+    }
+
+    .airo-badge b {
+      font-weight: 800;
+    }
+
+    .airo-badge .r {
+      font-weight: 800;
+      font-size: 1.06em;
+      letter-spacing: .2px;
+      background: linear-gradient(100deg, var(--red) 0%, #ff9466 30%, var(--red) 55%, #b40000 80%, var(--red) 100%);
+      background-size: 260% auto;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      animation: airoTrinitiShine 3.2s ease-in-out infinite;
+    }
+
+    .airo-badge sup {
+      font-size: 0.55em;
+      color: var(--red);
+    }
+
+    /* ---------- stat chips ---------- */
+    .airo-stats {
+      list-style: none;
+      margin: 22px 0 0;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      opacity: 0;
+      animation: airoUp .7s ease forwards;
+      animation-delay: .82s;
+    }
+
+    .airo-stats li {
+      font-size: 13.5px;
+      font-weight: 700;
+      letter-spacing: .3px;
+      color: var(--blue);
+      background: #F6F5EF;
+      border: 1px solid var(--grey-line);
+      padding: 8px 14px;
+      border-radius: 8px;
+      animation: airoStatActivate 6s ease-in-out infinite;
+    }
+
+    .airo-stats li:nth-child(1) {
+      animation-delay: 1.6s;
+    }
+
+    .airo-stats li:nth-child(2) {
+      animation-delay: 3.1s;
+    }
+
+    .airo-stats li:nth-child(3) {
+      animation-delay: 4.6s;
+    }
+
+    .airo-stats li:nth-child(4) {
+      animation-delay: 6.1s;
+    }
+
+    /* ---------- CTA ---------- */
+    .airo-cta-row {
+      margin-top: 30px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      opacity: 0;
+      animation: airoUp .7s ease forwards;
+      animation-delay: .95s;
+    }
+
+    .airo-cta {
+      position: relative;
+      overflow: hidden;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--red);
+      color: var(--white);
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      text-decoration: none;
+      padding: 15px 26px;
+      border-radius: 10px;
+      box-shadow: 0 10px 26px -10px rgba(255, 0, 0, 0.55);
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+
+    .airo-cta::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -60%;
+      width: 35%;
+      height: 100%;
+      background: linear-gradient(120deg, transparent, rgba(255, 255, 255, .5), transparent);
+      transform: skewX(-20deg);
+      animation: airoCtaSheen 4.2s ease-in-out infinite 2s;
+    }
+
+    .airo-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 30px -8px rgba(255, 0, 0, 0.6);
+    }
+
+    .airo-cta svg {
+      transition: transform .25s ease;
+    }
+
+    .airo-cta:hover svg {
+      transform: translateX(4px);
+    }
+
+    .airo-partners {
+      font-size: 12.5px;
+      font-weight: 600;
+      letter-spacing: .5px;
+      text-transform: uppercase;
+      color: #7a7e97;
+    }
+
+    .airo-partners b {
+      color: var(--blue);
+      font-weight: 800;
+      letter-spacing: .3px;
+    }
+
+    .airo-partners span.sep {
+      margin: 0 6px;
+      color: var(--grey-line);
+    }
+
+    /* ---------- visual / SVG card ---------- */
+    .airo-hero__visual {
+      position: relative;
+      opacity: 0;
+      animation: airoUp .9s ease forwards;
+      animation-delay: .35s;
+    }
+
+    .airo-visual-card {
+      position: relative;
+      background: var(--white);
+      border: 1px solid var(--grey-line);
+      border-radius: 26px;
+      padding: clamp(10px, 2vw, 22px);
+      box-shadow: 0 30px 60px -30px rgba(1, 0, 74, 0.22);
+    }
+
+    .airo-visual-card svg {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .airo-live-tag {
+      position: absolute;
+      left: 50%;
+      bottom: -18px;
+      transform: translateX(-50%);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--blue);
+      color: var(--white);
+      font-size: 12.5px;
+      font-weight: 700;
+      letter-spacing: .3px;
+      padding: 9px 16px;
+      border-radius: 100px;
+      box-shadow: 0 12px 24px -10px rgba(1, 0, 74, 0.45);
+      white-space: nowrap;
+    }
+
+    .airo-live-tag .dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--red);
+      box-shadow: 0 0 0 0 rgba(255, 0, 0, .6);
+      animation: airoPulseDot 2.2s ease-out infinite;
+    }
+
+    /* ---------- keyframes ---------- */
+    @keyframes airoUp {
+      from {
+        opacity: 0;
+        transform: translateY(16px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes airoLineUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes airoDraw {
+      to {
+        width: 68px;
+      }
+    }
+
+    @keyframes airoShimmer {
+      to {
+        background-position: -220% 0;
+      }
+    }
+
+    @keyframes airoPulseDot {
+      0% {
+        box-shadow: 0 0 0 0 rgba(255, 0, 0, .55);
+      }
+
+      70% {
+        box-shadow: 0 0 0 9px rgba(255, 0, 0, 0);
+      }
+
+      100% {
+        box-shadow: 0 0 0 0 rgba(255, 0, 0, 0);
+      }
+    }
+
+    /* headline: soft light passing over the whole line, endlessly */
+    @keyframes airoHeadlineSheen {
+      0% {
+        left: -35%;
+      }
+
+      45% {
+        left: 130%;
+      }
+
+      100% {
+        left: 130%;
+      }
+    }
+
+    /* divider bar: slow breathing glow + a streak that runs the length of the bar */
+    @keyframes airoBarBreathe {
+
+      0%,
+      100% {
+        box-shadow: 0 0 0 rgba(255, 0, 0, 0);
+      }
+
+      50% {
+        box-shadow: 0 0 12px rgba(255, 0, 0, .55);
+      }
+    }
+
+    @keyframes airoBarStreak {
+      0% {
+        left: -60%;
+      }
+
+      55% {
+        left: 100%;
+      }
+
+      100% {
+        left: 100%;
+      }
+    }
+
+    /* badge: gentle breathing red glow around the whole pill */
+    @keyframes airoBadgeGlow {
+
+      0%,
+      100% {
+        box-shadow: 0 6px 20px -8px rgba(255, 0, 0, 0.25);
+      }
+
+      50% {
+        box-shadow: 0 10px 28px -6px rgba(255, 0, 0, 0.45);
+      }
+    }
+
+    /* "Triniti": the gradient itself keeps traveling through the letters */
+    @keyframes airoTrinitiShine {
+
+      0%,
+      100% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
+    }
+
+    /* stat chips: one at a time "wakes up," looping — a quiet echo of the arc's own reveal cycle */
+    @keyframes airoStatActivate {
+
+      0%,
+      74%,
+      100% {
+        background: #F6F5EF;
+        border-color: var(--grey-line);
+        color: var(--blue);
+        box-shadow: none;
+        transform: translateY(0);
+      }
+
+      8% {
+        background: #FFF0EE;
+        border-color: var(--red);
+        color: var(--red);
+        box-shadow: 0 6px 16px -8px rgba(255, 0, 0, .4);
+        transform: translateY(-2px);
+      }
+
+      20% {
+        background: #F6F5EF;
+        border-color: var(--grey-line);
+        color: var(--blue);
+        box-shadow: none;
+        transform: translateY(0);
+      }
+    }
+
+    /* CTA button: a light sweeps through it every few seconds, then rests */
+    @keyframes airoCtaSheen {
+      0% {
+        left: -60%;
+      }
+
+      35% {
+        left: 120%;
+      }
+
+      100% {
+        left: 120%;
+      }
+    }
+
+    /* ---------- responsive ---------- */
+    @media (max-width: 980px) {
+      .airo-hero__grid {
+        grid-template-columns: 1fr;
+      }
+
+      .airo-hero__visual {
+        order: 1;
+        margin-bottom: 8px;
+      }
+
+      .airo-hero__content {
+        order: 2;
+      }
+
+      .airo-live-tag {
+        position: static;
+        transform: none;
+        margin: 22px auto 4px;
+        width: fit-content;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .airo-cta-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 14px;
+      }
+
+      .airo-badge {
+        font-size: 0.9rem;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+      .airo-hero *,
+      .airo-hero *::before,
+      .airo-hero *::after {
+        animation: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+      }
+    }
+  </style>
+
+  <div class="airo-hero__bg">
+    <span class="glow-red"></span>
+    <span class="glow-blue"></span>
+    <span class="dotgrid"></span>
+  </div>
+
+  <div class="airo-hero__grid">
+    <div class="airo-hero__content">
+
+      <h1 class="airo-headline">
+        <span class="line"><span>Delivering <span class="accent">AI</span></span></span>
+        <span class="line"><span>Through <span class="accent">AI</span></span></span>
+      </h1>
+      <span class="airo-divider"></span>
+
+      <p class="airo-subhead">World&rsquo;s <span class="spot">fastest builder</span> of AI agents in bulk, unveils:</p>
+
+      <div class="airo-badge">
+        Airo&rsquo;s <b>agen<span class="r">Triniti</span><sup>SM</sup></b> Package
+      </div>
+
+      <ul class="airo-stats">
+        <li>100 Agents</li>
+        <li>6 Months</li>
+        <li>One Fixed Fee</li>
+        <li>No Surprises</li>
+      </ul>
+
+      <div class="airo-cta-row">
+        <a class="airo-cta" href="#schedule-demo">
+          Schedule Your agenTriniti Demo
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M3 8h10M9 4l4 4-4 4" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="airo-hero__visual">
+      <div class="airo-visual-card">
+        <svg viewBox="0 0 1500 950" xmlns="http://www.w3.org/2000/svg" font-family="Inter, Arial, sans-serif">
+          <defs>
+            <path id="bandB_labelpath_0" d="M 422.50,700.00 A 327.50,327.50 0 0 1 586.25,416.38" fill="none" />
+            <path id="bandB_labelpath_1" d="M 586.25,416.38 A 327.50,327.50 0 0 1 913.75,416.38" fill="none" />
+            <path id="bandB_labelpath_2" d="M 913.75,416.38 A 327.50,327.50 0 0 1 1077.50,700.00" fill="none" />
+            <path id="bandC_labelpath_0" d="M 322.50,700.00 A 427.50,427.50 0 0 1 536.25,329.77" fill="none" />
+            <path id="bandC_labelpath_1" d="M 536.25,329.77 A 427.50,427.50 0 0 1 963.75,329.77" fill="none" />
+            <path id="bandC_labelpath_2" d="M 963.75,329.77 A 427.50,427.50 0 0 1 1177.50,700.00" fill="none" />
+            <path id="bandD_labelpath_0" d="M 212.50,700.00 A 537.50,537.50 0 0 1 369.93,319.93" fill="none" />
+            <path id="bandD_labelpath_1" d="M 369.93,319.93 A 537.50,537.50 0 0 1 750.00,162.50" fill="none" />
+            <path id="bandD_labelpath_2" d="M 750.00,162.50 A 537.50,537.50 0 0 1 1130.07,319.93" fill="none" />
+            <path id="bandD_labelpath_3" d="M 1130.07,319.93 A 537.50,537.50 0 0 1 1287.50,700.00" fill="none" />
+
+            <filter id="ambientBlur" x="-100%" y="-100%" width="300%" height="300%">
+              <feGaussianBlur stdDeviation="60" />
+            </filter>
+            <filter id="ringShadowRest" x="-50%" y="-50%" width="200%" height="200%">
+              <feDropShadow dx="0" dy="7" stdDeviation="9" flood-color="#01004A" flood-opacity="0.28" />
+            </filter>
+            <filter id="ringGlowFlash" x="-80%" y="-80%" width="260%" height="260%">
+              <feDropShadow dx="0" dy="0" stdDeviation="16" flood-color="#FF0000" flood-opacity="0.6" />
+            </filter>
+            <filter id="centerGlow" x="-60%" y="-60%" width="220%" height="220%">
+              <feGaussianBlur stdDeviation="10" result="blur" />
+              <feMerge>
+                <feMergeNode in="blur" />
+                <feMergeNode in="SourceGraphic" />
+              </feMerge>
+            </filter>
+            <filter id="footerGlow" x="-40%" y="-40%" width="180%" height="180%">
+              <feDropShadow dx="0" dy="0" stdDeviation="10" flood-color="#FF0000" flood-opacity="0.35" />
+            </filter>
+
+            <radialGradient id="glowRed" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#FF0000" stop-opacity="0.35" />
+              <stop offset="100%" stop-color="#FF0000" stop-opacity="0" />
+            </radialGradient>
+            <radialGradient id="glowBlue" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#003FE1" stop-opacity="0.22" />
+              <stop offset="100%" stop-color="#003FE1" stop-opacity="0" />
+            </radialGradient>
+            <linearGradient id="rimLight" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.55" />
+              <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0" />
+            </linearGradient>
+          </defs>
+
+          <style>
+            .band-group {
+              opacity: 0;
+              transform-box: fill-box;
+              transform-origin: 50% 100%;
+            }
+
+            .center-group {
+              opacity: 0;
+            }
+
+            .footer-group {
+              opacity: 0;
+            }
+
+            #bandA {
+              animation: revealA 7s ease-in-out infinite;
+            }
+
+            #bandB {
+              animation: revealB 7s ease-in-out infinite;
+            }
+
+            #bandC {
+              animation: revealC 7s ease-in-out infinite;
+            }
+
+            #bandD {
+              animation: revealD 7s ease-in-out infinite;
+            }
+
+            #centerGroup {
+              animation: revealCenter 7s ease-in-out infinite;
+            }
+
+            #footerGroup {
+              animation: revealFooter 7s ease-in-out infinite;
+            }
+
+            @keyframes revealA {
+              0% {
+                opacity: 0;
+                transform: translateY(18px) scale(0.92);
+                filter: url(#ringGlowFlash);
+              }
+
+              4% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+                filter: url(#ringGlowFlash);
+              }
+
+              11% {
+                filter: url(#ringShadowRest);
+              }
+
+              82% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+                filter: url(#ringShadowRest);
+              }
+
+              92% {
+                opacity: 0;
+                transform: translateY(0) scale(1);
+              }
+
+              100% {
+                opacity: 0;
+              }
+            }
+
+            @keyframes revealB {
+              0% {
+                opacity: 0;
+                transform: translateY(18px) scale(0.94);
+              }
+
+              10% {
+                opacity: 0;
+                transform: translateY(18px) scale(0.94);
+                filter: url(#ringGlowFlash);
+              }
+
+              16% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+                filter: url(#ringGlowFlash);
+              }
+
+              23% {
+                filter: url(#ringShadowRest);
+              }
+
+              82% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+                filter: url(#ringShadowRest);
+              }
+
+              92% {
+                opacity: 0;
+                transform: translateY(0) scale(1);
+              }
+
+              100% {
+                opacity: 0;
+              }
+            }
+
+            @keyframes revealC {
+              0% {
+                opacity: 0;
+                transform: translateY(18px) scale(0.96);
+              }
+
+              20% {
+                opacity: 0;
+                transform: translateY(18px) scale(0.96);
+                filter: url(#ringGlowFlash);
+              }
+
+              26% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+                filter: url(#ringGlowFlash);
+              }
+
+              33% {
+                filter: url(#ringShadowRest);
+              }
+
+              82% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+                filter: url(#ringShadowRest);
+              }
+
+              92% {
+                opacity: 0;
+                transform: translateY(0) scale(1);
+              }
+
+              100% {
+                opacity: 0;
+              }
+            }
+
+            @keyframes revealD {
+              0% {
+                opacity: 0;
+                transform: translateY(18px) scale(0.98);
+              }
+
+              30% {
+                opacity: 0;
+                transform: translateY(18px) scale(0.98);
+                filter: url(#ringGlowFlash);
+              }
+
+              36% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+                filter: url(#ringGlowFlash);
+              }
+
+              43% {
+                filter: url(#ringShadowRest);
+              }
+
+              82% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+                filter: url(#ringShadowRest);
+              }
+
+              92% {
+                opacity: 0;
+                transform: translateY(0) scale(1);
+              }
+
+              100% {
+                opacity: 0;
+              }
+            }
+
+            @keyframes revealCenter {
+              0% {
+                opacity: 0;
+              }
+
+              40% {
+                opacity: 0;
+              }
+
+              48% {
+                opacity: 1;
+              }
+
+              82% {
+                opacity: 1;
+              }
+
+              92% {
+                opacity: 0;
+              }
+
+              100% {
+                opacity: 0;
+              }
+            }
+
+            @keyframes revealFooter {
+              0% {
+                opacity: 0;
+              }
+
+              48% {
+                opacity: 0;
+              }
+
+              56% {
+                opacity: 1;
+              }
+
+              82% {
+                opacity: 1;
+              }
+
+              92% {
+                opacity: 0;
+              }
+
+              100% {
+                opacity: 0;
+              }
+            }
+
+            .seg-label {
+              font-weight: 700;
+              letter-spacing: 0.3px;
+            }
+
+            .seg-stroke {
+              stroke: #FFFFFF;
+              stroke-width: 2;
+            }
+          </style>
+
+          <rect x="0" y="0" width="1500" height="950" fill="#FFFFFF" />
+          <circle cx="530" cy="620" r="180" fill="url(#glowRed)" filter="url(#ambientBlur)" />
+          <circle cx="970" cy="620" r="180" fill="url(#glowBlue)" filter="url(#ambientBlur)" />
+          <circle cx="750" cy="350" r="220" fill="url(#glowRed)" filter="url(#ambientBlur)" opacity="0.5" />
+
+          <g id="bandA" class="band-group">
+            <path
+              d="M 485.00,700.00 A 265.00,265.00 0 0 1 617.50,470.50 L 680.00,578.76 A 140.00,140.00 0 0 0 610.00,700.00 Z"
+              fill="#01004A" class="seg-stroke" />
+            <path
+              d="M 617.50,470.50 A 265.00,265.00 0 0 1 882.50,470.50 L 820.00,578.76 A 140.00,140.00 0 0 0 680.00,578.76 Z"
+              fill="#8A8F98" class="seg-stroke" />
+            <path
+              d="M 882.50,470.50 A 265.00,265.00 0 0 1 1015.00,700.00 L 890.00,700.00 A 140.00,140.00 0 0 0 820.00,578.76 Z"
+              fill="#FF0000" class="seg-stroke" />
+            <path d="M 485.00,700.00 A 265.00,265.00 0 0 1 1015.00,700.00" fill="none" stroke="url(#rimLight)"
+              stroke-width="10" opacity="0.5" />
+            <text class="seg-label" font-size="24" fill="#FFFFFF" text-anchor="middle"
+              transform="rotate(-60.00,574.63,598.75)" x="574.63" y="598.75" dy="0.35em">Build</text>
+            <text class="seg-label" font-size="24" fill="#FFFFFF" text-anchor="middle"
+              transform="rotate(0.00,750.00,497.50)" x="750.00" y="497.50" dy="0.35em">Manage</text>
+            <text class="seg-label" font-size="24" fill="#FFFFFF" text-anchor="middle"
+              transform="rotate(60.00,925.37,598.75)" x="925.37" y="598.75">
+              <tspan x="925.37" dy="-0.15em">Continuously</tspan>
+              <tspan x="925.37" dy="1.15em">Upgrade</tspan>
+            </text>
+          </g>
+          <g id="bandB" class="band-group">
+            <path
+              d="M 365.00,700.00 A 385.00,385.00 0 0 1 557.50,366.58 L 615.00,466.17 A 270.00,270.00 0 0 0 480.00,700.00 Z"
+              fill="#FF0000" class="seg-stroke" />
+            <path
+              d="M 557.50,366.58 A 385.00,385.00 0 0 1 942.50,366.58 L 885.00,466.17 A 270.00,270.00 0 0 0 615.00,466.17 Z"
+              fill="#FF0000" class="seg-stroke" />
+            <path
+              d="M 942.50,366.58 A 385.00,385.00 0 0 1 1135.00,700.00 L 1020.00,700.00 A 270.00,270.00 0 0 0 885.00,466.17 Z"
+              fill="#FF0000" class="seg-stroke" />
+            <path d="M 365.00,700.00 A 385.00,385.00 0 0 1 1135.00,700.00" fill="none" stroke="url(#rimLight)"
+              stroke-width="10" opacity="0.5" />
+            <text class="seg-label" font-size="23" fill="#FFFFFF">
+              <textPath href="#bandB_labelpath_0" startOffset="50%" text-anchor="middle">ERP Platform</textPath>
+            </text>
+            <text class="seg-label" font-size="23" fill="#FFFFFF">
+              <textPath href="#bandB_labelpath_1" startOffset="50%" text-anchor="middle">CRM Platform</textPath>
+            </text>
+            <text class="seg-label" font-size="23" fill="#FFFFFF">
+              <textPath href="#bandB_labelpath_2" startOffset="50%" text-anchor="middle">SCM Platform</textPath>
+            </text>
+          </g>
+          <g id="bandC" class="band-group">
+            <path
+              d="M 285.00,700.00 A 465.00,465.00 0 0 1 517.50,297.30 L 555.00,362.25 A 390.00,390.00 0 0 0 360.00,700.00 Z"
+              fill="#CDD1D9" class="seg-stroke" />
+            <path
+              d="M 517.50,297.30 A 465.00,465.00 0 0 1 982.50,297.30 L 945.00,362.25 A 390.00,390.00 0 0 0 555.00,362.25 Z"
+              fill="#CDD1D9" class="seg-stroke" />
+            <path
+              d="M 982.50,297.30 A 465.00,465.00 0 0 1 1215.00,700.00 L 1140.00,700.00 A 390.00,390.00 0 0 0 945.00,362.25 Z"
+              fill="#CDD1D9" class="seg-stroke" />
+            <path d="M 285.00,700.00 A 465.00,465.00 0 0 1 1215.00,700.00" fill="none" stroke="url(#rimLight)"
+              stroke-width="10" opacity="0.5" />
+            <text class="seg-label" font-size="19" fill="#01004A">
+              <textPath href="#bandC_labelpath_0" startOffset="50%" text-anchor="middle">Flexible Office Use Cases
+              </textPath>
+            </text>
+            <text class="seg-label" font-size="19" fill="#01004A">
+              <textPath href="#bandC_labelpath_1" startOffset="50%" text-anchor="middle">Back Office Use Cases
+              </textPath>
+            </text>
+            <text class="seg-label" font-size="19" fill="#01004A">
+              <textPath href="#bandC_labelpath_2" startOffset="50%" text-anchor="middle">IT Use Cases</textPath>
+            </text>
+          </g>
+          <g id="bandD" class="band-group">
+            <path
+              d="M 145.00,700.00 A 605.00,605.00 0 0 1 322.20,272.20 L 417.66,367.66 A 470.00,470.00 0 0 0 280.00,700.00 Z"
+              fill="#EEEFF2" class="seg-stroke" />
+            <path
+              d="M 322.20,272.20 A 605.00,605.00 0 0 1 750.00,95.00 L 750.00,230.00 A 470.00,470.00 0 0 0 417.66,367.66 Z"
+              fill="#EEEFF2" class="seg-stroke" />
+            <path
+              d="M 750.00,95.00 A 605.00,605.00 0 0 1 1177.80,272.20 L 1082.34,367.66 A 470.00,470.00 0 0 0 750.00,230.00 Z"
+              fill="#EEEFF2" class="seg-stroke" />
+            <path
+              d="M 1177.80,272.20 A 605.00,605.00 0 0 1 1355.00,700.00 L 1220.00,700.00 A 470.00,470.00 0 0 0 1082.34,367.66 Z"
+              fill="#EEEFF2" class="seg-stroke" />
+            <path d="M 145.00,700.00 A 605.00,605.00 0 0 1 1355.00,700.00" fill="none" stroke="url(#rimLight)"
+              stroke-width="10" opacity="0.5" />
+            <text class="seg-label" font-size="20" fill="#01004A">
+              <textPath href="#bandD_labelpath_0" startOffset="50%" text-anchor="middle">Pharma &amp; Life Sciences
+              </textPath>
+            </text>
+            <text class="seg-label" font-size="20" fill="#01004A">
+              <textPath href="#bandD_labelpath_1" startOffset="50%" text-anchor="middle">Manufacturing</textPath>
+            </text>
+            <text class="seg-label" font-size="20" fill="#01004A">
+              <textPath href="#bandD_labelpath_2" startOffset="50%" text-anchor="middle">Retail &amp; CPG</textPath>
+            </text>
+            <text class="seg-label" font-size="20" fill="#01004A">
+              <textPath href="#bandD_labelpath_3" startOffset="50%" text-anchor="middle">Banking &amp; Financial
+                Services</textPath>
+            </text>
+          </g>
+          <g id="centerGroup" class="center-group" filter="url(#centerGlow)">
+            <text x="750" y="620" text-anchor="middle" font-size="17" font-weight="700" fill="#01004A">One fixed
+              price</text>
+            <text x="750" y="642" text-anchor="middle" font-size="17" font-weight="700" fill="#01004A">per month,</text>
+            <text x="750" y="664" text-anchor="middle" font-size="17" font-weight="700" fill="#01004A">no hidden
+              fees</text>
+          </g>
+          <g id="footerGroup" class="footer-group">
+            <rect x="370.0" y="800" width="760" height="110" rx="10" fill="#FFFFFF" stroke="#FF0000" stroke-width="3"
+              filter="url(#footerGlow)" />
+            <text x="750" y="845" text-anchor="middle" font-size="26" font-weight="800" fill="#01004A">Airo&#8217;s
+              <tspan fill="#FF0000">agenTriniti</tspan>
+              <tspan font-size="14" dy="-9">SM</tspan>
+              <tspan dy="9"> Package</tspan>
+            </text>
+            <text x="750" y="878" text-anchor="middle" font-size="19" fill="#01004A">AI Use Case Lifecycle
+              Management</text>
+          </g>
+        </svg>
+        <div class="airo-live-tag"><span class="dot"></span>Live agent orchestration</div>
+      </div>
+    </div>
+  </div>
+</section>
