@@ -763,7 +763,6 @@ body header:not(#site-header) {
             <!-- Desktop Nav Links -->
             <ul class="hidden md:flex items-center gap-8 text-[13px] font-medium text-gray-600 mb-0 list-none pl-0">
                 <li><a href="#packages" class="nav-link hover:text-ferrari transition-colors">Early-Bird Pricing</a></li>
-                <li><a href="#testimonials" class="nav-link hover:text-ferrari transition-colors">Testimonials</a></li>
                 <li><a href="#register" class="nav-link hover:text-ferrari transition-colors">Register</a></li>
                 <li><a href="#offer-terms" class="nav-link hover:text-ferrari transition-colors">Offer Terms</a></li>
             </ul>
@@ -839,7 +838,6 @@ body header:not(#site-header) {
 
     <!-- ── CLIENT LOGO CAROUSEL ── -->
     <section class="hero-client-logos-sec" style="height: 140px; min-height: 140px; max-height: 140px; background: #fff; border-bottom: 1px solid #E4E6EE; overflow: hidden; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px;">
-        <p style="margin: 0; padding: 0; line-height: 1; text-align: center; width: 100%; font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: #9ca3af; font-family: 'Inter', sans-serif;">Trusted by Industry Leaders</p>
         <div class="container-fluid" style="padding: 0; width: 100%;">
             <div class="hero-client-logos">
                 <?php
@@ -984,129 +982,7 @@ body header:not(#site-header) {
         </div>
     </section>
 
-    <!-- ── TESTIMONIALS ── -->
-    <section id="testimonials" class="py-2 px-6 lg:px-12 bg-white">
-        <div class="max-w-[900px] mx-auto">
-            <!-- Heading -->
-            <div class="text-center mb-14 fade-up">
-                <h2 class="font-heading text-4xl lg:text-5xl font-bold text-gray-900 mb-3">What Our Clients Say</h2>
-                <p class="text-gray-500 text-base max-w-xl mx-auto">Discover how enterprises are achieving remarkable results with agenTriniti℠.</p>
-            </div>
 
-            <!-- Carousel Wrapper -->
-            <div class="relative" id="testi-carousel">
-                <!-- Slide Track -->
-                <div id="testi-track-wrap" style="overflow-x:hidden; overflow-y:visible;">
-                    <div id="testi-track" style="display:flex; transition: transform 0.6s cubic-bezier(0.25,0.46,0.45,0.94);">
-                        <!-- Slide 1 -->
-                        <div class="testi-slide" style="min-width:100%; padding: 24px 4px 48px;">
-                            <div class="testimonial-box">
-                                <div style="font-family:'Roboto Slab',serif; font-size:120px; line-height:1; color:rgba(255,40,0,0.08); position:absolute; top:12px; left:36px; font-weight:800; user-select:none;">"</div>
-                                <div style="position:relative; z-index:1;">
-                                    <p style="font-family:'Inter',sans-serif; font-size:1.2rem; line-height:1.8; color:#374151; font-style:italic; margin-bottom:36px;">
-                                        "agenTriniti has become much more than an AI implementation for us. It has evolved into a strategic capability that continues to improve how we serve customers, support our teams, and operate at scale."
-                                    </p>
-                                    <div style="display:flex; align-items:center; gap:16px;">
-                                        <div style="width:52px;height:52px;border-radius:50%;background:rgba(255,40,0,0.08);border:2px solid rgba(255,40,0,0.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-                                            <i class="fas fa-user" style="color:#FF2800; font-size:18px;"></i>
-                                        </div>
-                                        <div>
-                                            <p style="font-family:'Roboto Slab',serif; font-weight:700; font-size:15px; color:#111827; margin:0 0 2px;">Chief Digital &amp; Customer Experience Officer</p>
-                                            <p style="font-family:'Inter',sans-serif; font-size:13px; color:#FF2800; font-weight:600; margin:0;">Follett — Leading North American Education Commerce Company</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Slide 2 -->
-                        <div class="testi-slide" style="min-width:100%; padding: 24px 4px 48px;">
-                            <div class="testimonial-box">
-                                <div style="font-family:'Roboto Slab',serif; font-size:120px; line-height:1; color:rgba(255,40,0,0.08); position:absolute; top:12px; left:36px; font-weight:800; user-select:none;">"</div>
-                                <div style="position:relative; z-index:1;">
-                                    <p style="font-family:'Inter',sans-serif; font-size:1.2rem; line-height:1.8; color:#374151; font-style:italic; margin-bottom:36px;">
-                                        "Our goal was to improve the employee support experience without increasing service desk capacity. agenTriniti helped us achieve exactly that. Routine requests are resolved faster, our analysts spend more time on complex issues, and the AI platform continues to improve."
-                                    </p>
-                                    <div style="display:flex; align-items:center; gap:16px;">
-                                        <div style="width:52px;height:52px;border-radius:50%;background:rgba(255,40,0,0.08);border:2px solid rgba(255,40,0,0.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-                                            <i class="fas fa-user" style="color:#FF2800; font-size:18px;"></i>
-                                        </div>
-                                        <div>
-                                            <p style="font-family:'Roboto Slab',serif; font-weight:700; font-size:15px; color:#111827; margin:0 0 2px;">Global Head of Enterprise IT Services</p>
-                                            <p style="font-family:'Inter',sans-serif; font-size:13px; color:#FF2800; font-weight:600; margin:0;">ATCC — Leading Life Sciences Organization</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Slide 3 -->
-                        <div class="testi-slide" style="min-width:100%; padding: 24px 4px 48px;">
-                            <div class="testimonial-box">
-                                <div style="font-family:'Roboto Slab',serif; font-size:120px; line-height:1; color:rgba(255,40,0,0.08); position:absolute; top:12px; left:36px; font-weight:800; user-select:none;">"</div>
-                                <div style="position:relative; z-index:1;">
-                                    <p style="font-family:'Inter',sans-serif; font-size:1.2rem; line-height:1.8; color:#374151; font-style:italic; margin-bottom:36px;">
-                                        "We were looking for more than a conversational interface to our data. We wanted an enterprise AI foundation that could grow across business functions. agenTriniti delivered governed insights from day one."
-                                    </p>
-                                    <div style="display:flex; align-items:center; gap:16px;">
-                                        <div style="width:52px;height:52px;border-radius:50%;background:rgba(255,40,0,0.08);border:2px solid rgba(255,40,0,0.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-                                            <i class="fas fa-user" style="color:#FF2800; font-size:18px;"></i>
-                                        </div>
-                                        <div>
-                                            <p style="font-family:'Roboto Slab',serif; font-weight:700; font-size:15px; color:#111827; margin:0 0 2px;">Chief Procurement &amp; Transformation Officer</p>
-                                            <p style="font-family:'Inter',sans-serif; font-size:13px; color:#FF2800; font-weight:600; margin:0;">Novolex — Leading North American Manufacturer</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Slide 4 -->
-                        <div class="testi-slide" style="min-width:100%; padding: 24px 4px 48px;">
-                            <div style="background:#E5E1C7; border-radius:20px; padding:48px 48px 40px; position:relative; box-shadow: 0 24px 48px rgba(15,23,42,0.12); border: 1px solid rgba(4,4,4,0.06);">
-                                <div style="font-family:'Roboto Slab',serif; font-size:120px; line-height:1; color:rgba(255,40,0,0.08); position:absolute; top:12px; left:36px; font-weight:800; user-select:none;">"</div>
-                                <div style="position:relative; z-index:1;">
-                                    <p style="font-family:'Inter',sans-serif; font-size:1.2rem; line-height:1.8; color:#374151; font-style:italic; margin-bottom:36px;">
-                                        "agenTriniti helped us migrate a mission-critical ITSM platform without disrupting the business. We went live on time, accelerated delivery, and established a foundation for continuous innovation."
-                                    </p>
-                                    <div style="display:flex; align-items:center; gap:16px;">
-                                        <div style="width:52px;height:52px;border-radius:50%;background:rgba(255,40,0,0.08);border:2px solid rgba(255,40,0,0.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-                                            <i class="fas fa-user" style="color:#FF2800; font-size:18px;"></i>
-                                        </div>
-                                        <div>
-                                            <p style="font-family:'Roboto Slab',serif; font-weight:700; font-size:15px; color:#111827; margin:0 0 2px;">VP, Enterprise Service Management</p>
-                                            <p style="font-family:'Inter',sans-serif; font-size:13px; color:#FF2800; font-weight:600; margin:0;">Leading U.S. Utility &amp; Broadband Provider</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Controls Row -->
-                <div style="display:flex; align-items:center; justify-content:center; gap:20px; margin-top:36px;">
-                    <!-- Prev -->
-                    <button id="testi-prev" style="width:44px;height:44px;border-radius:50%;border:2px solid rgba(255,40,0,0.25);background:#fff;color:#FF2800;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all 0.2s;font-size:14px;" onmouseover="this.style.background='#FF2800';this.style.color='#fff';this.style.borderColor='#FF2800'" onmouseout="this.style.background='#fff';this.style.color='#FF2800';this.style.borderColor='rgba(255,40,0,0.25)'">
-                        <i class="fas fa-chevron-left"></i>
-                    </button>
-
-                    <!-- Dots -->
-                    <div id="testi-dots" style="display:flex;gap:10px;align-items:center;">
-                        <button class="testi-dot" data-idx="0" style="width:10px;height:10px;border-radius:50%;border:none;background:#FF2800;cursor:pointer;transition:all 0.3s;padding:0;"></button>
-                        <button class="testi-dot" data-idx="1" style="width:10px;height:10px;border-radius:50%;border:none;background:rgba(255,40,0,0.2);cursor:pointer;transition:all 0.3s;padding:0;"></button>
-                        <button class="testi-dot" data-idx="2" style="width:10px;height:10px;border-radius:50%;border:none;background:rgba(255,40,0,0.2);cursor:pointer;transition:all 0.3s;padding:0;"></button>
-                        <button class="testi-dot" data-idx="3" style="width:10px;height:10px;border-radius:50%;border:none;background:rgba(255,40,0,0.2);cursor:pointer;transition:all 0.3s;padding:0;"></button>
-                    </div>
-
-                    <!-- Next -->
-                    <button id="testi-next" style="width:44px;height:44px;border-radius:50%;border:2px solid rgba(255,40,0,0.25);background:#fff;color:#FF2800;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all 0.2s;font-size:14px;" onmouseover="this.style.background='#FF2800';this.style.color='#fff';this.style.borderColor='#FF2800'" onmouseout="this.style.background='#fff';this.style.color='#FF2800';this.style.borderColor='rgba(255,40,0,0.25)'">
-                        <i class="fas fa-chevron-right"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- ── REGISTRATION FORM ── -->
     <section id="register" class="py-24 px-6 lg:px-12 bg-white">
@@ -1121,30 +997,7 @@ body header:not(#site-header) {
                     <p class="text-gray-500 leading-relaxed mb-8">
                         Share a few details and our team will contact you within two business days to schedule the next step.
                     </p>
-                    <!-- Info cards -->
-                    <div class="space-y-4">
-                        <div class="flex items-start gap-3 bg-ceramic rounded-xl p-4">
-                            <i class="fas fa-calendar-check text-ferrari mt-1 flex-shrink-0"></i>
-                            <div>
-                                <p class="font-semibold text-gray-800 text-sm">2-Business Day Response</p>
-                                <p class="text-xs text-gray-500">Our team will reach out promptly to schedule your next step.</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start gap-3 bg-ceramic rounded-xl p-4">
-                            <i class="fas fa-lock text-ferrari mt-1 flex-shrink-0"></i>
-                            <div>
-                                <p class="font-semibold text-gray-800 text-sm">Lock In Before Aug 15</p>
-                                <p class="text-xs text-gray-500">Discount secured for engagements contracted by August 15, 2026.</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start gap-3 bg-ceramic rounded-xl p-4">
-                            <i class="fas fa-handshake text-ferrari mt-1 flex-shrink-0"></i>
-                            <div>
-                                <p class="font-semibold text-gray-800 text-sm">No Commitment Required</p>
-                                <p class="text-xs text-gray-500">Registering your interest kicks off a conversation, nothing more.</p>
-                            </div>
-                        </div>
-                    </div>
+
                 </div>
 
                 <!-- Form -->
@@ -1168,30 +1021,8 @@ body header:not(#site-header) {
                                 <input type="email" class="form-input" placeholder="jane@acmecorp.com" required>
                             </div>
                             <div>
-                                <label class="form-label">Phone Number</label>
+                                <label class="form-label">Mobile Number</label>
                                 <input type="tel" class="form-input" placeholder="+1 (555) 000-0000">
-                            </div>
-                            <div class="md:col-span-2">
-                                <label class="form-label">Package of Interest *</label>
-                                <select class="form-input" required>
-                                    <option value="" disabled selected>Select a package…</option>
-                                    <option>agenTriniti℠ Silver — 10% off your first engagement term</option>
-                                    <option>agenTriniti℠ Gold — 15% off your first engagement term</option>
-                                    <option>agenTriniti℠ Platinum — 15% off your first engagement term</option>
-                                </select>
-                            </div>
-                            <div class="md:col-span-2">
-                                <label class="form-label">Priority AI Use Case or Business Challenge</label>
-                                <textarea class="form-input" rows="3" placeholder="Describe your primary AI challenge or the use case you'd like to address…"></textarea>
-                            </div>
-                            <div class="md:col-span-2">
-                                <label class="form-label">Preferred Next Step *</label>
-                                <select class="form-input" required>
-                                    <option value="" disabled selected>Select preferred next step…</option>
-                                    <option>Schedule a discovery workshop</option>
-                                    <option>Receive package information</option>
-                                    <option>Speak with the Airo team</option>
-                                </select>
                             </div>
                             <div class="md:col-span-2">
                                 <button type="submit" class="w-full bg-ferrari text-white py-4 rounded-full font-bold text-base hover:bg-ferrari-mid transition-all shadow-xl shadow-ferrari/30 flex items-center justify-center gap-2">
@@ -1264,30 +1095,8 @@ body header:not(#site-header) {
                     <input type="email" class="form-input" placeholder="jane@acmecorp.com" required>
                 </div>
                 <div>
-                    <label class="form-label">Phone Number</label>
+                    <label class="form-label">Mobile Number</label>
                     <input type="tel" class="form-input" placeholder="+1 (555) 000-0000">
-                </div>
-                <div>
-                    <label class="form-label">Package of Interest *</label>
-                    <select class="form-input" required>
-                        <option value="" disabled selected>Select a package…</option>
-                        <option>agenTriniti℠ Silver — 10% off your first engagement term</option>
-                        <option>agenTriniti℠ Gold — 15% off your first engagement term</option>
-                        <option>agenTriniti℠ Platinum — 15% off your first engagement term</option>
-                    </select>
-                </div>
-                <div>
-                    <label class="form-label">Priority AI Use Case or Business Challenge</label>
-                    <textarea class="form-input" rows="3" placeholder="Describe your primary AI challenge…"></textarea>
-                </div>
-                <div>
-                    <label class="form-label">Preferred Next Step *</label>
-                    <select class="form-input" required>
-                        <option value="" disabled selected>Select preferred next step…</option>
-                        <option>Schedule a discovery workshop</option>
-                        <option>Receive package information</option>
-                        <option>Speak with the Airo team</option>
-                    </select>
                 </div>
                 <button type="submit" class="w-full bg-ferrari text-white py-4 rounded-full font-bold text-base hover:bg-ferrari-mid transition-all shadow-xl shadow-ferrari/30 flex items-center justify-center gap-2">
                     Register My Interest <i class="fas fa-arrow-right"></i>
@@ -1367,59 +1176,7 @@ body header:not(#site-header) {
         });
     });
 
-    // ── TESTIMONIALS CAROUSEL ──
-    const track   = document.getElementById('testi-track');
-    const dots    = document.querySelectorAll('.testi-dot');
-    const prevBtn = document.getElementById('testi-prev');
-    const nextBtn = document.getElementById('testi-next');
-    const carousel = document.getElementById('testi-carousel');
-    const wrap = document.getElementById('testi-track-wrap');
-    
-    if (track && dots.length > 0 && prevBtn && nextBtn && carousel && wrap) {
-        const total   = 4;
-        let current   = 0;
-        let autoTimer;
 
-        function goTo(n) {
-            current = (n + total) % total;
-            track.style.transform = 'translateX(-' + (current * 100) + '%)';
-            dots.forEach((d, i) => {
-                if (i === current) {
-                    d.style.background = '#FF2800';
-                    d.style.width      = '28px';
-                    d.style.borderRadius = '5px';
-                } else {
-                    d.style.background   = 'rgba(255,40,0,0.2)';
-                    d.style.width        = '10px';
-                    d.style.borderRadius = '50%';
-                }
-            });
-        }
-
-        function startAuto() {
-            clearInterval(autoTimer);
-            autoTimer = setInterval(() => goTo(current + 1), 5000);
-        }
-
-        prevBtn.addEventListener('click', () => { goTo(current - 1); startAuto(); });
-        nextBtn.addEventListener('click', () => { goTo(current + 1); startAuto(); });
-        dots.forEach(d => d.addEventListener('click', () => { goTo(parseInt(d.dataset.idx)); startAuto(); }));
-
-        // Pause on hover
-        carousel.addEventListener('mouseenter', () => clearInterval(autoTimer));
-        carousel.addEventListener('mouseleave', startAuto);
-
-        // Swipe support
-        let touchStartX = 0;
-        wrap.addEventListener('touchstart', e => { touchStartX = e.changedTouches[0].screenX; }, { passive: true });
-        wrap.addEventListener('touchend', e => {
-            const dx = e.changedTouches[0].screenX - touchStartX;
-            if (Math.abs(dx) > 40) { goTo(current + (dx < 0 ? 1 : -1)); startAuto(); }
-        }, { passive: true });
-
-        goTo(0);
-        startAuto();
-    }
 
 })();
 </script>
