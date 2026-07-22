@@ -6,7 +6,11 @@
  * @package hitmag
  */
 
+// Configurable destination URL for the ElevateAIOps CTA button
+$elevate_aiops_url = 'https://elevateaiops.com/';
+
 get_header(); ?>
+
 
 <link
     href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&family=Inter:wght@400;500;600;700&display=swap"
@@ -200,28 +204,38 @@ get_header(); ?>
 
         /* Stack cards */
 
-        /* Center the floating 'Book a Demo' button at the bottom */
+        /* Center the CTA button on mobile — fluid font scales to any screen width */
         #fcta {
-            position: fixed !important;
-            /* This forces it to the glass of the viewport */
-            left: 50% !important;
+            position: static !important;
+            left: auto !important;
             right: auto !important;
-            bottom: 150px !important;
-            /* Keeps it exactly 20px from the bottom edge */
+            bottom: auto !important;
             top: auto !important;
-            /* Clears any accidental top spacing */
-            width: 90% !important;
-            max-width: 350px !important;
+            /* fluid: 10px on 320px → 14px on 437px+ */
+            font-size: clamp(10px, 3.2vw, 14px) !important;
+            padding: 10px clamp(10px, 3.5vw, 22px) !important;
+            gap: clamp(4px, 1.5vw, 8px) !important;
+            white-space: nowrap !important;
+            width: fit-content !important;
+            max-width: 100% !important;
             justify-content: center !important;
-            z-index: 99999 !important;
-            /* Ensures it sits above all scrolling text/images */
-            transform: translateX(-50%) translateY(80px) !important;
+            transform: none !important;
+            opacity: 1 !important;
+            margin: 20px auto 0 !important;
+            z-index: auto !important;
         }
 
-      #fcta.show {
-            transform: translateX(-50%) translateY(0) !important;
+        #fcta.show {
+            transform: none !important;
         }
- 
+
+        #fcta svg {
+            width: clamp(11px, 3vw, 15px) !important;
+            height: clamp(11px, 3vw, 15px) !important;
+            flex-shrink: 0 !important;
+        }
+
+
         /* Modals */
         #shared-modal-box,
         #phase-modal-box {
@@ -233,7 +247,6 @@ get_header(); ?>
             font-size: 22px !important;
         }
     }
-
 
     /* only when s6 is active show scroll */
     body.s6-scroll {
@@ -1951,8 +1964,12 @@ get_header(); ?>
         }
  
         .pkg-cta-btn {
-            width: 100%;
-            max-width: 360px;
+            /* fluid: auto-scales on every screen width */
+            font-size: clamp(10px, 3.2vw, 14px);
+            padding: 12px clamp(10px, 3.5vw, 20px);
+            white-space: nowrap;
+            width: fit-content;
+            max-width: 100%;
         }
     }
  
@@ -1984,10 +2001,11 @@ get_header(); ?>
         .pkg-agents-duration { font-size: 15px; }
  
         .pkg-cta-btn {
-            width: 100%;
+            font-size: clamp(10px, 3.2vw, 14px);
+            padding: 12px clamp(10px, 3.5vw, 20px);
+            white-space: nowrap;
+            width: fit-content;
             max-width: 100%;
-            padding: 14px 20px;
-            font-size: 12px;
         }
     }
         @media (max-width: 820px) {
@@ -2035,8 +2053,11 @@ get_header(); ?>
     }
 
     .pkg-cta-btn {
-        width: 100%;
-        max-width: 340px;
+        font-size: clamp(10px, 3.2vw, 14px);
+        padding: 12px clamp(10px, 3.5vw, 20px);
+        white-space: nowrap;
+        width: fit-content;
+        max-width: 100%;
     }
 }
 
@@ -2124,11 +2145,12 @@ get_header(); ?>
     }
 
     .pkg-cta-btn {
-        width: 100%;
-        max-width: 320px;
-        padding: 12px 18px;
-        font-size: 12px;
-        letter-spacing: 0.08em;
+        font-size: clamp(10px, 3.2vw, 14px);
+        padding: 12px clamp(10px, 3.5vw, 18px);
+        white-space: nowrap;
+        width: fit-content;
+        max-width: 100%;
+        letter-spacing: 0.06em;
     }
 }
 
@@ -2144,9 +2166,11 @@ get_header(); ?>
     }
 
     .pkg-cta-btn {
-        font-size: 11px;
-        padding: 10px 16px;
-        max-width: 280px;
+        font-size: clamp(10px, 3.2vw, 12px);
+        padding: 10px clamp(8px, 3vw, 16px);
+        white-space: nowrap;
+        width: fit-content;
+        max-width: 100%;
     }
 }
 
@@ -2203,6 +2227,23 @@ get_header(); ?>
     .slide.s5 .pkg-grid {
         gap: 14px !important;
     }
+}
+
+/* Custom premium hover states for agenTriniti CTA buttons */
+.pkg-cta-btn,
+#fcta,
+.tt-faq-cta-link {
+    transition: background 0.35s ease, transform 0.35s ease, box-shadow 0.35s ease !important;
+}
+
+.pkg-cta-btn:hover,
+#fcta:hover,
+.tt-faq-cta-link:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 14px 40px rgba(227, 24, 55, 0.55) !important;
+    background: #f53b2a !important; /* Premium richer brand red hover */
+    color: #ffffff !important;
+    cursor: pointer !important;
 }
 </style>
 </head>
@@ -2570,7 +2611,7 @@ get_header(); ?>
               ← Explore Again
             </button> -->
                       <button class="pkg-cta-btn" onclick="window.open('https://calendly.com/airodigitallabs/30min?guests=sayak.das%40airodigitallabs.com&month=2026-05', '_blank')" style="text-transform: none;">
-                            Schedule Your agenTriniti<sup style="font-size: 0.6em; position: relative; top: -0.8em; line-height: 0; vertical-align: baseline;">SM</sup> Demo Today
+                            Schedule Your agenTriniti Demo Today
                       </button> 
                     </div>
 
@@ -2594,6 +2635,7 @@ get_header(); ?>
                 .pkg-grid {
                     display: grid;
                     grid-template-columns: repeat(3, 1fr);
+                    grid-auto-rows: 1fr !important;
                     gap: 20px;
                     width: 100%;
                     margin-bottom: 1.25rem;
@@ -2612,15 +2654,16 @@ get_header(); ?>
                 .pkg-card {
                     cursor: pointer;
                     border-radius: 16px;
-                    padding: 1rem 1rem;
+                    padding: 1.5rem 1.5rem;
                     display: flex;
                     flex-direction: column;
-                    align-items: stretch;
+                    align-items: stretch !important;
+                    justify-content: flex-start !important;
                     gap: 7px;
                     transition: transform 0.3s ease, box-shadow 0.3s ease;
                     width: 100%;
                     box-sizing: border-box;
-                    min-height: auto;
+                    min-height: 0 !important;
                     position: relative;
                     overflow: hidden;
                 }
@@ -2855,7 +2898,7 @@ get_header(); ?>
                     width: 100%;
                     height: 1px;
                     border: none;
-                    margin: 0;
+                    margin: 0 !important;
                     position: relative;
                     z-index: 2;
                 }
@@ -3010,33 +3053,85 @@ get_header(); ?>
                 }
 
                 /* ── Package grid responsive ── */
+                .pkg-icon-box svg {
+                    width: 87.5% !important;
+                    height: 87.5% !important;
+                }
+
+                @media (max-width: 1366px) {
+                    .slide.s5 .pkg-grid { gap: 15px !important; }
+                    .pkg-card { padding: 1rem 0.75rem !important; }
+                    .pkg-card-body { gap: 8px !important; }
+                    .pkg-icon-box { width: 54px !important; height: 54px !important; }
+                    .pkg-agents-num { font-size: 32px !important; }
+                    .pkg-agents-label { font-size: 10px !important; letter-spacing: 0.02em !important; }
+                    .pkg-stat-group { gap: 4px !important; }
+                    .pkg-benefit { font-size: 11px !important; padding: 4px 6px !important; }
+                }
+
                 @media (max-width: 991px) {
                     .slide.s5 .pkg-grid {
                         grid-template-columns: repeat(2, 1fr) !important;
-                        max-width: 700px !important;
+                        max-width: 720px !important;
                         margin-left: auto !important;
                         margin-right: auto !important;
+                        gap: 20px !important;
                     }
-                    .slide.s5 .pkg-card.gold {
-                        grid-column: auto !important;
-                    }
+                    .slide.s5 .pkg-card.gold { grid-column: auto !important; }
+                    
+                    /* Reduce overall card height and scale content proportionally */
+                    .pkg-card { padding: 1rem 1rem !important; gap: 8px !important; }
+                    .pkg-card-body { gap: 10px !important; }
+                    .pkg-icon-box { width: 56px !important; height: 56px !important; }
+                    .pkg-agents-num { font-size: 34px !important; }
+                    .pkg-agents-label { font-size: 11px !important; letter-spacing: 0.05em !important; }
+                    .pkg-stat-group { gap: 6px !important; }
+                    .pkg-stats-divider { height: 32px !important; }
+                    .pkg-benefit { font-size: 12px !important; padding: 4px 6px !important; }
+                    .pkg-btn-cta { font-size: 12px !important; padding: 8px 12px !important; }
                 }
-                @media (max-width: 600px) {
+
+                @media (max-width: 767px) {
                     .slide.s5 .pkg-grid {
                         grid-template-columns: 1fr !important;
-                        max-width: 420px !important;
+                        max-width: 440px !important;
                         margin-left: auto !important;
                         margin-right: auto !important;
+                        padding-left: 15px !important;
+                        padding-right: 15px !important;
+                        gap: 20px !important;
                     }
-                    .slide.s5 .pkg-card.gold {
-                        grid-column: auto !important;
-                    }
-                    .pkg-agents-num { font-size: 36px !important; }
+                    .slide.s5 .pkg-card.gold { grid-column: auto !important; }
+                    
+                    .pkg-card { padding: 1.25rem 1rem !important; }
+                    .pkg-card-body { gap: 12px !important; }
+                    .pkg-icon-box { width: 56px !important; height: 56px !important; }
+                    .pkg-agents-num { font-size: 34px !important; }
+                    .pkg-agents-label { font-size: 11px !important; letter-spacing: 0.05em !important; }
+                    .pkg-stat-group { gap: 6px !important; }
+                    .pkg-stats-divider { height: 30px !important; }
+                    .pkg-benefit { font-size: 12px !important; padding: 5px 8px !important; }
+                    .pkg-btn-cta { font-size: 13px !important; padding: 8px 12px !important; }
                 }
-                @media (max-width: 380px) {
-                    .pkg-agents-num { font-size: 30px !important; }
-                    .pkg-icon-box { width: 52px !important; height: 52px !important; }
-                    .pkg-benefit { font-size: 11px !important; padding: 5px 8px !important; }
+
+                @media (max-width: 480px) {
+                    .slide.s5 .pkg-grid {
+                        max-width: 100% !important;
+                        padding-left: 10px !important;
+                        padding-right: 10px !important;
+                        gap: 16px !important;
+                    }
+                    
+                    /* Ultra compact to fit 320px viewport without overflow */
+                    .pkg-card { padding: 1rem 0.6rem !important; }
+                    .pkg-card-body { gap: 8px !important; }
+                    .pkg-icon-box { width: 44px !important; height: 44px !important; }
+                    .pkg-agents-num { font-size: 26px !important; }
+                    .pkg-agents-label { font-size: 9px !important; letter-spacing: 0 !important; }
+                    .pkg-stat-group { gap: 4px !important; }
+                    .pkg-stats-divider { height: 26px !important; }
+                    .pkg-benefit { font-size: 10px !important; padding: 4px 6px !important; }
+                    .pkg-btn-cta { font-size: 11px !important; padding: 6px 10px !important; }
                 }
             </style>
             <div class="pkg-grid">
@@ -3722,7 +3817,7 @@ get_header(); ?>
                         "20 Secure AI Agents",
                         "3 Months of Build Phase",
                         "Airo Pod Deployment",
-                        "Proprietary AiroCoreAI<sup>©</sup> Engine",
+                        "Proprietary AiroCoreAI<sup style=\"font-size: 0.6em; position: relative; top: -0.8em; line-height: 0; vertical-align: baseline;\">SM</sup> Engine",
                         "Total IP Ownership & Portability",
                     ],
                 },
@@ -3734,7 +3829,7 @@ get_header(); ?>
                         "50 Secure AI Agents",
                         "4 Months of Build Phase",
                         "Airo Pod Deployment",
-                        "Proprietary AiroCoreAI<sup>©</sup> Engine",
+                        "Proprietary AiroCoreAI<sup style=\"font-size: 0.6em; position: relative; top: -0.8em; line-height: 0; vertical-align: baseline;\">SM</sup> Engine",
                         "Total IP Ownership & Portability",
                     ],
                 },
@@ -3746,7 +3841,7 @@ get_header(); ?>
                         "100 Secure AI Agents",
                         "6 Months of Build Phase",
                         "Airo Pod Deployment",
-                        "Proprietary AiroCoreAI<sup>©</sup> Engine",
+                        "Proprietary AiroCoreAI<sup style=\"font-size: 0.6em; position: relative; top: -0.8em; line-height: 0; vertical-align: baseline;\">SM</sup> Engine",
                         "Total IP Ownership & Portability",
                     ],
                 },
@@ -4473,15 +4568,121 @@ get_header(); ?>
                     <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                         <path d="M5 12h14M12 5l7 7-7 7" />
                     </svg>
-                    Schedule Your agenTriniti<sup style="font-size: 0.6em; position: relative; top: -0.8em; line-height: 0; vertical-align: baseline; margin-left: -6px; letter-spacing: normal;">SM</sup> Demo Today
+                    Schedule Your agenTriniti Demo Today
                 </a>
             </div>
         </div>
 		
+        <!-- ── Slide 7: ElevateAIOps ── -->
+        <div class="slide s-elevate" id="elevate-aiops">
+            <div class="elevate-wrap">
+                <h2 class="tt-faq-title elevate-title" style="text-align: center; margin-bottom: 40px; position: relative; z-index: 2;">
+                    Migrating to <span>Salesforce Agentforce</span>?
+                </h2>
+                <div class="elevate-card">
+                    <p class="elevate-text">agenTriniti<sup style="font-size: 0.6em; position: relative; top: -0.8em; line-height: 0; vertical-align: baseline;">SM</sup> Package accelerates Agentforce ITS migrations by up to 50% using Agentic discovery, workflow mapping, data migration and deployment. More importantly, we don't stop at go-live. agenTriniti continuously governs, monitors and enhances your AI use cases, keeping your Agentforce environment aligned with evolving business needs.</p>
+                </div>
+                <div class="elevate-cta-wrap">
+                    <a href="<?php echo esc_url($elevate_aiops_url); ?>" class="pkg-cta-btn elevate-btn">
+                        Explore agenTriniti Package for ITSM
+                    </a>
+                </div>
+            </div>
+        </div>
 
     </div>
     <!-- 	  </div> -->
     <style>
+        /* ── Slide 7 (ElevateAIOps) — scoped via .s-elevate ── */
+        .slide.s-elevate {
+            height: auto !important;
+            min-height: auto !important;
+            overflow: visible !important;
+            padding: 40px 48px 40px !important;
+            background: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-sizing: border-box !important;
+        }
+
+        .s-elevate .elevate-wrap {
+            width: 100%;
+            max-width: 1040px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.55s ease, transform 0.55s ease;
+            transition-delay: 0.18s;
+        }
+
+        .slide.active .elevate-wrap {
+            opacity: 1;
+            transform: none;
+        }
+
+        .elevate-title {
+            text-align: center;
+        }
+
+        .elevate-card {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 40px 50px;
+            box-shadow: 0 18px 50px rgba(11, 31, 68, 0.12);
+            border: 1px solid rgba(11, 31, 68, 0.05);
+            width: 100%;
+            box-sizing: border-box;
+            margin-bottom: 30px;
+            text-align: left;
+        }
+
+        .elevate-text {
+            font-family: "Inter", sans-serif;
+            /*font-size: clamp(15px, 1.15vw, 17px);*/
+            font-size: 0.95rem;
+            font-weight: 400;
+            line-height: 1.8;
+            color: var(--navy);
+            margin-bottom: 20px;
+        }
+		
+		
+
+        .elevate-text:last-child {
+            margin-bottom: 0;
+        }
+
+        .elevate-bold {
+            font-weight: 700;
+            color: var(--navy);
+            font-size: clamp(17px, 1.3vw, 19px);
+			text-align:center;
+        }
+
+        .elevate-cta-wrap {
+            text-align: center;
+            width: 100%;
+        }
+
+        .elevate-btn {
+            text-transform: none !important;
+            letter-spacing: 0.05em !important;
+            padding: 15px 40px !important;
+        }
+
+        @media (max-width: 820px) {
+            .slide.s-elevate {
+                padding: 40px 16px 30px !important;
+            }
+            .elevate-card {
+                padding: 28px 24px !important;
+                border-radius: 12px !important;
+            }
+        }
+
         /* ── Slide 6 (Comparison Table) — scoped via .s6 / .cmp-* ── */
 
 
@@ -5256,7 +5457,7 @@ get_header(); ?>
           "name": "What does “Delivering AI through AI” mean?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "It refers to our proprietary AI-led Development Lifecycle (AI-DLC) engine, AiroCoreAI©. Instead of relying on traditional, manual \"body-count\" project labor, AiroCoreAI© utilizes autonomous agents to build, monitor, test, and manage your AI solutions. This programmatic approach shifts project economics, driving a 45–50% reduction in development effort and a 50–60% reduction in managed services effort."
+            "text": "It refers to our proprietary AI-led Development Lifecycle (AI-DLC) engine, AiroCoreAI. Instead of relying on traditional, manual \"body-count\" project labor, AiroCoreAI utilizes autonomous agents to build, monitor, test, and manage your AI solutions. This programmatic approach shifts project economics, driving a 45–50% reduction in development effort and a 50–60% reduction in managed services effort."
           }
         },
         {
@@ -5425,7 +5626,7 @@ get_header(); ?>
                         <div style="min-height: 0;">
                             <div class="tt-faq-answer-inner">
                                 <div class="tt-faq-answer-accent"></div>
-                                <p class="tt-faq-answer-text">It refers to our proprietary AI-led Development Lifecycle (AI-DLC) engine, AiroCoreAI<sup>©</sup>. Instead of relying on traditional, manual "body-count" project labor, AiroCoreAI<sup>©</sup> utilizes autonomous agents to build, monitor, test, and manage your AI solutions. This programmatic approach shifts project economics, driving a 45–50% reduction in development effort and a 50–60% reduction in managed services effort.</p>
+                                <p class="tt-faq-answer-text">It refers to our proprietary AI-led Development Lifecycle (AI-DLC) engine, AiroCoreAI<sup style="font-size: 0.6em; position: relative; top: -0.8em; line-height: 0; vertical-align: baseline;">SM</sup>. Instead of relying on traditional, manual "body-count" project labor, AiroCoreAI<sup style="font-size: 0.6em; position: relative; top: -0.8em; line-height: 0; vertical-align: baseline;">SM</sup> utilizes autonomous agents to build, monitor, test, and manage your AI solutions. This programmatic approach shifts project economics, driving a 45–50% reduction in development effort and a 50–60% reduction in managed services effort.</p>
                             </div>
                         </div>
                     </div>

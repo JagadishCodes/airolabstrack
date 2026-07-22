@@ -1,7 +1,7 @@
 /* ==========================================================================
-   NAVIGATION MENU RESPONSIVE TABLET OVERRIDES (768px to 1023.98px)
+   NAVIGATION MENU RESPONSIVE TABLET OVERRIDES (768px to 1024px)
    ========================================================================== */
-@media (min-width: 768px) and (max-width: 1023.98px) {
+@media (min-width: 768px) and (max-width: 1024px) {
 
     /* --- List bullet & padding resets (resolves unwanted black dots) --- */
     #mega-menu-wrap-primary #mega-menu-primary,
@@ -20,12 +20,20 @@
         content: none !important;
     }
 
-    /* --- Reset tablet menu container height and flex inheritance --- */
-    #mega-menu-wrap-primary #mega-menu-primary {
+    /* --- Enable scrolling on mobile/tablet menu drawer when content overflows --- */
+    body #mega-menu-wrap-primary #mega-menu-primary {
+        max-height: calc(100vh - 120px) !important;
+        overflow: auto !important;
+        overflow-y: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+        touch-action: pan-y !important;
+        overscroll-behavior-y: contain !important;
+    }
+
+    body #mega-menu-wrap-primary #mega-menu-primary li.mega-menu-item.mega-menu-megamenu.mega-menu-tabbed.mega-toggle-on>ul.mega-sub-menu {
         height: auto !important;
-        max-height: none !important;
-        overflow: visible !important;
-        display: block !important;
+        overflow-y: visible !important;
+        overflow-x: visible !important;
     }
 
     /* --- Stop dropdown panel container background overlays/shadows --- */
@@ -53,15 +61,11 @@
         min-width: 100% !important;
         max-width: 100% !important;
         box-sizing: border-box !important;
-        flex: none !important;
-        height: auto !important;
     }
 
     body #mega-menu-wrap-primary #mega-menu-primary li.mega-menu-item {
         width: 100% !important;
         box-sizing: border-box !important;
-        flex: none !important;
-        height: auto !important;
     }
 
     /* --- Primary menu links: Typography, sizes, touch targets --- */
@@ -106,8 +110,10 @@
     }
 
     body #mega-menu-wrap-primary #mega-menu-primary li.mega-menu-item>ul.mega-sub-menu>li.mega-menu-item>a.mega-menu-link:hover,
-    body #mega-menu-wrap-primary #mega-menu-primary li.mega-menu-item>ul.mega-sub-menu>li.mega-menu-item.mega-toggle-on>a.mega-menu-link,
-    body #mega-menu-wrap-primary #mega-menu-primary li.mega-menu-item>ul.mega-sub-menu>li.mega-menu-item.mega-current-menu-item>a.mega-menu-link {
+    body #mega-menu-wrap-primary #mega-menu-primary li.mega-menu-item>ul.mega-sub-menu>li.mega-menu-item.mega-current-menu-item>a.mega-menu-link,
+    body #mega-menu-wrap-primary #mega-menu-primary li.mega-menu-item>ul.mega-sub-menu>li.mega-menu-item.mega-current-menu-ancestor>a.mega-menu-link,
+    body #mega-menu-wrap-primary #mega-menu-primary li.mega-menu-item>ul.mega-sub-menu>li.mega-menu-item.mega-current_page_item>a.mega-menu-link,
+    body #mega-menu-wrap-primary #mega-menu-primary li.mega-menu-item>ul.mega-sub-menu>li.mega-menu-item.mega-current-page-ancestor>a.mega-menu-link {
         background: #FFF5F5 !important;
         color: #FF0000 !important;
         border-left: 4px solid #FF0000 !important;
@@ -163,11 +169,7 @@
     body #mega-menu-wrap-primary #mega-menu-primary li a.mega-menu-link>span.mega-indicator:after,
     body #mega-menu-wrap-primary #mega-menu-primary li a.mega-menu-link>.mega-indicator:after,
     body #mega-menu-wrap-primary #mega-menu-primary>li#mega-menu-item-15>a.mega-menu-link>span.mega-indicator:after,
-    body #mega-menu-wrap-primary #mega-menu-primary>li#mega-menu-item-15>a.mega-menu-link>.mega-indicator:after,
-    body #mega-menu-wrap-primary #mega-menu-primary>li#mega-menu-item-16>a.mega-menu-link>span.mega-indicator:after,
-    body #mega-menu-wrap-primary #mega-menu-primary>li#mega-menu-item-16>a.mega-menu-link>.mega-indicator:after,
-    body #mega-menu-wrap-primary #mega-menu-primary>li#mega-menu-item-17>a.mega-menu-link>span.mega-indicator:after,
-    body #mega-menu-wrap-primary #mega-menu-primary>li#mega-menu-item-17>a.mega-menu-link>.mega-indicator:after {
+    body #mega-menu-wrap-primary #mega-menu-primary>li#mega-menu-item-15>a.mega-menu-link>.mega-indicator:after {
         content: "" !important;
         display: block !important;
         background-image: url(/wp-content/uploads/2024/04/icn-dropdown.svg) !important;
@@ -195,7 +197,39 @@
 
     /* --- Rotate indicator arrow 180 degrees smoothly on toggle open --- */
     body #mega-menu-wrap-primary #mega-menu-primary li.mega-toggle-on>a.mega-menu-link>span.mega-indicator:after,
-    body #mega-menu-wrap-primary #mega-menu-primary li.mega-toggle-on>a.mega-menu-link>.mega-indicator:after {
+    body #mega-menu-wrap-primary #mega-menu-primary li.mega-toggle-on>a.mega-menu-link>.mega-indicator:after,
+    body #mega-menu-wrap-primary #mega-menu-primary li.open>a.mega-menu-link>span.mega-indicator:after,
+    body #mega-menu-wrap-primary #mega-menu-primary li.open>a.mega-menu-link>.mega-indicator:after,
+    body #mega-menu-wrap-primary #mega-menu-primary li.show>a.mega-menu-link>span.mega-indicator:after,
+    body #mega-menu-wrap-primary #mega-menu-primary li.show>a.mega-menu-link>.mega-indicator:after {
+        transform: rotate(180deg) !important;
+    }
+
+    /* --- Specific rotation rules for top-level menu items with ID selectors --- */
+    body #mega-menu-wrap-primary #mega-menu-primary li#mega-menu-item-16.mega-toggle-on a.mega-menu-link span.mega-indicator:after,
+    body #mega-menu-wrap-primary #mega-menu-primary li#mega-menu-item-16.mega-toggle-on a.mega-menu-link .mega-indicator:after,
+    body #mega-menu-wrap-primary #mega-menu-primary li#mega-menu-item-16.open a.mega-menu-link span.mega-indicator:after,
+    body #mega-menu-wrap-primary #mega-menu-primary li#mega-menu-item-16.open a.mega-menu-link .mega-indicator:after,
+    body #mega-menu-wrap-primary #mega-menu-primary li#mega-menu-item-16.show a.mega-menu-link span.mega-indicator:after,
+    body #mega-menu-wrap-primary #mega-menu-primary li#mega-menu-item-16.show a.mega-menu-link .mega-indicator:after,
+    body #mega-menu-wrap-primary #mega-menu-primary li#mega-menu-item-16.mega-toggle-on span.mega-indicator:after,
+    body #mega-menu-wrap-primary #mega-menu-primary li#mega-menu-item-16.mega-toggle-on .mega-indicator:after,
+    body #mega-menu-wrap-primary #mega-menu-primary li#mega-menu-item-16.open span.mega-indicator:after,
+    body #mega-menu-wrap-primary #mega-menu-primary li#mega-menu-item-16.open .mega-indicator:after,
+    body #mega-menu-wrap-primary #mega-menu-primary li#mega-menu-item-16.show span.mega-indicator:after,
+    body #mega-menu-wrap-primary #mega-menu-primary li#mega-menu-item-16.show .mega-indicator:after,
+    body #mega-menu-wrap-primary #mega-menu-primary li#mega-menu-item-17.mega-toggle-on a.mega-menu-link span.mega-indicator:after,
+    body #mega-menu-wrap-primary #mega-menu-primary li#mega-menu-item-17.mega-toggle-on a.mega-menu-link .mega-indicator:after,
+    body #mega-menu-wrap-primary #mega-menu-primary li#mega-menu-item-17.open a.mega-menu-link span.mega-indicator:after,
+    body #mega-menu-wrap-primary #mega-menu-primary li#mega-menu-item-17.open a.mega-menu-link .mega-indicator:after,
+    body #mega-menu-wrap-primary #mega-menu-primary li#mega-menu-item-17.show a.mega-menu-link span.mega-indicator:after,
+    body #mega-menu-wrap-primary #mega-menu-primary li#mega-menu-item-17.show a.mega-menu-link .mega-indicator:after,
+    body #mega-menu-wrap-primary #mega-menu-primary li#mega-menu-item-17.mega-toggle-on span.mega-indicator:after,
+    body #mega-menu-wrap-primary #mega-menu-primary li#mega-menu-item-17.mega-toggle-on .mega-indicator:after,
+    body #mega-menu-wrap-primary #mega-menu-primary li#mega-menu-item-17.open span.mega-indicator:after,
+    body #mega-menu-wrap-primary #mega-menu-primary li#mega-menu-item-17.open .mega-indicator:after,
+    body #mega-menu-wrap-primary #mega-menu-primary li#mega-menu-item-17.show span.mega-indicator:after,
+    body #mega-menu-wrap-primary #mega-menu-primary li#mega-menu-item-17.show .mega-indicator:after {
         transform: rotate(180deg) !important;
     }
 
@@ -205,7 +239,11 @@
     }
 
     #mega-menu-wrap-primary #mega-menu-primary #mega-menu-item-15>ul.mega-sub-menu,
-    #mega-menu-wrap-primary #mega-menu-primary #mega-menu-item-15>ul#mega-sub-menu-15 {
+    #mega-menu-wrap-primary #mega-menu-primary #mega-menu-item-15>ul#mega-sub-menu-15,
+    #mega-menu-wrap-primary #mega-menu-primary #mega-menu-item-16>ul.mega-sub-menu,
+    #mega-menu-wrap-primary #mega-menu-primary #mega-menu-item-16>ul#mega-sub-menu-16,
+    #mega-menu-wrap-primary #mega-menu-primary #mega-menu-item-17>ul.mega-sub-menu,
+    #mega-menu-wrap-primary #mega-menu-primary #mega-menu-item-17>ul#mega-sub-menu-17 {
         position: static !important;
         width: 100% !important;
         min-width: 0 !important;
@@ -216,6 +254,28 @@
         border-top: none !important;
         padding: 0 !important;
         background: transparent !important;
+        display: none;
+    }
+
+    #mega-menu-wrap-primary #mega-menu-primary #mega-menu-item-15.mega-toggle-on>ul.mega-sub-menu,
+    #mega-menu-wrap-primary #mega-menu-primary #mega-menu-item-15.mega-toggle-on>ul#mega-sub-menu-15,
+    #mega-menu-wrap-primary #mega-menu-primary #mega-menu-item-15.open>ul.mega-sub-menu,
+    #mega-menu-wrap-primary #mega-menu-primary #mega-menu-item-15.open>ul#mega-sub-menu-15,
+    #mega-menu-wrap-primary #mega-menu-primary #mega-menu-item-15.show>ul.mega-sub-menu,
+    #mega-menu-wrap-primary #mega-menu-primary #mega-menu-item-15.show>ul#mega-sub-menu-15,
+    #mega-menu-wrap-primary #mega-menu-primary #mega-menu-item-16.mega-toggle-on>ul.mega-sub-menu,
+    #mega-menu-wrap-primary #mega-menu-primary #mega-menu-item-16.mega-toggle-on>ul#mega-sub-menu-16,
+    #mega-menu-wrap-primary #mega-menu-primary #mega-menu-item-16.open>ul.mega-sub-menu,
+    #mega-menu-wrap-primary #mega-menu-primary #mega-menu-item-16.open>ul#mega-sub-menu-16,
+    #mega-menu-wrap-primary #mega-menu-primary #mega-menu-item-16.show>ul.mega-sub-menu,
+    #mega-menu-wrap-primary #mega-menu-primary #mega-menu-item-16.show>ul#mega-sub-menu-16,
+    #mega-menu-wrap-primary #mega-menu-primary #mega-menu-item-17.mega-toggle-on>ul.mega-sub-menu,
+    #mega-menu-wrap-primary #mega-menu-primary #mega-menu-item-17.mega-toggle-on>ul#mega-sub-menu-17,
+    #mega-menu-wrap-primary #mega-menu-primary #mega-menu-item-17.open>ul.mega-sub-menu,
+    #mega-menu-wrap-primary #mega-menu-primary #mega-menu-item-17.open>ul#mega-sub-menu-17,
+    #mega-menu-wrap-primary #mega-menu-primary #mega-menu-item-17.show>ul.mega-sub-menu,
+    #mega-menu-wrap-primary #mega-menu-primary #mega-menu-item-17.show>ul#mega-sub-menu-17 {
+        display: block !important;
     }
 
     /* --- Minimize spacing and vertical gaps on mobile panel sub-items --- */
@@ -257,9 +317,17 @@
 
     #mega-sub-menu-16>li.mega-menu-item>a.mega-menu-link,
     #mega-sub-menu-16>li.mega-menu-item.mega-toggle-on>a.mega-menu-link,
+    #mega-sub-menu-16>li.mega-menu-item.mega-current-menu-item>a.mega-menu-link,
+    #mega-sub-menu-16>li.mega-menu-item.mega-current-menu-ancestor>a.mega-menu-link,
+    #mega-sub-menu-16>li.mega-menu-item.mega-current_page_item>a.mega-menu-link,
+    #mega-sub-menu-16>li.mega-menu-item.mega-current-page-ancestor>a.mega-menu-link,
     #mega-sub-menu-16>li.mega-menu-item>a.mega-menu-link:hover,
     #mega-sub-menu-17>li.mega-menu-item>a.mega-menu-link,
     #mega-sub-menu-17>li.mega-menu-item.mega-toggle-on>a.mega-menu-link,
+    #mega-sub-menu-17>li.mega-menu-item.mega-current-menu-item>a.mega-menu-link,
+    #mega-sub-menu-17>li.mega-menu-item.mega-current-menu-ancestor>a.mega-menu-link,
+    #mega-sub-menu-17>li.mega-menu-item.mega-current_page_item>a.mega-menu-link,
+    #mega-sub-menu-17>li.mega-menu-item.mega-current-page-ancestor>a.mega-menu-link,
     #mega-sub-menu-17>li.mega-menu-item>a.mega-menu-link:hover {
         border-left: none !important;
         background: transparent !important;
@@ -267,9 +335,15 @@
         /* Keep clean visual indentation */
     }
 
-    #mega-sub-menu-16>li.mega-menu-item.mega-toggle-on>a.mega-menu-link,
+    #mega-sub-menu-16>li.mega-menu-item.mega-current-menu-item>a.mega-menu-link,
+    #mega-sub-menu-16>li.mega-menu-item.mega-current-menu-ancestor>a.mega-menu-link,
+    #mega-sub-menu-16>li.mega-menu-item.mega-current_page_item>a.mega-menu-link,
+    #mega-sub-menu-16>li.mega-menu-item.mega-current-page-ancestor>a.mega-menu-link,
     #mega-sub-menu-16>li.mega-menu-item>a.mega-menu-link:hover,
-    #mega-sub-menu-17>li.mega-menu-item.mega-toggle-on>a.mega-menu-link,
+    #mega-sub-menu-17>li.mega-menu-item.mega-current-menu-item>a.mega-menu-link,
+    #mega-sub-menu-17>li.mega-menu-item.mega-current-menu-ancestor>a.mega-menu-link,
+    #mega-sub-menu-17>li.mega-menu-item.mega-current_page_item>a.mega-menu-link,
+    #mega-sub-menu-17>li.mega-menu-item.mega-current-page-ancestor>a.mega-menu-link,
     #mega-sub-menu-17>li.mega-menu-item>a.mega-menu-link:hover {
         color: #FF0000 !important;
     }
@@ -290,4 +364,53 @@
     #mega-menu-wrap-primary #mega-menu-primary>li[class*="social-share"] {
         display: none !important;
     }
+
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .logo-menu {
+        position: relative !important;
+    }
+
+    body #mega-menu-wrap-primary {
+        position: static !important;
+        width: 100% !important;
+    }
+
+    body #mega-menu-wrap-primary .mega-menu-toggle {
+        display: block !important;
+        float: right !important;
+    }
+
+    body #mega-menu-wrap-primary #mega-menu-primary {
+        display: none !important;
+        float: none !important;
+        width: 100% !important;
+        min-width: 100% !important;
+        max-width: 100% !important;
+        position: absolute !important;
+        top: 100% !important;
+        left: 0 !important;
+        right: 0 !important;
+        background: #FFFFFF !important;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1) !important;
+        z-index: 999999 !important;
+        box-sizing: border-box !important;
+        max-height: calc(100vh - 120px) !important;
+        overflow: auto !important;
+        overflow-y: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+        touch-action: pan-y !important;
+        overscroll-behavior-y: contain !important;
+    }
+
+    body #mega-menu-wrap-primary.mega-menu-open #mega-menu-primary {
+        display: block !important;
+    }
+}
+
+/* --- Prevent body scrolling when mobile/tablet menu is open --- */
+html.mega-menu-open-body,
+body.mega-menu-open-body {
+    overflow: hidden !important;
 }
