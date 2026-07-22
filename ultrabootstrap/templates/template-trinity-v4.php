@@ -3104,12 +3104,13 @@ get_header(); ?>
                     .slide.s5 .pkg-card.gold { grid-column: auto !important; }
                     
                     .pkg-card { padding: 1.25rem 1rem !important; }
-                    .pkg-card-body { gap: 12px !important; }
+                    .pkg-card-body { justify-content: center !important; gap: 20px !important; }
                     .pkg-icon-box { width: 56px !important; height: 56px !important; }
                     .pkg-agents-num { font-size: 34px !important; }
                     .pkg-agents-label { font-size: 11px !important; letter-spacing: 0.05em !important; }
                     .pkg-stat-group { gap: 6px !important; }
                     .pkg-stats-divider { height: 30px !important; }
+                    .pkg-stats { flex: none !important; gap: 20px !important; }
                     .pkg-benefit { font-size: 12px !important; padding: 5px 8px !important; }
                     .pkg-btn-cta { font-size: 13px !important; padding: 8px 12px !important; }
                 }
@@ -3124,12 +3125,13 @@ get_header(); ?>
                     
                     /* Ultra compact to fit 320px viewport without overflow */
                     .pkg-card { padding: 1rem 0.6rem !important; }
-                    .pkg-card-body { gap: 8px !important; }
+                    .pkg-card-body { justify-content: center !important; gap: 16px !important; }
                     .pkg-icon-box { width: 44px !important; height: 44px !important; }
                     .pkg-agents-num { font-size: 26px !important; }
                     .pkg-agents-label { font-size: 9px !important; letter-spacing: 0 !important; }
                     .pkg-stat-group { gap: 4px !important; }
                     .pkg-stats-divider { height: 26px !important; }
+                    .pkg-stats { flex: none !important; gap: 16px !important; }
                     .pkg-benefit { font-size: 10px !important; padding: 4px 6px !important; }
                     .pkg-btn-cta { font-size: 11px !important; padding: 6px 10px !important; }
                 }

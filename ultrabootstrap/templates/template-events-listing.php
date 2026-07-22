@@ -124,9 +124,9 @@ get_header(); ?>
 </section>
 
 
-<div class="container">
+<!-- <div class="container">
 	<div class="sec-gap"></div>
-</div>
+</div> -->
 
 <section id="upcoming-events">
 	<div class="container">
@@ -134,7 +134,7 @@ get_header(); ?>
 			<h2><?php echo $pass_eve['section_heading']; ?></h2>
 		</div>
 			
-		<div class="filter-part">
+<!-- 		<div class="filter-part">
 			<span>Filter <img src="/wp-content/uploads/2024/05/div-Icn.png"> </span>
 			
 		
@@ -175,7 +175,7 @@ get_header(); ?>
                         <?php endforeach; ?>
                           <div class="filter-cat"><div class=""><a href="#" class="clearsearch clearevent">X</a></div></div>
                    
-		</div>
+		</div> -->
 		
 		<div class="br bl bt">
 			<div class="row eventlists">

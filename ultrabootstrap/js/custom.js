@@ -1271,16 +1271,3 @@ jQuery(document).ready(function($) {
         }
     });
 });
-
-// Fix for iPad/Tablet mega menu touch scrolling
-document.addEventListener('DOMContentLoaded', function() {
-    var megaMenu = document.querySelector('#mega-menu-primary');
-    if (megaMenu) {
-        // Prevent touchmove events from bubbling up to maxmegamenu's body listener which calls preventDefault()
-        megaMenu.addEventListener('touchmove', function(e) {
-            if (window.innerWidth >= 768 && window.innerWidth <= 1024) {
-                e.stopPropagation();
-            }
-        }, { passive: true });
-    }
-});

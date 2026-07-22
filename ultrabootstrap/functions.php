@@ -1662,7 +1662,7 @@ add_action('init', function () {
 
 
 
-function custom_menu_page_breadcrumb_shortcode($atts) {
+function custom_menu_page_breadcrumb_shortcode_original($atts) {
     global $post;
 $post_type = get_post_type($post);
 		
@@ -1683,13 +1683,18 @@ if (!is_front_page()) {
     $breadcrumb .= '<a href="' . home_url() . '">Home</a> &raquo; ';
 }
 
-// ✅ Fix for Agentic AI Trinity Model page
-if (is_page(5114)) {
-    $breadcrumb .= '<a href="#">Capabilities</a> &raquo; ';
-    $breadcrumb .= get_the_title($post->ID); 
+$skip_to_services = array(5114);
+
+if (in_array($post->ID, $skip_to_services)) {
+    $breadcrumb .= get_the_title($post->ID);
     $breadcrumb .= '</nav>';
-    $breadcrumb = preg_replace('/(Agentic AI Trinity(?: Model)?)(.{0,10}?)(©|&copy;|&#169;|&amp;copy;|&amp;#169;)/iu', '$1$2<sup>SM</sup>', $breadcrumb);
-    $breadcrumb = preg_replace('/(Airo(?:’|\\\'|&rsquo;|&#8217;)s\\s+agenTriniti)\\s+(Package)/iu', '$1<sup>SM</sup> $2', $breadcrumb);
+
+    $breadcrumb = preg_replace(
+        '/(Airo(?:’|\\\'|&rsquo;|&#8217;)s\\s+agenTriniti)\\s+(Package)/iu',
+        '$1<sup>SM</sup> $2',
+        $breadcrumb
+    );
+
     return $breadcrumb;
 }
 
@@ -1860,6 +1865,24 @@ if (isset($locations[$atts['menu']])) {
     $breadcrumb .= '</nav>';
     $breadcrumb = preg_replace('/(Agentic AI Trinity(?: Model)?)(.{0,10}?)(©|&copy;|&#169;|&amp;copy;|&amp;#169;)/iu', '$1$2<sup>SM</sup>', $breadcrumb);
     $breadcrumb = preg_replace('/(Airo(?:’|\\\'|&rsquo;|&#8217;)s\\s+agenTriniti)\\s+(Package)/iu', '$1<sup>SM</sup> $2', $breadcrumb);
+    return $breadcrumb;
+}
+
+function custom_menu_page_breadcrumb_shortcode($atts) {
+    $breadcrumb = custom_menu_page_breadcrumb_shortcode_original($atts);
+    
+    global $post;
+    if (is_a($post, 'WP_Post')) {
+        $post_slug = $post->post_name;
+        $post_id = $post->ID;
+        
+        if ($post_slug === 'airocore-ai-the-delivery-engine') {
+            $breadcrumb = preg_replace('/AiroCore\s*AI(<sup\b[^>]*>SM<\/sup>|℠)?/i', 'AiroCoreAI', $breadcrumb);
+        } elseif ($post_slug === 'airos-agentriniti-package' || $post_id === 5114 || $post_id === 5431) {
+            $breadcrumb = preg_replace('/(Airo(?:’|\'|&rsquo;|&#8217;)s\s+agen[t]?Triniti)\s*(?:<sup\b[^>]*>SM<\/sup>|℠)?\s*(Package)/iu', '$1 $2', $breadcrumb);
+        }
+    }
+    
     return $breadcrumb;
 }
 add_shortcode('breadcrumb', 'custom_menu_page_breadcrumb_shortcode');

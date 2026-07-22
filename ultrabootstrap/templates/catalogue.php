@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: New Home 
+ * Template Name: Catalogue
  * The template used for displaying fullwidth page content in Publications page
  *
  * @package hitmag
