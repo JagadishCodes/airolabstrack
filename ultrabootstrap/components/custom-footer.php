@@ -8,6 +8,7 @@
 							<div class="col-md-4 col-sm-4 col-xs-6">
 								<div class="footr-col-wrap">
 									<div class="footr-title"><a href="/airos-agentriniti-package/"><h4>Airo’s agenTriniti<sup>SM</sup> Package</h4></a></div>
+									<div class="footr-title"><a href="https://trinity-atlas-app.gentlepebble-1b59190b.centralindia.azurecontainerapps.io/"><h4>agenTriniti Catalog</h4></a></div>
 									
 									<div class="footr-title"><h4>Capabilities</h4></div>
 									<ul class="footr-list">																
@@ -114,6 +115,8 @@
 						<div class="col-md-4 col-sm-4 col-6">
 							<div class="footr-col-wrap">
 									<div class="footr-title"><a href="/airos-agentriniti-package/"><h4>Airo’s agenTriniti<sup>SM</sup> Package</h4></a></div>
+								
+									<div class="footr-title"><a href="https://trinity-atlas-app.gentlepebble-1b59190b.centralindia.azurecontainerapps.io/"><h4>agenTriniti Catalog</h4></a></div>
 								
 								<div class="footr-title"><h4>Capabilities</h4></div>
 									<ul class="footr-list">																

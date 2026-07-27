@@ -1,0 +1,19 @@
+ID: 6595
+Title: ContactForm AI4 Landing
+Fields:
+Type: text*, Name: full-name
+Type: text*, Name: company
+Type: text*, Name: job-title
+Type: email*, Name: work-email
+Type: tel, Name: phone-number
+Type: select*, Name: package
+Type: textarea, Name: business-challenge
+
+Form Config:
+[text* full-name]
+[text* company]
+[text* job-title]
+[email* work-email]
+[tel phone-number]
+[select* package "Starter" "Professional" "Enterprise"]
+[textarea business-challenge placeholder "Describe your primary AI challenge"]

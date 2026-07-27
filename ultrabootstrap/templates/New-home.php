@@ -1856,7 +1856,7 @@ html, body {
       color: var(--blue);
       isolation: isolate;
     }
-    .airo-hero:not(.airo-hero--package):not(.airo-hero--proud),
+    .airo-hero:not(.airo-hero--package):not(.airo-hero--proud):not(.airo-hero--ai4),
     .airo-hero--proud {
       cursor: pointer;
     }
@@ -2247,7 +2247,7 @@ html, body {
       border-radius: 26px;
       padding: clamp(10px, 1.5vw, 16px);
       box-shadow: none;
-      max-height: calc(100vh - 170px); /* Allowed it to grow taller */
+      max-height: calc(100vh - 165px); /* Allowed it to grow taller */
       width: 100%; /* Force card to fill the wider column */
       max-width: 780px; /* Allowed it to be wider */
       display: flex;
@@ -2420,9 +2420,652 @@ html, body {
       }
     }
 
+    /* ---------- Slide 3 Specific Styling (Ai4 HTML Text Banner) ---------- */
+    .airo-hero--ai4 {
+      position: relative !important;
+      background-color: #ffffff !important;
+      background-image: url('/wp-content/uploads/2026/07/banner10.jpeg') !important;
+      background-size: cover !important;
+      background-position: right center !important;
+      background-repeat: no-repeat !important;
+      color: #0F172A;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+    }
+    .airo-hero--ai4 .airo-hero__grid {
+      display: grid !important;
+      grid-template-columns: minmax(45%, 650px) 1fr !important;
+      height: 100%;
+      width: clamp(90%, 96vw, 100%) !important;
+      max-width: 1600px !important;
+      align-items: center !important;
+      margin: 0 auto !important;
+      gap: clamp(20px, 4vw, 50px) !important;
+    }
+    .airo-hero--ai4 .airo-hero__content.ai4-hero-content {
+      position: relative;
+      height: auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      z-index: 5;
+      /* padding-left: clamp(20px, 5vw, 80px) !important; */
+      width: 100%;
+    }
+    .ai4-top-badge {
+      display: inline-flex;
+      align-items: center;
+      border: 1.5px solid #DC2626;
+      border-radius: 8px;
+      padding: 4px 14px;
+      background: #FFFFFF;
+      width: fit-content;
+      margin-bottom: 10px;
+      font-family: 'Inter', sans-serif;
+    }
+    .ai4-top-badge .attending {
+      color: #DC2626;
+      font-weight: 700;
+      font-size: clamp(16px, 1.8vw, 24px);
+      margin-right: 6px;
+      letter-spacing: -0.2px;
+    }
+    .ai4-top-badge .ai4-logo {
+      color: #0F172A;
+      font-weight: 900;
+      font-size: clamp(16px, 1.8vw, 24px);
+      display: inline-flex;
+      align-items: center;
+      letter-spacing: -0.3px;
+    }
+    .ai4-top-badge .ai4-year-stack {
+      display: inline-flex;
+      flex-direction: column;
+      font-size: clamp(8px, 0.85vw, 11px);
+      font-weight: 800;
+      line-height: 1;
+      border-left: 1.5px solid #0F172A;
+      padding-left: 3px;
+      margin: 0 4px 0 3px;
+      color: #0F172A;
+      text-align: center;
+    }
+    .ai4-top-badge .question-mark {
+      color: #DC2626;
+      font-weight: 700;
+      font-size: clamp(16px, 1.8vw, 24px);
+      margin-left: 1px;
+    }
+
+    .ai4-main-headline {
+      font-size: clamp(20px, 2.3vw, 32px);
+      font-weight: 800;
+      color: #0F172A;
+      margin: 0 0 8px 0;
+      line-height: 1.25;
+      font-family: 'Inter', sans-serif;
+    }
+    .ai4-main-headline .ai4-underline {
+      position: relative;
+      display: inline-block;
+      border-bottom: 3px solid #DC2626;
+      padding-bottom: 2px;
+    }
+
+    .ai4-subheadline {
+      font-size: clamp(15px, 1.6vw, 21px);
+      font-weight: 800;
+      color: #000000;
+      margin: 0 0 6px 0;
+      line-height: 1.3;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .ai4-description {
+      font-size: clamp(13px, 1.2vw, 16px);
+      color: #334155;
+      margin: 0 0 12px 0;
+      max-width: 580px;
+      line-height: 1.45;
+      font-weight: 500;
+      font-family: 'Inter', sans-serif;
+    }
+    .ai4-description .triniti-highlight {
+      color: #DC2626;
+      font-weight: 800;
+    }
+
+    .ai4-offers-card {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      background: #FFFFFF;
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      border-radius: 12px;
+      padding: 10px 18px;
+      box-shadow: 0 8px 24px -6px rgba(0, 0, 0, 0.08);
+      margin: 4px 0 14px 0;
+      max-width: 100%;
+      flex-wrap: wrap;
+    }
+    .ai4-offer-chip {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .ai4-chip-icon {
+      display: flex;
+      align-items: center;
+      flex-shrink: 0;
+    }
+    .ai4-chip-text {
+      display: flex;
+      flex-direction: column;
+    }
+    .ai4-discount {
+      font-size: clamp(13px, 1.2vw, 16px);
+      font-weight: 800;
+      color: #DC2626;
+      line-height: 1.1;
+    }
+    .ai4-discount .off {
+      font-weight: 700;
+      color: #0F172A;
+      font-size: clamp(11px, 1vw, 13px);
+    }
+    .ai4-package {
+      font-size: clamp(9px, 0.85vw, 11px);
+      color: #475569;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    .ai4-chip-divider {
+      width: 1px;
+      height: 30px;
+      background: #CBD5E1;
+      margin: 0 2px;
+      flex-shrink: 0;
+    }
+
+    .ai4-cta-row {
+      position: relative !important;
+      left: 0 !important;
+      bottom: 0 !important;
+      display: flex !important;
+      flex-direction: row !important;
+      flex-wrap: nowrap !important;
+      align-items: center !important;
+      gap: 16px;
+      z-index: 15;
+      width: auto !important;
+      margin-top: 4px;
+    }
+    .ai4-btn-red {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: #FF0000 !important;
+      color: #FFFFFF !important;
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+      font-size: 15.5px;
+      padding: 11px 24px;
+      border-radius: 9px;
+      text-decoration: none !important;
+      border: 2px solid #FF0000;
+      box-shadow: 0 4px 14px rgba(255, 0, 0, 0.3);
+      transition: all 0.25s ease;
+      cursor: pointer;
+      line-height: 1.2;
+      white-space: nowrap;
+    }
+    .ai4-btn-red:hover {
+      background: #D60000 !important;
+      border-color: #D60000;
+      color: #FFFFFF !important;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(255, 0, 0, 0.4);
+      text-decoration: none !important;
+    }
+    .ai4-btn-outline {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: #FFFFFF !important;
+      color: #FF0000 !important;
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+      font-size: 15.5px;
+      padding: 11px 24px;
+      border-radius: 9px;
+      text-decoration: none !important;
+      border: 2px solid #FF0000;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      transition: all 0.25s ease;
+      cursor: pointer;
+      line-height: 1.2;
+      white-space: nowrap;
+    }
+    .ai4-btn-outline:hover {
+      background: #FF0000 !important;
+      color: #FFFFFF !important;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(255, 0, 0, 0.3);
+      text-decoration: none !important;
+    }
+    @media (min-width: 1024px) {
+      .airo-hero--ai4 {
+        background-image: url('/wp-content/uploads/2026/07/banner10.jpeg') !important;
+        background-size: cover !important;
+        background-position: right center !important;
+        background-repeat: no-repeat !important;
+        background-color: #ffffff !important;
+      }
+      .ai4-btn-red,
+      .ai4-btn-outline {
+        font-size: 15.5px !important;
+        padding: 11px 24px !important;
+        border-radius: 9px !important;
+      }
+    }
+    @media (max-width: 1280px) and (min-width: 1024px) {
+      .airo-hero {
+        height: calc(100vh - 160px) !important;
+        min-height: 440px !important;
+        max-height: 520px !important;
+      }
+      .airo-hero--ai4 .airo-hero__grid {
+        grid-template-columns: minmax(40%, 540px) 1fr !important;
+        gap: clamp(16px, 2vw, 30px) !important;
+      }
+      .airo-hero--ai4 .ai4-hero-content {
+        padding-left: clamp(15px, 3vw, 40px) !important;
+      }
+      .ai4-offers-card {
+        flex-wrap: nowrap !important;
+        gap: 8px !important;
+        padding: 8px 10px !important;
+      }
+      .ai4-offer-chip {
+        gap: 5px !important;
+      }
+      .ai4-discount {
+        font-size: clamp(12px, 1.1vw, 14px) !important;
+      }
+      .ai4-discount .off {
+        font-size: clamp(10px, 0.9vw, 11px) !important;
+      }
+      .ai4-package {
+        font-size: clamp(8px, 0.75vw, 10px) !important;
+      }
+    }
+    @media (min-width: 768px) and (max-width: 1024px), (min-width: 768px) and (max-width: 1366px) and (hover: none), (min-width: 768px) and (max-width: 1366px) and (pointer: coarse) {
+      .airo-hero--ai4 {
+        background-image: url('/wp-content/uploads/2026/07/banner10.jpeg') !important;
+        background-size: cover !important;
+        background-position: right center !important;
+        background-repeat: no-repeat !important;
+      }
+      .ai4-top-badge {
+        padding: 3px 10px;
+        margin-bottom: 8px;
+      }
+      .ai4-main-headline {
+        font-size: 22px !important;
+        margin-bottom: 6px;
+      }
+      .ai4-subheadline {
+        font-size: 15px !important;
+        margin-bottom: 6px;
+      }
+      .ai4-description {
+        font-size: 12px !important;
+        margin-bottom: 10px;
+      }
+      .ai4-offers-card {
+        padding: 6px 10px !important;
+        gap: 6px !important;
+        margin-bottom: 12px !important;
+        flex-wrap: nowrap !important;
+      }
+      .ai4-offer-chip {
+        gap: 4px !important;
+      }
+      .ai4-chip-icon svg {
+        width: 18px !important;
+        height: 20px !important;
+      }
+      .ai4-discount {
+        font-size: 11px !important;
+      }
+      .ai4-discount .off {
+        font-size: 9px !important;
+      }
+      .ai4-package {
+        font-size: 8px !important;
+      }
+      .ai4-chip-divider {
+        height: 22px !important;
+        margin: 0 1px !important;
+      }
+      .ai4-btn-red,
+      .ai4-btn-outline {
+        font-size: 13px !important;
+        padding: 8px 18px !important;
+        border-radius: 7px !important;
+      }
+    }
+    /* General mobile styles for Slide 3 (max-width: 767px) */
+    @media (max-width: 767px) {
+      .airo-hero--ai4 {
+        height: 220px !important;
+        min-height: 220px !important;
+        max-height: 220px !important;
+        width: 100% !important;
+        overflow: hidden !important;
+        display: flex !important;
+        align-items: center !important;
+        padding: 12px clamp(15px, 4vw, 20px) 10px !important;
+        box-sizing: border-box !important;
+        background-image: url('/wp-content/uploads/2026/07/banner10.jpeg') !important;
+        background-size: cover !important;
+        background-position: right center !important;
+        background-repeat: no-repeat !important;
+      }
+      .airo-hero--ai4 .airo-hero__grid {
+        grid-template-columns: 1fr !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: flex-start !important;
+        text-align: left !important;
+        height: 100% !important;
+        width: 100% !important;
+        margin: 0 !important;
+        gap: 0 !important;
+      }
+      .airo-hero--ai4 .airo-hero__visual {
+        display: none !important;
+      }
+      .airo-hero--ai4 .ai4-hero-content {
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: flex-start !important;
+        text-align: left !important;
+        height: 100% !important;
+        width: 100% !important;
+        max-width: 60% !important;
+        margin-left: 0 !important;
+        margin-right: auto !important;
+      }
+      .airo-hero--ai4 .ai4-top-badge {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+        padding: 2.5px 6px !important;
+        margin-bottom: 4px !important;
+        margin-left: 0 !important;
+        border-radius: 4px !important;
+        border-width: 1.5px !important;
+        text-align: left !important;
+      }
+      .airo-hero--ai4 .ai4-top-badge .attending,
+      .airo-hero--ai4 .ai4-top-badge .ai4-logo,
+      .airo-hero--ai4 .ai4-top-badge .question-mark {
+        font-size: 0.52rem !important;
+      }
+      .airo-hero--ai4 .ai4-top-badge .ai4-year-stack {
+        font-size: 4.5px !important;
+        line-height: 1 !important;
+        margin: 0 2px 0 2px !important;
+        padding-left: 2px !important;
+      }
+      .airo-hero--ai4 .ai4-main-headline {
+        font-size: clamp(0.68rem, 2.6vw, 0.8rem) !important;
+        line-height: 1.15 !important;
+        margin: 0 0 4px 0 !important;
+        text-align: left !important;
+      }
+      .airo-hero--ai4 .ai4-main-headline .ai4-underline {
+        border-bottom-width: 1.5px !important;
+        padding-bottom: 1px !important;
+      }
+      .airo-hero--ai4 .ai4-subheadline {
+        font-size: clamp(0.5rem, 1.8vw, 0.58rem) !important;
+        line-height: 1.2 !important;
+        margin: 0 0 4px 0 !important;
+        text-align: left !important;
+      }
+      .airo-hero--ai4 .ai4-description {
+        font-size: clamp(0.44rem, 1.5vw, 0.5rem) !important;
+        line-height: 1.25 !important;
+        margin: 0 0 6px 0 !important;
+        text-align: left !important;
+      }
+      .airo-hero--ai4 .ai4-offers-card {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+        padding: 1.5px 3.5px !important;
+        gap: 2px !important;
+        margin: 0 0 6px 0 !important;
+        margin-left: 0 !important;
+        border-radius: 3px !important;
+        flex-wrap: nowrap !important;
+        max-width: 100% !important;
+        text-align: left !important;
+      }
+      .airo-hero--ai4 .ai4-offer-chip {
+        gap: 2px !important;
+        display: flex !important;
+        align-items: center !important;
+      }
+      .airo-hero--ai4 .ai4-chip-icon svg {
+        width: 8.5px !important;
+        height: 10px !important;
+      }
+      .airo-hero--ai4 .ai4-discount {
+        font-size: 6.2px !important;
+        line-height: 1 !important;
+      }
+      .airo-hero--ai4 .ai4-discount .off {
+        font-size: 5px !important;
+      }
+      .airo-hero--ai4 .ai4-package {
+        font-size: 4.5px !important;
+      }
+      .airo-hero--ai4 .ai4-chip-divider {
+        height: 9.5px !important;
+        margin: 0 1px !important;
+        width: 1px !important;
+      }
+      .airo-hero--ai4 .ai4-cta-row {
+        position: relative !important;
+        left: 0 !important;
+        bottom: 0 !important;
+        margin-top: 5px !important;
+        margin-bottom: 0 !important;
+        padding: 0 !important;
+        margin-left: 0 !important;
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: wrap !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+        gap: 4px !important;
+        width: 100% !important;
+      }
+      .airo-hero--ai4 .ai4-btn-red,
+      .airo-hero--ai4 .ai4-btn-outline {
+        font-family: 'Inter', sans-serif !important;
+        font-weight: 700 !important;
+        font-size: 0.44rem !important;
+        padding: 2.5px 5px !important;
+        border-radius: 3px !important;
+        line-height: 1.1 !important;
+        white-space: nowrap !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        box-sizing: border-box !important;
+        cursor: pointer !important;
+      }
+      .airo-hero--ai4 .ai4-btn-red {
+        background: #FF0000 !important;
+        color: #FFFFFF !important;
+        border: 1.5px solid #FF0000 !important;
+        box-shadow: 0 2px 6px -3px rgba(255, 0, 0, 0.5) !important;
+        transition: transform .25s ease, box-shadow .25s ease !important;
+      }
+      .airo-hero--ai4 .ai4-btn-outline {
+        background: #FFFFFF !important;
+        color: #FF0000 !important;
+        border: 1.5px solid #FF0000 !important;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05) !important;
+        transition: transform .25s ease, box-shadow .25s ease !important;
+      }
+      .airo-hero--ai4 .ai4-btn-red:hover,
+      .airo-hero--ai4 .ai4-btn-red:active {
+        background: #D60000 !important;
+        border-color: #D60000 !important;
+        color: #FFFFFF !important;
+        transform: translateY(-1px) !important;
+        box-shadow: 0 4px 10px -3px rgba(255, 0, 0, 0.6) !important;
+      }
+      .airo-hero--ai4 .ai4-btn-outline:hover,
+      .airo-hero--ai4 .ai4-btn-outline:active {
+        background: #FF0000 !important;
+        color: #FFFFFF !important;
+        transform: translateY(-1px) !important;
+        box-shadow: 0 3px 8px rgba(255, 0, 0, 0.3) !important;
+      }
+    }
+
+    /* Specific breakpoint overrides for 321px - 375px mobile devices */
+    @media (min-width: 321px) and (max-width: 375px) {
+      .airo-hero--ai4 .ai4-hero-content {
+        max-width: 56% !important;
+      }
+      .airo-hero--ai4 .ai4-top-badge {
+        padding: 1px 4px !important;
+        margin-bottom: 2px !important;
+      }
+      .airo-hero--ai4 .ai4-top-badge .attending,
+      .airo-hero--ai4 .ai4-top-badge .ai4-logo,
+      .airo-hero--ai4 .ai4-top-badge .question-mark {
+        font-size: 0.45rem !important;
+      }
+      .airo-hero--ai4 .ai4-main-headline {
+        font-size: 0.62rem !important;
+        line-height: 1.12 !important;
+        margin-bottom: 2px !important;
+      }
+      .airo-hero--ai4 .ai4-subheadline {
+        font-size: 0.45rem !important;
+        line-height: 1.15 !important;
+        margin-bottom: 2px !important;
+      }
+      .airo-hero--ai4 .ai4-description {
+        font-size: 0.39rem !important;
+        line-height: 1.18 !important;
+        margin-bottom: 4px !important;
+      }
+      .airo-hero--ai4 .ai4-offers-card {
+        padding: 1px 3px !important;
+        gap: 1.8px !important;
+        margin-bottom: 4px !important;
+      }
+      .airo-hero--ai4 .ai4-chip-icon svg {
+        width: 8px !important;
+        height: 9px !important;
+      }
+      .airo-hero--ai4 .ai4-discount {
+        font-size: 5.8px !important;
+      }
+      .airo-hero--ai4 .ai4-discount .off {
+        font-size: 4.8px !important;
+      }
+      .airo-hero--ai4 .ai4-package {
+        font-size: 4.2px !important;
+      }
+      .airo-hero--ai4 .ai4-cta-row {
+        margin-top: 4px !important;
+        margin-bottom: 12px !important;
+        gap: 3.5px !important;
+      }
+      .airo-hero--ai4 .ai4-btn-red,
+      .airo-hero--ai4 .ai4-btn-outline {
+        font-size: 0.41rem !important;
+        padding: 2px 4px !important;
+      }
+    }
+
+    /* Specific breakpoint overrides for ultra-small mobile devices (up to 320px width) */
+    @media (max-width: 320px) {
+      .airo-hero--ai4 .ai4-hero-content {
+        max-width: 58% !important;
+      }
+      .airo-hero--ai4 .ai4-top-badge {
+        padding: 1px 3px !important;
+        margin-bottom: 2px !important;
+      }
+      .airo-hero--ai4 .ai4-top-badge .attending,
+      .airo-hero--ai4 .ai4-top-badge .ai4-logo,
+      .airo-hero--ai4 .ai4-top-badge .question-mark {
+        font-size: 0.42rem !important;
+      }
+      .airo-hero--ai4 .ai4-main-headline {
+        font-size: 0.58rem !important;
+        line-height: 1.1 !important;
+        margin-bottom: 1.5px !important;
+      }
+      .airo-hero--ai4 .ai4-subheadline {
+        font-size: 0.42rem !important;
+        line-height: 1.12 !important;
+        margin-bottom: 1.5px !important;
+      }
+      .airo-hero--ai4 .ai4-description {
+        font-size: 0.36rem !important;
+        line-height: 1.15 !important;
+        margin-bottom: 3px !important;
+      }
+      .airo-hero--ai4 .ai4-offers-card {
+        padding: 1px 2.5px !important;
+        gap: 1.5px !important;
+        margin-bottom: 3px !important;
+      }
+      .airo-hero--ai4 .ai4-chip-icon svg {
+        width: 7.5px !important;
+        height: 8.5px !important;
+      }
+      .airo-hero--ai4 .ai4-discount {
+        font-size: 5.5px !important;
+      }
+      .airo-hero--ai4 .ai4-discount .off {
+        font-size: 4.2px !important;
+      }
+      .airo-hero--ai4 .ai4-package {
+        font-size: 3.8px !important;
+      }
+      .airo-hero--ai4 .ai4-cta-row {
+        margin-top: 3px !important;
+        margin-bottom: 10px !important;
+        gap: 3px !important;
+      }
+      .airo-hero--ai4 .ai4-btn-red,
+      .airo-hero--ai4 .ai4-btn-outline {
+        font-size: 0.38rem !important;
+        padding: 1.5px 3.5px !important;
+      }
+    }
+
 
     @media (min-width: 768px) and (max-width: 1024px) {
-      .airo-hero:not(.airo-hero--package):not(.airo-hero--proud) {
+      .airo-hero:not(.airo-hero--package):not(.airo-hero--proud):not(.airo-hero--ai4) {
         height: 420px !important;
         min-height: 420px !important;
         max-height: 420px !important;
@@ -2432,45 +3075,45 @@ html, body {
         align-items: center !important;
         overflow: hidden !important;
       }
-      .airo-hero:not(.airo-hero--package):not(.airo-hero--proud) .airo-hero__grid {
+      .airo-hero:not(.airo-hero--package):not(.airo-hero--proud):not(.airo-hero--ai4) .airo-hero__grid {
         gap: 20px !important;
         align-items: center !important;
       }
-      .airo-hero:not(.airo-hero--package):not(.airo-hero--proud) .airo-eyebrow {
+      .airo-hero:not(.airo-hero--package):not(.airo-hero--proud):not(.airo-hero--ai4) .airo-eyebrow {
         font-size: 10px !important;
         padding: 4px 10px !important;
         margin-bottom: 4px !important;
       }
-      .airo-hero:not(.airo-hero--package):not(.airo-hero--proud) .airo-headline {
+      .airo-hero:not(.airo-hero--package):not(.airo-hero--proud):not(.airo-hero--ai4) .airo-headline {
         font-size: 2.2rem !important;
         margin-top: 0 !important;
         line-height: 1.1 !important;
       }
-      .airo-hero:not(.airo-hero--package):not(.airo-hero--proud) .airo-divider {
+      .airo-hero:not(.airo-hero--package):not(.airo-hero--proud):not(.airo-hero--ai4) .airo-divider {
         margin-top: 6px !important;
       }
-      .airo-hero:not(.airo-hero--package):not(.airo-hero--proud) .airo-subhead {
+      .airo-hero:not(.airo-hero--package):not(.airo-hero--proud):not(.airo-hero--ai4) .airo-subhead {
         font-size: 1rem !important;
         margin-top: 6px !important;
       }
-      .airo-hero:not(.airo-hero--package):not(.airo-hero--proud) .airo-badge {
+      .airo-hero:not(.airo-hero--package):not(.airo-hero--proud):not(.airo-hero--ai4) .airo-badge {
         font-size: 0.95rem !important;
         padding: 6px 14px !important;
         margin-top: 6px !important;
         margin-bottom: 6px !important;
       }
-      .airo-hero:not(.airo-hero--package):not(.airo-hero--proud) .airo-stats li {
+      .airo-hero:not(.airo-hero--package):not(.airo-hero--proud):not(.airo-hero--ai4) .airo-stats li {
         font-size: 11px !important;
         padding: 4px 8px !important;
       }
-      .airo-hero:not(.airo-hero--package):not(.airo-hero--proud) .airo-cta-row {
+      .airo-hero:not(.airo-hero--package):not(.airo-hero--proud):not(.airo-hero--ai4) .airo-cta-row {
         margin-top: 10px !important;
       }
-      .airo-hero:not(.airo-hero--package):not(.airo-hero--proud) .airo-cta {
+      .airo-hero:not(.airo-hero--package):not(.airo-hero--proud):not(.airo-hero--ai4) .airo-cta {
         font-size: 12px !important;
         padding: 8px 16px !important;
       }
-      .airo-hero:not(.airo-hero--package):not(.airo-hero--proud) .airo-visual-card {
+      .airo-hero:not(.airo-hero--package):not(.airo-hero--proud):not(.airo-hero--ai4) .airo-visual-card {
         padding: 8px !important;
         max-height: 390px !important; /* Increased slightly to accommodate scaled image */
         border-radius: 16px !important;
@@ -2480,16 +3123,16 @@ html, body {
         background: transparent !important;
         max-width: 100% !important;
       }
-      .airo-hero:not(.airo-hero--package):not(.airo-hero--proud) .airo-visual-card img {
+      .airo-hero:not(.airo-hero--package):not(.airo-hero--proud):not(.airo-hero--ai4) .airo-visual-card img {
         height: 100% !important;
         max-height: 360px !important;
         width: 100% !important;
         object-fit: contain !important;
         object-position: center !important;
-        transform: scale(1.12) !important; /* Scaled slightly larger for better text clarity */
+        transform: scale(1) !important; /* Scale removed to prevent overflow on tablet */
         transform-origin: center center !important;
       }
-      .airo-hero:not(.airo-hero--package):not(.airo-hero--proud) .airo-live-tag {
+      .airo-hero:not(.airo-hero--package):not(.airo-hero--proud):not(.airo-hero--ai4) .airo-live-tag {
         font-size: 10px !important;
         padding: 6px 12px !important;
         bottom: -12px !important;
@@ -2507,13 +3150,169 @@ html, body {
         margin-top: 0 !important;
         margin-bottom: 0 !important;
       }
+      .airo-hero.airo-hero--ai4 {
+        height: 420px !important;
+        min-height: 420px !important;
+        max-height: 420px !important;
+        width: 100% !important;
+        overflow: hidden !important;
+        display: flex !important;
+        align-items: center !important;
+        padding: 20px 30px !important;
+        box-sizing: border-box !important;
+        background-image: url('/wp-content/uploads/2026/07/banner10.jpeg') !important;
+        background-size: cover !important;
+        background-position: right center !important;
+        background-repeat: no-repeat !important;
+      }
+      .airo-hero.airo-hero--ai4 .airo-hero__grid {
+        grid-template-columns: 1fr !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: flex-start !important;
+        text-align: left !important;
+        height: 100% !important;
+        width: 100% !important;
+        margin: 0 !important;
+        gap: 0 !important;
+      }
+      .airo-hero.airo-hero--ai4 .airo-hero__visual {
+        display: none !important;
+      }
+      .airo-hero.airo-hero--ai4 .ai4-hero-content {
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: flex-start !important;
+        text-align: left !important;
+        height: 100% !important;
+        width: 100% !important;
+        max-width: 58% !important;
+        margin-left: 0 !important;
+        margin-right: auto !important;
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+      }
+      .airo-hero.airo-hero--ai4 .ai4-top-badge {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+        padding: 3px 10px !important;
+        margin-bottom: 8px !important;
+        margin-left: 0 !important;
+        border-radius: 5px !important;
+        border-width: 1.5px !important;
+        text-align: left !important;
+      }
+      .airo-hero.airo-hero--ai4 .ai4-top-badge .attending,
+      .airo-hero.airo-hero--ai4 .ai4-top-badge .ai4-logo,
+      .airo-hero.airo-hero--ai4 .ai4-top-badge .question-mark {
+        font-size: 0.82rem !important;
+      }
+      .airo-hero.airo-hero--ai4 .ai4-top-badge .ai4-year-stack {
+        font-size: 8px !important;
+        line-height: 1 !important;
+        margin: 0 3px 0 2px !important;
+        padding-left: 2px !important;
+      }
+      .airo-hero.airo-hero--ai4 .ai4-main-headline {
+        font-size: clamp(1.4rem, 2.8vw, 1.8rem) !important;
+        line-height: 1.2 !important;
+        margin: 0 0 8px 0 !important;
+        text-align: left !important;
+      }
+      .airo-hero.airo-hero--ai4 .ai4-main-headline .ai4-underline {
+        border-bottom-width: 2px !important;
+        padding-bottom: 2px !important;
+      }
+      .airo-hero.airo-hero--ai4 .ai4-subheadline {
+        font-size: clamp(0.95rem, 1.8vw, 1.15rem) !important;
+        line-height: 1.3 !important;
+        margin: 0 0 8px 0 !important;
+        text-align: left !important;
+      }
+      .airo-hero.airo-hero--ai4 .ai4-description {
+        font-size: clamp(0.85rem, 1.5vw, 1rem) !important;
+        line-height: 1.4 !important;
+        margin: 0 0 12px 0 !important;
+        text-align: left !important;
+      }
+      .airo-hero.airo-hero--ai4 .ai4-offers-card {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+        padding: 4px 10px !important;
+        gap: 8px !important;
+        margin: 0 0 14px 0 !important;
+        margin-left: 0 !important;
+        border-radius: 6px !important;
+        flex-wrap: nowrap !important;
+        max-width: 100% !important;
+        text-align: left !important;
+      }
+      .airo-hero.airo-hero--ai4 .ai4-offer-chip {
+        gap: 4px !important;
+        display: flex !important;
+        align-items: center !important;
+      }
+      .airo-hero.airo-hero--ai4 .ai4-chip-icon svg {
+        width: 16px !important;
+        height: 18px !important;
+      }
+      .airo-hero.airo-hero--ai4 .ai4-discount {
+        font-size: 11px !important;
+        line-height: 1.1 !important;
+      }
+      .airo-hero.airo-hero--ai4 .ai4-discount .off {
+        font-size: 9px !important;
+      }
+      .airo-hero.airo-hero--ai4 .ai4-package {
+        font-size: 8px !important;
+      }
+      .airo-hero.airo-hero--ai4 .ai4-chip-divider {
+        height: 20px !important;
+        margin: 0 2px !important;
+        width: 1px !important;
+      }
+      .airo-hero.airo-hero--ai4 .ai4-cta-row {
+        position: relative !important;
+        left: 0 !important;
+        bottom: 0 !important;
+        margin-top: 4px !important;
+        margin-bottom: 0 !important;
+        padding: 0 !important;
+        margin-left: 0 !important;
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+        gap: 10px !important;
+        width: 100% !important;
+      }
+      .airo-hero.airo-hero--ai4 .ai4-btn-red,
+      .airo-hero.airo-hero--ai4 .ai4-btn-outline {
+        font-family: 'Inter', sans-serif !important;
+        font-weight: 700 !important;
+        font-size: 0.8rem !important;
+        padding: 8px 16px !important;
+        border-radius: 6px !important;
+        line-height: 1.2 !important;
+        white-space: nowrap !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        box-sizing: border-box !important;
+        cursor: pointer !important;
+      }
     }
     @media (max-width: 767px) {
       .hero-main-carousel {
         margin-top: 70px !important; /* Push carousel below sticky nav */
       }
       .hero-main-carousel .slick-dots {
-        bottom: 2px !important;
+        bottom: 8px !important;
       }
     }
 
@@ -2522,23 +3321,23 @@ html, body {
 
       /* === Slide 1 Mobile: Diagram Hidden, Text Always Visible === */
 
-      .airo-hero:not(.airo-hero--package):not(.airo-hero--proud) .airo-hero__grid {
+      .airo-hero:not(.airo-hero--package):not(.airo-hero--proud):not(.airo-hero--ai4) .airo-hero__grid {
         grid-template-columns: 1fr;
         display: flex !important;
         flex-direction: column;
         gap: 0;
       }
-      .airo-hero:not(.airo-hero--package):not(.airo-hero--proud) .airo-hero__visual {
+      .airo-hero:not(.airo-hero--package):not(.airo-hero--proud):not(.airo-hero--ai4) .airo-hero__visual {
         display: none !important;
       }
-      .airo-hero:not(.airo-hero--package):not(.airo-hero--proud) .airo-hero__content {
+      .airo-hero:not(.airo-hero--package):not(.airo-hero--proud):not(.airo-hero--ai4) .airo-hero__content {
         opacity: 1 !important;
         max-height: none !important;
         overflow: visible !important;
         pointer-events: auto !important;
       }
       /* Slide 1 mobile: set height to 220px to match other slides */
-      .airo-hero:not(.airo-hero--package):not(.airo-hero--proud) {
+      .airo-hero:not(.airo-hero--package):not(.airo-hero--proud):not(.airo-hero--ai4) {
         height: 220px !important;
         min-height: 220px !important;
         max-height: 220px !important;
@@ -2546,7 +3345,7 @@ html, body {
         padding: 12px clamp(15px, 4vw, 20px) 10px !important;
       }
 
-      .airo-hero:not(.airo-hero--package):not(.airo-hero--proud) .airo-visual-card {
+      .airo-hero:not(.airo-hero--package):not(.airo-hero--proud):not(.airo-hero--ai4) .airo-visual-card {
         max-height: 185px !important;
         padding: 0 !important;
         border: none !important;
@@ -2554,7 +3353,7 @@ html, body {
         background: transparent !important;
       }
 
-      .airo-hero:not(.airo-hero--package):not(.airo-hero--proud) .airo-hero__content {
+      .airo-hero:not(.airo-hero--package):not(.airo-hero--proud):not(.airo-hero--ai4) .airo-hero__content {
         display: flex !important;
         flex-direction: column !important;
         justify-content: center !important;
@@ -2564,7 +3363,7 @@ html, body {
         width: 100% !important;
       }
 
-      .airo-hero:not(.airo-hero--package):not(.airo-hero--proud) .airo-headline {
+      .airo-hero:not(.airo-hero--package):not(.airo-hero--proud):not(.airo-hero--ai4) .airo-headline {
         font-size: clamp(1.15rem, 5.5vw, 1.4rem) !important;
         line-height: 1.1 !important;
         margin-top: 0 !important;
@@ -2572,12 +3371,12 @@ html, body {
         width: 100% !important;
       }
 
-      .airo-hero:not(.airo-hero--package):not(.airo-hero--proud) .airo-divider {
+      .airo-hero:not(.airo-hero--package):not(.airo-hero--proud):not(.airo-hero--ai4) .airo-divider {
         margin-top: 6px !important;
         height: 2px !important;
       }
 
-      .airo-hero:not(.airo-hero--package):not(.airo-hero--proud) .airo-subhead {
+      .airo-hero:not(.airo-hero--package):not(.airo-hero--proud):not(.airo-hero--ai4) .airo-subhead {
         font-size: clamp(0.72rem, 2.8vw, 0.82rem) !important;
         margin-top: 6px !important;
         line-height: 1.3 !important;
@@ -2585,7 +3384,7 @@ html, body {
         width: 100% !important;
       }
 
-      .airo-hero:not(.airo-hero--package):not(.airo-hero--proud) .airo-badge {
+      .airo-hero:not(.airo-hero--package):not(.airo-hero--proud):not(.airo-hero--ai4) .airo-badge {
         font-size: 0.65rem !important;
         padding: 4px 8px !important;
         margin-top: 6px !important;
@@ -2596,7 +3395,7 @@ html, body {
         max-width: 100% !important;
       }
 
-      .airo-hero:not(.airo-hero--package):not(.airo-hero--proud) .airo-stats {
+      .airo-hero:not(.airo-hero--package):not(.airo-hero--proud):not(.airo-hero--ai4) .airo-stats {
         display: flex !important;
         flex-wrap: wrap !important;
         gap: 4px !important;
@@ -2608,7 +3407,7 @@ html, body {
         justify-content: flex-start !important;
       }
 
-      .airo-hero:not(.airo-hero--package):not(.airo-hero--proud) .airo-stats li {
+      .airo-hero:not(.airo-hero--package):not(.airo-hero--proud):not(.airo-hero--ai4) .airo-stats li {
         font-size: 9.5px !important;
         padding: 3px 6px !important;
         width: fit-content !important;
@@ -2618,7 +3417,7 @@ html, body {
 
 
 
-      .airo-hero:not(.airo-hero--package):not(.airo-hero--proud) .airo-cta-row {
+      .airo-hero:not(.airo-hero--package):not(.airo-hero--proud):not(.airo-hero--ai4) .airo-cta-row {
         margin-top: 10px !important;
         margin-bottom: 0 !important;
         padding: 0 !important;
@@ -2627,7 +3426,7 @@ html, body {
         width: 100% !important;
       }
 
-      .airo-hero:not(.airo-hero--package):not(.airo-hero--proud) .airo-cta {
+      .airo-hero:not(.airo-hero--package):not(.airo-hero--proud):not(.airo-hero--ai4) .airo-cta {
         font-size: 0.66rem !important;
         padding: 6px 12px !important;
         border-radius: 5px !important;
@@ -2639,7 +3438,7 @@ html, body {
         gap: 3px;
       }
 
-      .airo-hero:not(.airo-hero--package):not(.airo-hero--proud) .airo-cta svg {
+      .airo-hero:not(.airo-hero--package):not(.airo-hero--proud):not(.airo-hero--ai4) .airo-cta svg {
         width: 12px !important;
         height: 12px !important;
         flex-shrink: 0;
@@ -2780,7 +3579,66 @@ html, body {
         gap: 6px;
       }
 
+      /* Slide 3 mobile: HTML text banner with banner10.jpeg background */
+      .airo-hero--ai4 {
+        height: 220px !important;
+        min-height: 220px !important;
+        max-height: 220px !important;
+        width: 100% !important;
+        overflow: hidden !important;
+        display: flex !important;
+        align-items: center !important;
+        padding: 8px 16px !important;
+        background-image: url('/wp-content/uploads/2026/07/banner10.jpeg') !important;
+        background-size: cover !important;
+        background-position: right center !important;
+        background-repeat: no-repeat !important;
+      }
+    }
 
+    @media (max-width: 767px) {
+      .airo-hero,
+      .airo-hero--package,
+      .airo-hero--ai4 {
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+      }
+      .airo-hero .airo-hero__grid,
+      .airo-hero .airo-hero__content {
+        align-items: flex-start !important;
+        text-align: left !important;
+      }
+      .airo-hero .airo-headline,
+      .airo-hero .airo-subhead,
+      .airo-hero .airo-badge {
+        text-align: left !important;
+        justify-content: flex-start !important;
+      }
+      .airo-hero .airo-stats {
+        justify-content: flex-start !important;
+      }
+      .airo-hero .airo-stats li {
+        text-align: left !important;
+      }
+      .airo-hero .airo-cta-row {
+        align-items: flex-start !important;
+        justify-content: flex-start !important;
+      }
+      .airo-hero .airo-cta {
+        justify-content: flex-start !important;
+        text-align: left !important;
+      }
+      .airo-hero--ai4 .ai4-main-headline,
+      .airo-hero--ai4 .ai4-subheadline,
+      .airo-hero--ai4 .ai4-description,
+      .airo-hero--ai4 .ai4-top-badge,
+      .airo-hero--ai4 .ai4-offers-card {
+        text-align: left !important;
+        align-items: flex-start !important;
+      }
+      .airo-hero--ai4 .ai4-cta-row {
+        justify-content: flex-start !important;
+      }
     }
 
     @media (max-width: 1024px), (hover: none) and (max-width: 1366px), (pointer: coarse) and (max-width: 1366px) {
@@ -3040,6 +3898,116 @@ html, body {
       </div>
     </div>
   </section>
+
+  <!-- Slide 3: AI4 2026 Banner -->
+  <a href="/agentriniti-early-bird-offer/" class="airo-hero airo-hero--ai4" aria-label="AI4 2026 Banner hero" style="display:block; text-decoration:none;">
+    <div class="airo-hero__grid">
+      <div class="airo-hero__content ai4-hero-content">
+        
+        <div class="ai4-top-badge">
+          <span class="attending">Attending</span>
+          <span class="ai4-logo">
+            Ai4
+            <span class="ai4-year-stack">
+              <span>20</span>
+              <span>26</span>
+            </span>
+          </span>
+          <span class="question-mark">?</span>
+        </div>
+
+        <h2 class="ai4-main-headline">
+          <span class="ai4-underline">Schedule a meeting</span> with Airo's leadership
+        </h2>
+
+        <p class="ai4-subheadline">
+          Bring your toughest AI use cases.
+        </p>
+
+        <p class="ai4-description">
+          Discover how to turn it into measurable business impact and explore the <span class="triniti-highlight">agenTriniti</span> early-bird offer.
+        </p>
+
+        <div class="ai4-offers-card">
+          <div class="ai4-offer-chip">
+            <div class="ai4-chip-icon">
+              <svg width="22" height="24" viewBox="0 0 24 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 1L2 5V12C2 18.5 6.3 24.1 12 25C17.7 24.1 22 18.5 22 12V5L12 1Z" fill="url(#goldGrad)" stroke="#EAB308" stroke-width="1.5"/>
+                <path d="M9 13L11 15L15 10" stroke="#713F12" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                <defs>
+                  <linearGradient id="goldGrad" x1="12" y1="1" x2="12" y2="25" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#FEF08A"/>
+                    <stop offset="0.5" stop-color="#EAB308"/>
+                    <stop offset="1" stop-color="#CA8A04"/>
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
+            <div class="ai4-chip-text">
+              <div class="ai4-discount"><span class="pct">15%</span> <span class="off">Off</span></div>
+              <div class="ai4-package">on Gold package</div>
+            </div>
+          </div>
+
+          <div class="ai4-chip-divider"></div>
+
+          <div class="ai4-offer-chip">
+            <div class="ai4-chip-icon">
+              <svg width="22" height="24" viewBox="0 0 24 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 1L2 5V12C2 18.5 6.3 24.1 12 25C17.7 24.1 22 18.5 22 12V5L12 1Z" fill="url(#platGrad)" stroke="#2563EB" stroke-width="1.5"/>
+                <path d="M9 13L11 15L15 10" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                <defs>
+                  <linearGradient id="platGrad" x1="12" y1="1" x2="12" y2="25" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#60A5FA"/>
+                    <stop offset="0.5" stop-color="#2563EB"/>
+                    <stop offset="1" stop-color="#1E3A8A"/>
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
+            <div class="ai4-chip-text">
+              <div class="ai4-discount"><span class="pct">15%</span> <span class="off">Off</span></div>
+              <div class="ai4-package">on Platinum package</div>
+            </div>
+          </div>
+
+          <div class="ai4-chip-divider"></div>
+
+          <div class="ai4-offer-chip">
+            <div class="ai4-chip-icon">
+              <svg width="22" height="24" viewBox="0 0 24 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 1L2 5V12C2 18.5 6.3 24.1 12 25C17.7 24.1 22 18.5 22 12V5L12 1Z" fill="url(#silvGrad)" stroke="#94A3B8" stroke-width="1.5"/>
+                <path d="M9 13L11 15L15 10" stroke="#334155" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                <defs>
+                  <linearGradient id="silvGrad" x1="12" y1="1" x2="12" y2="25" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#F1F5F9"/>
+                    <stop offset="0.5" stop-color="#94A3B8"/>
+                    <stop offset="1" stop-color="#64748B"/>
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
+            <div class="ai4-chip-text">
+              <div class="ai4-discount"><span class="pct">10%</span> <span class="off">Off</span></div>
+              <div class="ai4-package">on Silver package</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="ai4-cta-row">
+          <span class="ai4-btn-red" style="pointer-events: none;">
+            Book a meeting
+          </span>
+          <span class="ai4-btn-outline" style="pointer-events: none;">
+            Explore the early-bird offer
+          </span>
+        </div>
+
+      </div>
+      <div class="airo-hero__visual">
+      </div>
+    </div>
+  </a>
 
 
 </div>
@@ -4137,7 +5105,7 @@ html, body {
 
 	// Make Slide 1 banner fully clickable to /capabilities/airos-agentriniti-package/
 	document.addEventListener('DOMContentLoaded', function() {
-		const firstBanner = document.querySelector('.airo-hero:not(.airo-hero--package):not(.airo-hero--proud)');
+		const firstBanner = document.querySelector('.airo-hero:not(.airo-hero--package):not(.airo-hero--proud):not(.airo-hero--ai4)');
 		if (firstBanner) {
 			firstBanner.addEventListener('click', function(e) {
 				// Don't trigger if clicked on an actual link, button, or slick dots wrapper

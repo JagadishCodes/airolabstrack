@@ -2203,3 +2203,50 @@ function custom_wpcf7_tel_validation_filter($result, $tag) {
 }
 
 
+/**
+ * Give Subscriber access to CRM Entries
+ */
+/**
+ * Allow Subscribers to see selected admin menu pages.
+ */
+function airolabs_subscriber_admin_menu() {
+
+    if ( ! current_user_can( 'subscriber' ) ) {
+        return;
+    }
+
+    // CRM Entries
+    add_menu_page(
+        'CRM Entries',
+        'CRM Entries',
+        'read',
+        'vxcf_leads',
+        '',
+        'dashicons-feedback',
+        30
+    );
+
+    // Example submenu
+    add_submenu_page(
+        'vxcf_leads',
+        'All Entries',
+        'All Entries',
+        'read',
+        'vxcf_leads'
+    );
+
+}
+add_action( 'admin_menu', 'airolabs_subscriber_admin_menu', 999 );
+
+function airolabs_noindex_ai4landingpage() {
+
+    if ( is_page( 'ai4landingpage' ) ) {
+        echo '<meta name="robots" content="noindex, nofollow">' . "\n";
+    }
+
+}
+add_action( 'wp_head', 'airolabs_noindex_ai4landingpage' );
+
+if ( is_page(6590) ) {
+    echo '<meta name="robots" content="noindex, nofollow">';
+}

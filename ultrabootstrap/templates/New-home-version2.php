@@ -1396,6 +1396,7 @@ body {
   padding: 30px 0 36px;
   background: #fff;
   border-top: 3px solid var(--red);
+  overflow: hidden;
 }
 
 .ecosystem-header {
@@ -1429,47 +1430,77 @@ body {
   line-height: 1.75;
   text-align: left;
 }
+@media (min-width: 901px) {
+  .ecosystem-copy {
+    white-space: nowrap;
+    text-align: center; /* Center to match header when it's a single line */
+  }
+}
 
 .eco-logo-strip {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  gap: 0;
-/*   border: 1px solid var(--border); */
-  border-radius: 6px;
-  overflow: hidden;
-  place-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  width: 100%;
 }
 
 .eco-logo-item {
-  width: fit-content;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 16px 8px;
   background: #fff;
-  transition: background 0.2s ease;
+  height: 90px;
+  box-sizing: border-box;
+  flex: 0 0 auto;
 }
-
-/* .eco-logo-item:hover {
-  background: var(--off);
-} */
 
 /* Logo image sizing */
 .eco-logo-item img {
-  height: 60px;
-  width: 120px;
-  max-width: 200px;
   object-fit: contain;
   opacity: 1;
   filter: grayscale(0%);
-/*   transition: opacity 0.2s ease, filter 0.2s ease; */
+  width: auto;
+  height: auto;
 }
 
-/* Brighten on hover */
-/* .eco-logo-item:hover img {
-  opacity: 1;
-  filter: grayscale(0%);
-} */
+/* Precise widths and heights to ensure identical visual sizes without layout-distorting scales */
+.eco-logo-openai {
+  width: 260px !important;
+  height: 85px !important;
+  margin: 0 -35px;
+}
+.eco-logo-anthropic {
+  width: 320px !important;
+  height: 100px !important;
+  margin: 0 -50px;
+}
+.eco-logo-microsoft {
+  width: 300px !important;
+  height: 95px !important;
+  transform: translateY(-3px);
+  transform-origin: center;
+  margin: 0 -45px;
+}
+.eco-logo-google {
+  width: 260px !important;
+  height: 87px !important;
+  margin: 0 -25px 0 -65px !important;
+}
+.eco-logo-aws {
+  width: 85px !important;
+  height: 46px !important;
+  transform: translateY(1px);
+  transform-origin: center;
+  margin: 0 -5px;
+}
+.eco-logo-watsonx {
+  width: 260px !important;
+  height: 87px !important;
+  transform: translateY(-4px);
+  transform-origin: center;
+  margin: 0 -35px;
+}
 
 /* .s2-quote { border-left: 4px solid var(--red); padding: 14px 16px; background: var(--blue); width: fit-content; }
 .s2-quote-text { font-family: var(--font-d); font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; color: #ffffff; line-height: 1.4; }
@@ -1556,28 +1587,139 @@ body {
     cursor: pointer;
 }
 /* ══ RESPONSIVE ══ */
-@media (max-width: 900px) {
-  .s-trinity, .s-ecosystem { padding: 60px 0; }
-  .eco-logo-strip { grid-template-columns: repeat(3, 1fr); border-radius: 6px; }
-  .trinity-ctas { flex-direction: column; align-items: stretch; }
-  .trinity-btn-primary, .trinity-btn-outline { justify-content: center; text-align: center; }
-  .eco-logo-item img { height: 44px; max-width: 110px; }
-  .eco-logo-item { padding: 20px 18px; }
-}
-
-
-@media (max-width: 600px) {
-  .eco-logo-strip { grid-template-columns: repeat(2, 1fr); }
-  .eco-logo-item img { height: 36px; max-width: 90px; }
-  .eco-logo-item { padding: 16px 8px; }
-}
-@media (max-width: 1280px) {
-  .eco-logo-item img {
-    height: 50px;
-    max-width: 130px;
+@media (max-width: 1200px) {
+  .eco-logo-strip {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px 40px;
   }
   .eco-logo-item {
-    padding: 20px 6px;
+    padding: 0;
+    height: 80px;
+  }
+  .eco-logo-openai {
+    width: 220px !important;
+    height: 72px !important;
+    margin: 0 -30px;
+  }
+  .eco-logo-anthropic {
+    width: 270px !important;
+    height: 85px !important;
+    margin: 0 -40px;
+  }
+  .eco-logo-microsoft {
+    width: 250px !important;
+    height: 80px !important;
+    transform: translateY(-2.5px);
+    margin: 0 -38px;
+  }
+  .eco-logo-google {
+    width: 220px !important;
+    height: 74px !important;
+    margin: 0 -20px 0 -55px !important;
+  }
+  .eco-logo-aws {
+    width: 72px !important;
+    height: 40px !important;
+    transform: translateY(0.5px);
+    margin: 0 -4px;
+  }
+  .eco-logo-watsonx {
+    width: 220px !important;
+    height: 74px !important;
+    transform: translateY(-3px);
+    margin: 0 -30px;
+  }
+}
+
+@media (max-width: 900px) {
+  .s-trinity, .s-ecosystem { padding: 60px 0; }
+  .eco-logo-strip {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px 30px;
+  }
+  .trinity-ctas { flex-direction: column; align-items: stretch; }
+  .trinity-btn-primary, .trinity-btn-outline { justify-content: center; text-align: center; }
+  .eco-logo-item {
+    height: 70px;
+  }
+  .eco-logo-openai {
+    width: 180px !important;
+    height: 60px !important;
+    margin: 0 -25px;
+  }
+  .eco-logo-anthropic {
+    width: 220px !important;
+    height: 69px !important;
+    margin: 0 -33px;
+  }
+  .eco-logo-microsoft {
+    width: 200px !important;
+    height: 63px !important;
+    transform: translateY(-2px);
+    margin: 0 -30px;
+  }
+  .eco-logo-google {
+    width: 180px !important;
+    height: 60px !important;
+    margin: 0 -15px 0 -45px !important;
+  }
+  .eco-logo-aws {
+    width: 62px !important;
+    height: 35px !important;
+    transform: translateY(0.5px);
+    margin: 0 -3px;
+  }
+  .eco-logo-watsonx {
+    width: 180px !important;
+    height: 60px !important;
+    transform: translateY(-2.5px);
+    margin: 0 -25px;
+  }
+}
+
+@media (max-width: 600px) {
+  .eco-logo-strip {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px 20px;
+  }
+  .eco-logo-item {
+    height: 60px;
+  }
+  .eco-logo-openai {
+    width: 130px !important;
+    height: 43px !important;
+    margin: 0 -18px;
+  }
+  .eco-logo-anthropic {
+    width: 160px !important;
+    height: 50px !important;
+    margin: 0 -24px;
+  }
+  .eco-logo-microsoft {
+    width: 150px !important;
+    height: 47px !important;
+    transform: translateY(-1.5px);
+    margin: 0 -22px;
+  }
+  .eco-logo-google {
+    width: 130px !important;
+    height: 43px !important;
+    margin: 0 -12px 0 -35px !important;
+  }
+  .eco-logo-aws {
+    width: 52px !important;
+    height: 29px !important;
+    transform: translateY(0.5px);
+    margin: 0 -2px;
+  }
+  .eco-logo-watsonx {
+    width: 130px !important;
+    height: 43px !important;
+    transform: translateY(-2px);
+    margin: 0 -18px;
   }
 }
 
@@ -1787,9 +1929,9 @@ html, body {
         margin-bottom: 0 !important;
       }
       .airo-hero {
-        height: 520px !important;
-        min-height: 480px !important;
-        max-height: 560px !important;
+        height: 420px !important;
+        min-height: 420px !important;
+        max-height: 420px !important;
         padding: 24px clamp(20px, 4vw, 40px) !important;
         display: flex !important;
         align-items: center !important;
@@ -1797,9 +1939,9 @@ html, body {
         margin-top: 85px !important;
       }
       body.admin-bar .airo-hero {
-        height: 520px !important;
-        min-height: 480px !important;
-        max-height: 560px !important;
+        height: 420px !important;
+        min-height: 420px !important;
+        max-height: 420px !important;
       }
       .hero-main-carousel {
         margin-bottom: 0 !important;
@@ -1809,7 +1951,7 @@ html, body {
       }
       .airo-hero__grid {
         display: grid !important;
-        grid-template-columns: 1.15fr 1fr !important; /* Balanced layout (approx. 53/47) */
+        grid-template-columns: 1fr 1.15fr !important; /* Wider right column for better diagram legibility */
         gap: 24px !important;
         align-items: center !important;
         width: 100% !important;
@@ -1867,7 +2009,9 @@ html, body {
         max-width: 100% !important;
         border-radius: 20px !important;
         padding: 12px !important;
-        box-shadow: 0 15px 35px -15px rgba(1,0,74,0.15) !important;
+        box-shadow: none !important;
+        border: none !important;
+        background: transparent !important;
         display: flex !important;
         align-items: center !important;
         justify-content: center !important;
@@ -1913,7 +2057,7 @@ html, body {
       position: relative; z-index: 1;
       width: 100%;
       max-width: 1320px; margin: 0 auto;
-      display: grid; grid-template-columns: 1fr 1.35fr; /* Wider right column to increase image size */
+      display: grid; grid-template-columns: 1fr 1.45fr; /* Wider right column to increase image size */
       gap: clamp(24px, 4vw, 48px);
       align-items: center;
     }
@@ -2098,14 +2242,14 @@ html, body {
     }
     .airo-visual-card {
       position: relative;
-      background: var(--white);
-      border: 1px solid var(--grey-line);
+      background: transparent;
+      border: none;
       border-radius: 26px;
       padding: clamp(10px, 1.5vw, 16px);
-      box-shadow: 0 30px 60px -30px rgba(1,0,74,0.22);
+      box-shadow: none;
       max-height: calc(100vh - 170px); /* Allowed it to grow taller */
-      width: 100%; /* Force card to fill the wider 1.35fr column */
-      max-width: 680px; /* Allowed it to be wider */
+      width: 100%; /* Force card to fill the wider column */
+      max-width: 780px; /* Allowed it to be wider */
       display: flex;
       align-items: center;
       justify-content: center;
@@ -2118,6 +2262,8 @@ html, body {
       height: auto;
       display: block;
       object-fit: contain;
+      transform: scale(1.12); /* Scaled slightly larger for better text clarity */
+      transform-origin: center center;
     }
 
     .airo-live-tag {
@@ -2274,24 +2420,253 @@ html, body {
       }
     }
 
-    /* ---------- Slide 3 Specific Styling (Proud to Be) ---------- */
-    .airo-hero--proud {
-      background-image: url('/wp-content/uploads/2026/04/Proud_to_be_a__14___1__no_logo.png');
+    /* ---------- Slide 3 Specific Styling ---------- */
+    .airo-hero--ai4 {
+      position: relative !important;
+      background-image: url('/wp-content/uploads/2026/07/AI4-2026-Banner.jpg');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
+      color: #FFFFFF;
     }
-    @media (max-width: 1024px) {
-      .airo-hero.airo-hero--proud {
+    .airo-hero--ai4 .airo-hero__grid {
+      height: 100%;
+    }
+    .airo-hero--ai4 .airo-hero__content {
+      position: relative;
+      height: 100%;
+    }
+    .ai4-cta-row {
+      position: absolute;
+      left: clamp(5px, 3.2vw, 45px);
+      bottom: 40px;
+      display: flex !important;
+      flex-direction: row !important;
+      flex-wrap: nowrap !important;
+      align-items: center !important;
+      gap: 16px;
+      z-index: 15;
+      width: max-content !important;
+    }
+    .ai4-btn-red {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: #FF0000 !important;
+      color: #FFFFFF !important;
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+      font-size: 15.5px;
+      padding: 11px 24px;
+      border-radius: 9px;
+      text-decoration: none !important;
+      border: 2px solid #FF0000;
+      box-shadow: 0 4px 14px rgba(255, 0, 0, 0.3);
+      transition: all 0.25s ease;
+      cursor: pointer;
+      line-height: 1.2;
+      white-space: nowrap;
+    }
+    .ai4-btn-red:hover {
+      background: #D60000 !important;
+      border-color: #D60000;
+      color: #FFFFFF !important;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(255, 0, 0, 0.4);
+      text-decoration: none !important;
+    }
+    .ai4-btn-outline {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: #FFFFFF !important;
+      color: #FF0000 !important;
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+      font-size: 15.5px;
+      padding: 11px 24px;
+      border-radius: 9px;
+      text-decoration: none !important;
+      border: 2px solid #FF0000;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      transition: all 0.25s ease;
+      cursor: pointer;
+      line-height: 1.2;
+      white-space: nowrap;
+    }
+    .ai4-btn-outline:hover {
+      background: #FF0000 !important;
+      color: #FFFFFF !important;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(255, 0, 0, 0.3);
+      text-decoration: none !important;
+    }
+    @media (min-width: 1024px) {
+      .airo-hero--ai4 {
+        background-image: url('/wp-content/uploads/2026/07/AI4-2026-Banner.jpg') !important;
+        background-size: 100% 100% !important;
+        background-position: center !important;
+        background-repeat: no-repeat !important;
+      }
+      .ai4-cta-row {
+        left: clamp(5px, 3.2vw, 45px) !important;
+        bottom: 40px !important;
+        flex-wrap: nowrap !important;
+        width: max-content !important;
+        gap: 16px !important;
+      }
+      .ai4-btn-red,
+      .ai4-btn-outline {
+        font-size: 15.5px !important;
+        padding: 11px 24px !important;
+        border-radius: 9px !important;
+      }
+    }
+    @media (min-width: 768px) and (max-width: 1023px) {
+      .ai4-cta-row {
+        left: clamp(5px, 3.2vw, 30px) !important;
+        bottom: 28px !important;
+        flex-wrap: nowrap !important;
+        width: max-content !important;
+        gap: 12px !important;
+      }
+      .ai4-btn-red,
+      .ai4-btn-outline {
+        font-size: 13px !important;
+        padding: 8px 18px !important;
+        border-radius: 7px !important;
+      }
+    }
+    @media (max-width: 767px) {
+      .airo-hero--ai4 {
+        background-image: url('/wp-content/uploads/2026/07/AI4-2026-Banner.jpg') !important;
+        background-size: 100% 100% !important;
+        background-position: center !important;
+        background-repeat: no-repeat !important;
+        padding: 0 !important;
+      }
+      .airo-hero--ai4 .airo-hero__visual {
+        display: none !important;
+      }
+      .ai4-cta-row {
+        left: 6.5% !important;
+        bottom: 18px !important;
+        flex-wrap: nowrap !important;
+        width: max-content !important;
+        gap: 5px !important;
+      }
+      .ai4-btn-red,
+      .ai4-btn-outline {
+        font-size: 7.5px !important;
+        padding: 2.5px 6px !important;
+        border-radius: 4px !important;
+        border-width: 1px !important;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1) !important;
+        line-height: 1.1 !important;
+        white-space: nowrap !important;
+      }
+    }
+
+
+    @media (min-width: 768px) and (max-width: 1024px) {
+      .airo-hero:not(.airo-hero--package):not(.airo-hero--proud) {
         height: 420px !important;
         min-height: 420px !important;
         max-height: 420px !important;
-        background-image: url('/wp-content/uploads/2026/04/Proud_to_be_a__14___1__no_logo.png') !important;
-        background-size: cover !important;
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+        display: flex !important;
+        align-items: center !important;
+        overflow: hidden !important;
+      }
+      .airo-hero:not(.airo-hero--package):not(.airo-hero--proud) .airo-hero__grid {
+        gap: 20px !important;
+        align-items: center !important;
+      }
+      .airo-hero:not(.airo-hero--package):not(.airo-hero--proud) .airo-eyebrow {
+        font-size: 10px !important;
+        padding: 4px 10px !important;
+        margin-bottom: 4px !important;
+      }
+      .airo-hero:not(.airo-hero--package):not(.airo-hero--proud) .airo-headline {
+        font-size: 2.2rem !important;
+        margin-top: 0 !important;
+        line-height: 1.1 !important;
+      }
+      .airo-hero:not(.airo-hero--package):not(.airo-hero--proud) .airo-divider {
+        margin-top: 6px !important;
+      }
+      .airo-hero:not(.airo-hero--package):not(.airo-hero--proud) .airo-subhead {
+        font-size: 1rem !important;
+        margin-top: 6px !important;
+      }
+      .airo-hero:not(.airo-hero--package):not(.airo-hero--proud) .airo-badge {
+        font-size: 0.95rem !important;
+        padding: 6px 14px !important;
+        margin-top: 6px !important;
+        margin-bottom: 6px !important;
+      }
+      .airo-hero:not(.airo-hero--package):not(.airo-hero--proud) .airo-stats li {
+        font-size: 11px !important;
+        padding: 4px 8px !important;
+      }
+      .airo-hero:not(.airo-hero--package):not(.airo-hero--proud) .airo-cta-row {
+        margin-top: 10px !important;
+      }
+      .airo-hero:not(.airo-hero--package):not(.airo-hero--proud) .airo-cta {
+        font-size: 12px !important;
+        padding: 8px 16px !important;
+      }
+      .airo-hero:not(.airo-hero--package):not(.airo-hero--proud) .airo-visual-card {
+        padding: 8px !important;
+        max-height: 390px !important; /* Increased slightly to accommodate scaled image */
+        border-radius: 16px !important;
+        height: auto !important;
+        box-shadow: none !important;
+        border: none !important;
+        background: transparent !important;
+        max-width: 100% !important;
+      }
+      .airo-hero:not(.airo-hero--package):not(.airo-hero--proud) .airo-visual-card img {
+        height: 100% !important;
+        max-height: 360px !important;
+        width: 100% !important;
+        object-fit: contain !important;
+        object-position: center !important;
+        transform: scale(1.12) !important; /* Scaled slightly larger for better text clarity */
+        transform-origin: center center !important;
+      }
+      .airo-hero:not(.airo-hero--package):not(.airo-hero--proud) .airo-live-tag {
+        font-size: 10px !important;
+        padding: 6px 12px !important;
+        bottom: -12px !important;
+      }
+      .airo-hero.airo-hero--package {
+        height: 420px !important;
+        min-height: 420px !important;
+        max-height: 420px !important;
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+      }
+      .airo-hero.airo-hero--package .airo-hero__content {
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+      }
+      .airo-hero.airo-hero--ai4 {
+        height: 420px !important;
+        min-height: 420px !important;
+        max-height: 420px !important;
+        background-size: 100% 100% !important;
         background-position: center !important;
         background-repeat: no-repeat !important;
-        background-color: #ffffff !important;
-        padding: 0 !important;
+      }
+      .airo-hero.airo-hero--ai4 .airo-hero__content {
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
       }
     }
     @media (max-width: 767px) {
@@ -2306,19 +2681,8 @@ html, body {
     /* ---------- responsive ---------- */
     @media (max-width: 767px) {
 
-      /* === Slide 1 Mobile: Sequential — Diagram first, then Text === */
+      /* === Slide 1 Mobile: Diagram Hidden, Text Always Visible === */
 
-      /* Phase 1 (default): show diagram only, hide text */
-		.airo-visual-card {
-			margin-top:-4px !important;
-		}
-		. airo-cta {
-			margin-top:-12px !important;
-		}
-/* 		.exp-airo-cta-row {
-			margin-top:-12px !important;
-
-		} */
       .airo-hero:not(.airo-hero--package):not(.airo-hero--proud) .airo-hero__grid {
         grid-template-columns: 1fr;
         display: flex !important;
@@ -2326,36 +2690,13 @@ html, body {
         gap: 0;
       }
       .airo-hero:not(.airo-hero--package):not(.airo-hero--proud) .airo-hero__visual {
-        display: block !important;
-        opacity: 1;
-        transition: opacity 0.5s ease;
-        flex-shrink: 0;
-        margin-bottom: 0;
-      }
-      .airo-hero:not(.airo-hero--package):not(.airo-hero--proud) .airo-visual-card {
-        max-height: 240px !important;
-        width: 100%;
-        max-width: 100%;
-        padding: 10px;
-        border-radius: 18px;
-      }
-      .airo-hero:not(.airo-hero--package):not(.airo-hero--proud) .airo-hero__content {
-        opacity: 0;
-        max-height: 0;
-        overflow: hidden;
-        transition: opacity 0.5s ease, max-height 0.5s ease;
-        pointer-events: none;
-      }
-
-      /* Phase 2 (.show-content): hide diagram, reveal text */
-      .airo-hero:not(.airo-hero--package):not(.airo-hero--proud).show-content .airo-hero__visual {
         display: none !important;
       }
-      .airo-hero:not(.airo-hero--package):not(.airo-hero--proud).show-content .airo-hero__content {
-        opacity: 1;
-        max-height: 1200px;
-        pointer-events: auto;
-        transition: opacity 0.5s ease, max-height 0.6s ease;
+      .airo-hero:not(.airo-hero--package):not(.airo-hero--proud) .airo-hero__content {
+        opacity: 1 !important;
+        max-height: none !important;
+        overflow: visible !important;
+        pointer-events: auto !important;
       }
       /* Slide 1 mobile: set height to 220px to match other slides */
       .airo-hero:not(.airo-hero--package):not(.airo-hero--proud) {
@@ -2436,17 +2777,7 @@ html, body {
         text-align: center !important;
       }
 
-      /* Sequential animation starting from "100 Agents" only after content is shown */
-      .airo-hero:not(.airo-hero--package):not(.airo-hero--proud):not(.show-content) .airo-stats li {
-        animation: none !important;
-      }
-      .airo-hero:not(.airo-hero--package):not(.airo-hero--proud).show-content .airo-stats li {
-        animation: airoStatActivate 6s ease-in-out infinite !important;
-      }
-      .airo-hero:not(.airo-hero--package):not(.airo-hero--proud).show-content .airo-stats li:nth-child(1) { animation-delay: 0.6s !important; }
-      .airo-hero:not(.airo-hero--package):not(.airo-hero--proud).show-content .airo-stats li:nth-child(2) { animation-delay: 2.1s !important; }
-      .airo-hero:not(.airo-hero--package):not(.airo-hero--proud).show-content .airo-stats li:nth-child(3) { animation-delay: 3.6s !important; }
-      .airo-hero:not(.airo-hero--package):not(.airo-hero--proud).show-content .airo-stats li:nth-child(4) { animation-delay: 5.1s !important; }
+
 
       .airo-hero:not(.airo-hero--package):not(.airo-hero--proud) .airo-cta-row {
         margin-top: 10px !important;
@@ -2610,22 +2941,208 @@ html, body {
         gap: 6px;
       }
 
-      /* Slide 3 mobile: proud background image, matching Slide 1 and 2 (220px) */
-      .airo-hero.airo-hero--proud {
+      /* Slide 3 mobile: same fixed height as other slides (220px) */
+      .airo-hero--ai4 {
         height: 220px !important;
         min-height: 220px !important;
         max-height: 220px !important;
+        overflow: hidden !important;
+        display: flex !important;
+        align-items: center !important;
         padding: 0 !important;
-        background-image: url('/wp-content/uploads/2026/04/Proud_to_be_a__14___1__no_logo.png') !important;
-        background-size: cover !important;
-        background-position: center !important;
-        background-repeat: no-repeat !important;
-        background-color: #ffffff !important;
+      }
+
+
+    }
+
+    @media (max-width: 1024px), (hover: none) and (max-width: 1366px), (pointer: coarse) and (max-width: 1366px) {
+      /* Mobile-only overrides for Services/Capabilities content cards */
+      .services-sec .services-inner,
+      .services-sec .services-inner:hover,
+      .services-sec .services-inner:active,
+      .services-sec .services-inner:focus,
+      .services-sec .row.services-main .col-md-6.col-lg-4.col-sm-6 .services-inner,
+      .services-sec .row.services-main .col-md-6.col-lg-4.col-sm-6 .services-inner:hover,
+      .services-sec .row.services-main .col-md-6.col-lg-4.col-sm-6:nth-child(10) .services-inner,
+      .services-sec .row.services-main .col-md-6.col-lg-4.col-sm-6:nth-child(10) .services-inner:hover,
+      .services-sec .row.services-main .col-md-6.col-lg-4.col-sm-6:nth-child(11) .services-inner,
+      .services-sec .row.services-main .col-md-6.col-lg-4.col-sm-6:nth-child(11) .services-inner:hover {
+          background: #ffffff !important;
+          background-color: #ffffff !important;
+          color: inherit !important;
+          height: auto !important;
+          -webkit-tap-highlight-color: transparent !important;
+          box-shadow: none !important;
+          transform: none !important;
+          cursor: pointer !important;
+      }
+
+      /* Keep titles and images always visible with their default colors */
+      .services-sec .services-inner h3,
+      .services-sec .services-inner:hover h3,
+      .services-sec .services-inner:active h3,
+      .services-sec .services-inner:focus h3,
+      .services-sec .row.services-main .col-md-6.col-lg-4.col-sm-6:nth-child(10) .services-inner h3,
+      .services-sec .row.services-main .col-md-6.col-lg-4.col-sm-6:nth-child(10) .services-inner:hover h3,
+      .services-sec .row.services-main .col-md-6.col-lg-4.col-sm-6:nth-child(11) .services-inner h3,
+      .services-sec .row.services-main .col-md-6.col-lg-4.col-sm-6:nth-child(11) .services-inner:hover h3 {
+          display: block !important;
+          color: #0D004A !important;
+          opacity: 1 !important;
+          visibility: visible !important;
+      }
+
+      .services-sec .services-inner img,
+      .services-sec .services-inner:hover img,
+      .services-sec .services-inner:active img,
+      .services-sec .services-inner:focus img,
+      .services-sec .row.services-main .col-md-6.col-lg-4.col-sm-6:nth-child(10) .services-inner img,
+      .services-sec .row.services-main .col-md-6.col-lg-4.col-sm-6:nth-child(10) .services-inner:hover img,
+      .services-sec .row.services-main .col-md-6.col-lg-4.col-sm-6:nth-child(11) .services-inner img,
+      .services-sec .row.services-main .col-md-6.col-lg-4.col-sm-6:nth-child(11) .services-inner:hover img {
+          display: block !important;
+          opacity: 1 !important;
+          visibility: visible !important;
+      }
+
+      /* Keep content paragraph visible with dark color */
+      .services-sec .services-inner p,
+      .services-sec .services-inner:hover p,
+      .services-sec .services-inner:active p,
+      .services-sec .services-inner:focus p,
+      .services-sec .row.services-main .col-md-6.col-lg-4.col-sm-6:nth-child(10) .services-inner p,
+      .services-sec .row.services-main .col-md-6.col-lg-4.col-sm-6:nth-child(10) .services-inner:hover p,
+      .services-sec .row.services-main .col-md-6.col-lg-4.col-sm-6:nth-child(11) .services-inner p,
+      .services-sec .row.services-main .col-md-6.col-lg-4.col-sm-6:nth-child(11) .services-inner:hover p {
+          display: block !important;
+          color: #000000 !important;
+          opacity: 1 !important;
+          visibility: visible !important;
+      }
+
+      /* Keep arrow red visible and hide hover arrow */
+      .services-sec .services-inner .arrow-red,
+      .services-sec .services-inner:hover .arrow-red,
+      .services-sec .services-inner:active .arrow-red,
+      .services-sec .services-inner .arrow-link .arrow-red,
+      .services-sec .services-inner:hover .arrow-link .arrow-red,
+      .services-sec .row.services-main .col-md-6.col-lg-4.col-sm-6:nth-child(10) .services-inner .arrow-red,
+      .services-sec .row.services-main .col-md-6.col-lg-4.col-sm-6:nth-child(10) .services-inner:hover .arrow-red,
+      .services-sec .row.services-main .col-md-6.col-lg-4.col-sm-6:nth-child(11) .services-inner .arrow-red,
+      .services-sec .row.services-main .col-md-6.col-lg-4.col-sm-6:nth-child(11) .services-inner:hover .arrow-red {
+          display: block !important;
+      }
+
+      .services-sec .services-inner .arrow-hover,
+      .services-sec .services-inner:hover .arrow-hover,
+      .services-sec .services-inner:active .arrow-hover,
+      .services-sec .services-inner .arrow-link .arrow-hover,
+      .services-sec .services-inner:hover .arrow-link .arrow-hover,
+      .services-sec .row.services-main .col-md-6.col-lg-4.col-sm-6:nth-child(10) .services-inner .arrow-hover,
+      .services-sec .row.services-main .col-md-6.col-lg-4.col-sm-6:nth-child(10) .services-inner:hover .arrow-hover,
+      .services-sec .row.services-main .col-md-6.col-lg-4.col-sm-6:nth-child(11) .services-inner .arrow-hover,
+      .services-sec .row.services-main .col-md-6.col-lg-4.col-sm-6:nth-child(11) .services-inner:hover .arrow-hover {
+          display: none !important;
+      }
+
+      /* Make the entire card clickable on mobile & tablet devices */
+      .services-sec .services-inner > a {
+          display: block !important;
+          position: absolute !important;
+          top: 0 !important;
+          left: 0 !important;
+          width: 100% !important;
+          height: 100% !important;
+          z-index: 15 !important;
+          cursor: pointer !important;
+          pointer-events: auto !important;
+          -webkit-tap-highlight-color: rgba(255, 0, 0, 0.1) !important;
+      }
+
+      .services-sec .services-inner > a .arrow-link {
+          position: absolute !important;
+          bottom: 27px !important;
+          right: 15px !important;
+          left: auto !important;
+          top: auto !important;
+          width: 30px !important;
+          height: 12px !important;
+          margin: 0 !important;
+          pointer-events: none !important;
+      }
+
+      .services-sec .services-inner > a .arrow-link svg {
+          pointer-events: none !important;
       }
     }
 
-    @media (prefers-reduced-motion: reduce) {
-      .airo-hero *, .airo-hero *::before, .airo-hero *::after { animation: none !important; opacity: 1 !important; transform: none !important; }
+    @media (min-width: 768px) and (max-width: 1024px) {
+      /* Tablet Tab Alignment Fix */
+      .services-sec ul.services-tabs {
+          display: flex !important;
+          width: 100% !important;
+          max-width: 100% !important;
+          padding: 0 !important;
+          margin: 0 !important;
+          gap: 0 !important;
+          justify-content: center !important;
+          box-sizing: border-box !important;
+      }
+      .services-sec ul.services-tabs li.ai-tab-title {
+          flex: 1 1 0px !important;
+          width: auto !important;
+          max-width: none !important;
+          box-sizing: border-box !important;
+          margin: 0 !important;
+          padding: 0 !important;
+          display: flex !important;
+          justify-content: center !important;
+          align-items: center !important;
+      }
+      .services-sec ul.services-tabs li.ai-tab-title .services-title {
+          width: 100% !important;
+          display: flex !important;
+          justify-content: center !important;
+          align-items: center !important;
+          padding: 20px 10px !important;
+          box-sizing: border-box !important;
+          border: none !important;
+      }
+      .services-sec ul.services-tabs li.ai-tab-title .services-title h2 {
+          margin: 0 !important;
+          padding: 0 !important;
+          text-align: center !important;
+          font-size: 22px !important;
+          line-height: 1.2 !important;
+          white-space: nowrap !important;
+      }
+
+      /* Tablet Card Equal Heights Fix */
+      .services-sec .row.services-main {
+          display: flex !important;
+          flex-wrap: wrap !important;
+      }
+      .services-sec .row.services-main > div {
+          display: flex !important;
+          flex-direction: column !important;
+      }
+      .services-sec .services-inner {
+          display: flex !important;
+          flex-direction: column !important;
+          justify-content: space-between !important;
+          height: 100% !important;
+          min-height: 100% !important;
+          flex: 1 1 auto !important;
+          padding-bottom: 60px !important; /* Leave room for absolute arrow at bottom-right */
+      }
+      .services-sec .services-inner:hover,
+      .services-sec .services-inner:active,
+      .services-sec .services-inner:focus {
+          height: 100% !important;
+      }
+      .services-sec .services-inner img {
+          margin-bottom: auto !important;
+      }
     }
   </style>
 
@@ -2647,7 +3164,7 @@ html, body {
       <p class="airo-subhead">World&rsquo;s <span class="spot">fastest builder</span> of AI agents in bulk, unveils:</p>
 
       <div class="airo-badge">
-        Airo&rsquo;s <b><span class="r">agenTriniti</span><sup>SM</sup></b> Package
+        <b><span class="r">agenTriniti</span><sup>SM</sup></b> Package
       </div>
 
       <ul class="airo-stats">
@@ -2659,7 +3176,7 @@ html, body {
 
       <div class="airo-cta-row exp-airo-cta-row">
         <a class="airo-cta" href="https://calendly.com/airodigitallabs/30min?guests=sayak.das%40airodigitallabs.com&month=2026-06" target="_blank">
-          Schedule Your agenTriniti Demo Today
+          <span>Schedule Your agenTriniti Demo Today</span>
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
       </div>
@@ -2683,7 +3200,7 @@ html, body {
           <span class="line"><span><span class="accent-package">PACKAGE</span></span></span>
         </h1>
         <span class="airo-divider"></span>
-        <p class="airo-subhead">Explore our transparent, flat-rate tiers designed to scale with your enterprise.</p>
+        <p class="airo-subhead">Choose the agenTriniti<sup style="font-size: 0.45em; position: relative; top: -1em; line-height: 0; vertical-align: baseline; font-weight: 500;">SM</sup> Package that aligns with your AI ambitions, timelines, and business goals.</p>
         <div class="airo-cta-row exp-airo-cta-row">
           <a class="airo-cta exp-airo-cta" href="/capabilities/airos-agentriniti-package/#choose-package">
             Explore Packages
@@ -2696,10 +3213,25 @@ html, body {
     </div>
   </section>
 
-  <!-- Slide 3: Proud to Be -->
-  <section class="airo-hero airo-hero--proud" aria-label="Proud to be hero">
-    <!-- Empty banner to showcase the background image -->
+  <!-- Slide 3: AI4 2026 Banner -->
+  <section class="airo-hero airo-hero--ai4" aria-label="AI4 2026 Banner hero">
+    <div class="airo-hero__grid">
+      <div class="airo-hero__content">
+        <div class="ai4-cta-row">
+          <a href="https://calendly.com/airodigitallabs/30min?guests=sayak.das%40airodigitallabs.com&month=2026-06" target="_blank" class="ai4-btn-red">
+            Book a meeting
+          </a>
+          <a href="/capabilities/airos-agentriniti-package/#choose-package" class="ai4-btn-outline">
+            Explore the early-bird offer
+          </a>
+        </div>
+      </div>
+      <div class="airo-hero__visual">
+      </div>
+    </div>
   </section>
+
+
 </div>
 
 
@@ -2715,7 +3247,7 @@ html, body {
                 "/wp-content/uploads/2026/06/Social-IP-Law-Group.svg",
                 "/wp-content/uploads/2026/06/Navitus.jpg.svg",
                 "/wp-content/uploads/2026/06/Iffco-Tokyo.jpg.svg",
-                "/wp-content/uploads/2026/06/Microsoft.svg",
+                "/wp-content/uploads/2026/07/Microsoft-logo.png",
                 "/wp-content/uploads/2026/06/BMC.svg",
                 "/wp-content/uploads/2026/06/TIDI.svg",
                 "/wp-content/uploads/2026/06/Cleveland-Metropolotian-School-District.jpg.svg",
@@ -2825,7 +3357,7 @@ html, body {
 			<div class="col-12 text-center">
 				<!-- USING NATIVE VIDEO TAG TO AVOID GOOGLE DRIVE IFRAME OVERLAY ISSUES ON MOBILE -->
 				<video style="width: 100%; max-width: 100%; aspect-ratio: 16/9; border-radius: 8px; box-shadow: 0 12px 40px rgba(0,0,0,0.15); display: inline-block; background-color: #000;" id="new-player-2" controls playsinline preload="metadata" muted>
-					<source src="/wp-content/uploads/2026/06/Agentic-AI-Trinity-Package.mp4" type="video/mp4">
+					<source src="/wp-content/uploads/2026/07/Airos-agenTriniti-Package-updated.mp4" type="video/mp4">
 					Your browser does not support the video tag.
 				</video>
 			</div>
@@ -2846,7 +3378,7 @@ html, body {
 		  An AI Use Case Lifecycle Management System for continuous enterprise execution.</b>
 	  </h3> -->
     <p class="intro-body">
-      Airo’s agenTriniti<sup style="font-size: 0.45em; position: relative; top: -1.5em; line-height: 0; vertical-align: baseline; font-weight: 500;">SM</sup> Package integrates deployment, governance, and continuous AI evolution into one operational system designed for enterprise scale.<br>Built to orchestrate AI across enterprise workflows, legacy systems, and agent ecosystems while eliminating fragmented delivery, vendor lock-in, and operational complexity.
+      Airo’s agenTriniti<sup style="font-size: 0.45em; position: relative; top: -1em; line-height: 0; vertical-align: baseline; font-weight: 500;">SM</sup> Package integrates deployment, governance, and continuous AI evolution into one operational system designed for enterprise scale.<br>Built to orchestrate AI across enterprise workflows, legacy systems, and agent ecosystems while eliminating fragmented delivery, vendor lock-in, and operational complexity.
     </p>
 
 	  <div style="display: flex; justify-content: center; margin-top: 20px;">
@@ -2858,8 +3390,8 @@ html, body {
 </div>
 	  <div class="trinity-ctas">
   <a href="/capabilities/airos-agentriniti-package/"  class="trinity-btn-primary text-wrap text-center" style="white-space: normal; height: auto; line-height: 1.4; padding-top: 10px; padding-bottom: 10px; text-transform: none;">
-	       <span class="d-none d-md-inline">Learn More About agenTriniti<sup style="font-size: 0.50em; position: relative; top: -1.5em; line-height: 0; vertical-align: baseline;">SM</sup> Package</span>
-	  <span class="d-md-none">Learn More About agenTriniti<sup style="font-size: 0.35em; position: relative; top: -1.5em; line-height: 0; vertical-align: baseline;">SM</sup> Package</span>
+	       <span class="d-none d-md-inline">Learn More About agenTriniti Package</span>
+	  <span class="d-md-none">Learn More About agenTriniti Package</span>
   </a>
 </div>
 
@@ -2947,27 +3479,27 @@ html, body {
     <div class="eco-logo-strip">
 
   <div class="eco-logo-item">
-    <img src="/wp-content/uploads/2026/05/openai.png" alt="OpenAI" loading="lazy">
+    <img src=" /wp-content/uploads/2026/07/OpenAI-logo-1.svg" alt="OpenAI" class="eco-logo-openai" loading="lazy">
   </div>
 
   <div class="eco-logo-item">
-    <img src="/wp-content/uploads/2026/05/anthropic-2.png" alt="Anthropic" loading="lazy">
+    <img src=" /wp-content/uploads/2026/07/Anthropic-logo.svg" alt="Anthropic" class="eco-logo-anthropic" loading="lazy">
   </div>
 
   <div class="eco-logo-item">
-    <img src="/wp-content/uploads/2026/05/vertexai-color.png" alt="Google" loading="lazy">
+    <img src= "/wp-content/uploads/2026/07/Microsoft-logo.svg" alt="Microsoft" class="eco-logo-microsoft" loading="lazy">
   </div>
 
   <div class="eco-logo-item">
-    <img src="/wp-content/uploads/2026/05/copilot-color.png" alt="Microsoft" loading="lazy">
+    <img src="/wp-content/uploads/2026/07/Google-Logo.svg" alt="Google" class="eco-logo-google" loading="lazy">
   </div>
 
   <div class="eco-logo-item">
-    <img src="/wp-content/uploads/2026/05/bedrock-color.png" alt="Amazon" loading="lazy">
+    <img src=" /wp-content/uploads/2026/07/aws.svg" alt="AWS" class="eco-logo-aws" loading="lazy">
   </div>
 
   <div class="eco-logo-item">
-    <img src="/wp-content/uploads/2026/05/cursor-3-1.png" alt="Cursor" loading="lazy">
+    <img src="/wp-content/uploads/2026/07/Watsonx-logo-1.svg" alt="WatsonX" class="eco-logo-watsonx" loading="lazy">
   </div>
 
 </div>
@@ -3061,14 +3593,14 @@ html, body {
 				<?php if (!empty($ai_partners_section) && !empty($ai_partners_section['services'])) { ?>
 					<li class="ai-tab-title <?php if (empty($ai_services_section)) echo 'ai-active'; ?>" data-tab="partners">
 						<div class="services-title">
-							<h2>Partners</h2>
+							<h2>Platforms</h2>
 						</div>
 					</li>
 				<?php } ?>
 				<?php if (!empty($premium_enterprise_application)) { ?>
 					<li class="ai-tab-title <?php if (empty($ai_services_section) && empty($ai_partners_section['services'])) echo 'ai-active'; ?>" data-tab="premium_enterprise">
 						<div class="services-title">
-							<h2>Partners</h2>
+							<h2>Platforms</h2>
 						</div>
 					</li>
 				<?php } ?>
@@ -3312,93 +3844,7 @@ html, body {
 </section>
 <?php } ?>
 
-<?php if($ai_race_section['title']){ ?>
-<section class="fixed-sec">
-	<div class="fixed-sec-inner" style="background-image: url('<?php echo $ai_race_section['background_image']['url'] ; ?>');">
-		<div class="container-l-auto">
-			<div class="fixed-sec-title">
-				<h2><?php echo $ai_race_section['title']; ?></h2>
-			</div>
-			<div class="race-main" id="second">
-				<div class="race-slider">
-					<?php foreach ($ai_race_section['block'] as $key => $ai_block) { ?>
-						<div class="race-inner">
-							<span class="big-text"><?php echo $ai_block['big_letter']; ?></span>
-							<hr />
-							<div class="race-text">
-								<h3><?php echo $ai_block['title']; ?></h3>
-								<div><?php echo $ai_block['content']; ?></div>
-							</div>
-						</div>
-					<?php } ?>
-				</div>
-			</div>
 
-		</div>
-	</div>
-</section>
-<section class="fixed-secs">
-	<div class="fixed-sec-inner" style="background-image: url('<?php echo $ai_race_section['background_image']['url'] ; ?>');">
-		<div class="container-l-auto">
-			<div class="fixed-sec-title">
-				<h2><?php echo $ai_race_section['title']; ?></h2>
-			</div>
-			<div class="race-main" id="second">
-				<div class="race-slider">
-					<?php foreach ($ai_race_section['block'] as $key => $ai_block) { ?>
-						<div class="race-inner active">
-							<span class="big-text"><?php echo $ai_block['big_letter']; ?></span>
-							<hr />
-							<div class="race-text">
-								<h3><?php echo $ai_block['title']; ?></h3>
-								<div><?php echo $ai_block['content']; ?></div>
-							</div>
-						</div>
-					<?php } ?>
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
-<?php } ?>
-<?php if($ai_race_section['title']){ ?>
-<section class="race-sec">
-	<div class="race-sec-inner" style="background-image: url('<?php echo $ai_race_section['background_image']['url'] ; ?>');">
-		<div class="container">
-			<div class="fixed-sec-title">
-				<h2><?php echo $ai_race_section['title']; ?></h2>
-			</div>
-			<div class="race-main">
-				<div class="race-sliders">
-					<?php foreach ($ai_race_section['block'] as $key => $value_block) { ?>
-						<div class="race-inner">
-							<span class="big-text"><?php echo $value_block['big_letter']; ?></span>
-							<hr />
-							<div class="race-text">
-								<h3><?php echo $value_block['title']; ?></h3>
-								<div><?php echo $value_block['content']; ?></div>
-							</div>
-						</div>
-					<?php } ?>
-				</div>
-				<div class="my-slick-arrows color-white">
-					<button class="race-prev slick-prev slick-arrow" style="transform: rotate(90deg);">
-						<svg xmlns="http://www.w3.org/2000/svg" width="12.558" height="12.558" viewBox="0 0 12.558 12.558">
-						  <path id="icn-dropdown" d="M125.882,8.882V2.8a2.8,2.8,0,0,0-2.8-2.8H117Z" transform="translate(95.292 -76.452) rotate(135)" fill="#fff"/>
-						</svg>
-					</button>
-                	<button class="race-next slick-next slick-arrow" style="transform: rotate(-90deg);">
-                		<svg xmlns="http://www.w3.org/2000/svg" width="12.558" height="12.558" viewBox="0 0 12.558 12.558">
-						  <path id="icn-dropdown" d="M125.882,8.882V2.8a2.8,2.8,0,0,0-2.8-2.8H117Z" transform="translate(95.292 -76.452) rotate(135)" fill="#fff"/>
-						</svg>
-                	</button>
-				</div>
-			</div>
-			<div class="lines"></div>
-		</div>
-	</div>
-</section>
-<?php } ?>
 
 <?php if($ai_blog_section['title']){ ?>
 <section class="blog-sec">
@@ -3860,7 +4306,7 @@ html, body {
 
 			$this.slick({
 				autoplay: true,
-				autoplaySpeed: isFirst ? 8000 : 5000,
+				autoplaySpeed: isFirst ? 10000 : 6000,
 				speed: isFirst ? 500 : 800,
 				dots: true,
 				arrows: false,
@@ -3874,35 +4320,8 @@ html, body {
 			});
 		});
 
-		// keep using the first carousel for the mobile sequential animation
-		const $carousel = $carousels.eq(0);
-
-		if (window.innerWidth < 768) {
-			const slide1 = document.querySelector('.airo-hero:not(.airo-hero--package):not(.airo-hero--proud)');
-			let slide1Timer = null;
-			function startSlide1Sequence() {
-				if (!slide1) return;
-				slide1.classList.remove('show-content');
-				clearTimeout(slide1Timer);
-				slide1Timer = setTimeout(function() {
-					slide1.classList.add('show-content');
-				}, 2500);
-			}
-			startSlide1Sequence();
-			$carousel.on('afterChange', function(event, slick, currentSlide) {
-				if (currentSlide === 0) {
-					startSlide1Sequence();
-				} else {
-					clearTimeout(slide1Timer);
-					if (slide1) slide1.classList.remove('show-content');
-				}
-				if (currentSlide === 2) {
-					$carousel.addClass('slide3-active');
-				} else {
-					$carousel.removeClass('slide3-active');
-				}
-			});
-		}
+		// Sequential animation removed for mobile since it now mimics desktop behavior directly
+		// (No longer waiting for show-content on mobile)
 	}
 });
 
@@ -3920,18 +4339,6 @@ html, body {
 		}
 	});
 
-	// Make Slide 3 banner fully clickable to /news/airos-great-place-to-work-story-three-years-running/
-	document.addEventListener('DOMContentLoaded', function() {
-		const thirdBanner = document.querySelector('.airo-hero--proud');
-		if (thirdBanner) {
-			thirdBanner.addEventListener('click', function(e) {
-				// Don't trigger if clicked on an actual link, button, or slick dots wrapper
-				if (e.target.closest('a') || e.target.closest('button') || e.target.closest('.slick-dots')) {
-					return;
-				}
-				window.location.href = '/news/airos-great-place-to-work-story-three-years-running/';
-			});
-		}
-	});
+
 
 </script>

@@ -256,9 +256,9 @@ get_header(); ?>
     background:linear-gradient(90deg, #3e0c10 0%, #151515 80%);
   }
   .catalogue-wrap .ai4-modal-inline::before{display:none;}
-  .catalogue-wrap .ai4-modal-inline .ai4-modal-actions{flex-direction:row;width:auto;margin-top:0;gap:16px;}
+  .catalogue-wrap .ai4-modal-inline .ai4-modal-actions{flex-direction:row;width:auto;margin-top:0;gap:16px;flex-shrink:0;}
   .catalogue-wrap .ai4-modal-inline .ai4-modal-actions .btn-primary, .catalogue-wrap .ai4-modal-inline .ai4-modal-actions .btn-ghost{
-    width:auto;padding:12px 24px;font-size:12px;
+    width:auto;padding:12px 24px;font-size:12px;white-space:nowrap;
   }
   .catalogue-wrap .ai4-modal-inline .ai4-modal-actions .btn-ghost{
     border:1px solid rgba(255,255,255,0.25);
@@ -288,11 +288,12 @@ get_header(); ?>
     .catalogue-wrap .chip-row{justify-content:center !important;}
     .catalogue-wrap .banner-ctas{display:flex;flex-direction:column;align-items:center;text-align:center;}
     
-    .catalogue-wrap .ai4-modal-inline{flex-direction:column;text-align:center;padding:28px 24px;}
-    .catalogue-wrap .ai4-modal-inline h3{margin-bottom:8px;}
-    .catalogue-wrap .ai4-modal-inline p{margin-bottom:20px;}
-    .catalogue-wrap .ai4-modal-inline .ai4-modal-actions{flex-direction:column;width:100%;gap:12px;}
-    .catalogue-wrap .ai4-modal-inline .ai4-modal-actions .btn-primary, .catalogue-wrap .ai4-modal-inline .ai4-modal-actions .btn-ghost{width:100%;justify-content:center;}
+    .catalogue-wrap .ai4-modal-inline{padding:18px 20px;}
+    .catalogue-wrap .ai4-modal-inline h3{font-size:16px;}
+    .catalogue-wrap .ai4-modal-inline p{font-size:12px;}
+    .catalogue-wrap .ai4-modal-inline .ai4-modal-actions{gap:10px;}
+    .catalogue-wrap .ai4-modal-inline .ai4-modal-actions .btn-primary, .catalogue-wrap .ai4-modal-inline .ai4-modal-actions .btn-ghost{padding:10px 14px;font-size:11px;}
+    
     .catalogue-wrap .ai4-modal{padding:40px 28px;}
   }
 
@@ -305,7 +306,13 @@ get_header(); ?>
     .catalogue-wrap .content-visual{height:280px !important;width:100% !important;}
     .catalogue-wrap .btn-primary, .catalogue-wrap .btn-outline{width:100%;justify-content:center;}
     .catalogue-wrap .chip{padding:8px 16px !important;font-size:12.5px !important;}
-    #inlineCtaContainer{padding:10px 0 40px 0 !important;}
+    #inlineCtaContainer{padding:80px 0 60px 0 !important;}
+
+    .catalogue-wrap .ai4-modal-inline{flex-direction:column;text-align:center;padding:24px 20px;}
+    .catalogue-wrap .ai4-modal-inline h3{margin-bottom:6px;font-size:18px;white-space:normal;}
+    .catalogue-wrap .ai4-modal-inline p{margin-bottom:24px;font-size:13px;}
+    .catalogue-wrap .ai4-modal-inline .ai4-modal-actions{flex-direction:column;width:100%;gap:10px;}
+    .catalogue-wrap .ai4-modal-inline .ai4-modal-actions .btn-primary, .catalogue-wrap .ai4-modal-inline .ai4-modal-actions .btn-ghost{width:100%;justify-content:center;padding:12px 14px;font-size:11px;white-space:normal;}
   }
 
   @media(max-width:480px) {
@@ -361,7 +368,7 @@ get_header(); ?>
 <section id="inlineCtaContainer" style="display: none; position: relative; z-index: 10; background: var(--white); padding: 20px 0 60px 0;">
   <div class="container">
     <div class="ai4-modal ai4-modal-inline">
-      <div style="position:relative; z-index:2;">
+      <div style="position:relative; z-index:2; flex:1; min-width:0; padding-right:16px;">
         <h3>Met Airo leadership team at the Ai4?</h3>
         <p>Explore your exclusive agenTriniti℠ offer.</p>
       </div>
